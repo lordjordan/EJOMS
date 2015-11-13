@@ -206,7 +206,7 @@ Partial Class MainMenu
         Me.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnLogOut.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnLogOut.ForeColor = System.Drawing.Color.Gold
-        Me.btnLogOut.Location = New System.Drawing.Point(900, 27)
+        Me.btnLogOut.Location = New System.Drawing.Point(924, 27)
         Me.btnLogOut.Name = "btnLogOut"
         Me.btnLogOut.Size = New System.Drawing.Size(76, 51)
         Me.btnLogOut.TabIndex = 193
@@ -251,7 +251,7 @@ Partial Class MainMenu
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
-        Me.BackColor = System.Drawing.SystemColors.Control
+        Me.BackColor = System.Drawing.Color.Silver
         Me.Controls.Add(Me.lblDate)
         Me.Controls.Add(Me.lblTime)
         Me.Controls.Add(Me.btnLogOut)

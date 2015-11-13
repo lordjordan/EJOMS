@@ -37,6 +37,8 @@ Partial Class JobOrder
         Me.chJobID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.pnlAddEdit = New System.Windows.Forms.Panel()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.TextBox8 = New System.Windows.Forms.TextBox()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
@@ -44,8 +46,12 @@ Partial Class JobOrder
         Me.btnViewImg = New System.Windows.Forms.Button()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.lvServices = New System.Windows.Forms.ListView()
+        Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Label5 = New System.Windows.Forms.Label()
         Me.lvParts = New System.Windows.Forms.ListView()
+        Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.btnSave = New System.Windows.Forms.Button()
         Me.btnSearchPlate = New System.Windows.Forms.Button()
         Me.btnBrowseInspect = New System.Windows.Forms.Button()
@@ -78,12 +84,6 @@ Partial Class JobOrder
         Me.btnAddEditClose = New System.Windows.Forms.Button()
         Me.lblAddedit = New System.Windows.Forms.Label()
         Me.timerAnimate = New System.Windows.Forms.Timer(Me.components)
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.pnlMain.SuspendLayout()
         Me.pnlAddEdit.SuspendLayout()
         Me.SuspendLayout()
@@ -95,7 +95,7 @@ Partial Class JobOrder
         Me.Label1.BackColor = System.Drawing.Color.MidnightBlue
         Me.Label1.Font = New System.Drawing.Font("Segoe UI Light", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Gold
-        Me.Label1.Location = New System.Drawing.Point(2, 2)
+        Me.Label1.Location = New System.Drawing.Point(1, 2)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(1030, 51)
         Me.Label1.TabIndex = 189
@@ -134,7 +134,7 @@ Partial Class JobOrder
         Me.pnlMain.Controls.Add(Me.Label3)
         Me.pnlMain.Controls.Add(Me.Label1)
         Me.pnlMain.Controls.Add(Me.lvJobOrderList)
-        Me.pnlMain.Location = New System.Drawing.Point(0, 27)
+        Me.pnlMain.Location = New System.Drawing.Point(0, 24)
         Me.pnlMain.Name = "pnlMain"
         Me.pnlMain.Size = New System.Drawing.Size(1030, 670)
         Me.pnlMain.TabIndex = 193
@@ -180,7 +180,7 @@ Partial Class JobOrder
         Me.btnSearch.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSearch.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.btnSearch.Image = CType(resources.GetObject("btnSearch.Image"), System.Drawing.Image)
-        Me.btnSearch.Location = New System.Drawing.Point(294, 129)
+        Me.btnSearch.Location = New System.Drawing.Point(299, 87)
         Me.btnSearch.Name = "btnSearch"
         Me.btnSearch.Size = New System.Drawing.Size(28, 26)
         Me.btnSearch.TabIndex = 5
@@ -192,7 +192,7 @@ Partial Class JobOrder
         Me.txtSearch.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
         Me.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtSearch.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtSearch.Location = New System.Drawing.Point(71, 129)
+        Me.txtSearch.Location = New System.Drawing.Point(76, 87)
         Me.txtSearch.Name = "txtSearch"
         Me.txtSearch.Size = New System.Drawing.Size(222, 26)
         Me.txtSearch.TabIndex = 4
@@ -217,7 +217,7 @@ Partial Class JobOrder
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(10, 132)
+        Me.Label3.Location = New System.Drawing.Point(15, 90)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(55, 21)
         Me.Label3.TabIndex = 3
@@ -232,9 +232,9 @@ Partial Class JobOrder
         Me.lvJobOrderList.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.chJobID, Me.chName})
         Me.lvJobOrderList.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lvJobOrderList.GridLines = True
-        Me.lvJobOrderList.Location = New System.Drawing.Point(14, 161)
+        Me.lvJobOrderList.Location = New System.Drawing.Point(14, 119)
         Me.lvJobOrderList.Name = "lvJobOrderList"
-        Me.lvJobOrderList.Size = New System.Drawing.Size(1001, 494)
+        Me.lvJobOrderList.Size = New System.Drawing.Size(1001, 536)
         Me.lvJobOrderList.TabIndex = 6
         Me.lvJobOrderList.UseCompatibleStateImageBehavior = False
         Me.lvJobOrderList.View = System.Windows.Forms.View.Details
@@ -296,11 +296,39 @@ Partial Class JobOrder
         Me.pnlAddEdit.Controls.Add(Me.btnAddEditClose)
         Me.pnlAddEdit.Controls.Add(Me.lblAddedit)
         Me.pnlAddEdit.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.pnlAddEdit.Location = New System.Drawing.Point(0, 29)
+        Me.pnlAddEdit.Location = New System.Drawing.Point(0, 26)
         Me.pnlAddEdit.Name = "pnlAddEdit"
         Me.pnlAddEdit.Size = New System.Drawing.Size(1030, 600)
         Me.pnlAddEdit.TabIndex = 194
         Me.pnlAddEdit.Visible = False
+        '
+        'Button2
+        '
+        Me.Button2.BackColor = System.Drawing.Color.MidnightBlue
+        Me.Button2.FlatAppearance.BorderSize = 0
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.ForeColor = System.Drawing.Color.Gold
+        Me.Button2.Location = New System.Drawing.Point(889, 87)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(119, 26)
+        Me.Button2.TabIndex = 235
+        Me.Button2.Text = "Choose"
+        Me.Button2.UseVisualStyleBackColor = False
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.MidnightBlue
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.Gold
+        Me.Button1.Location = New System.Drawing.Point(589, 87)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(119, 26)
+        Me.Button1.TabIndex = 234
+        Me.Button1.Text = "Order"
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'TextBox8
         '
@@ -378,6 +406,16 @@ Partial Class JobOrder
         Me.lvServices.UseCompatibleStateImageBehavior = False
         Me.lvServices.View = System.Windows.Forms.View.Details
         '
+        'ColumnHeader3
+        '
+        Me.ColumnHeader3.Text = "ServiceID"
+        Me.ColumnHeader3.Width = 0
+        '
+        'ColumnHeader4
+        '
+        Me.ColumnHeader4.Text = "Service"
+        Me.ColumnHeader4.Width = 262
+        '
         'Label5
         '
         Me.Label5.AutoSize = True
@@ -399,6 +437,16 @@ Partial Class JobOrder
         Me.lvParts.UseCompatibleStateImageBehavior = False
         Me.lvParts.View = System.Windows.Forms.View.Details
         '
+        'ColumnHeader1
+        '
+        Me.ColumnHeader1.Text = "Item ID"
+        Me.ColumnHeader1.Width = 0
+        '
+        'ColumnHeader2
+        '
+        Me.ColumnHeader2.Text = "Name"
+        Me.ColumnHeader2.Width = 261
+        '
         'btnSave
         '
         Me.btnSave.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -407,7 +455,7 @@ Partial Class JobOrder
         Me.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSave.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSave.ForeColor = System.Drawing.Color.Gold
-        Me.btnSave.Location = New System.Drawing.Point(823, -1)
+        Me.btnSave.Location = New System.Drawing.Point(824, -1)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(102, 51)
         Me.btnSave.TabIndex = 223
@@ -700,7 +748,7 @@ Partial Class JobOrder
         Me.btnAddEditClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAddEditClose.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAddEditClose.ForeColor = System.Drawing.Color.Gold
-        Me.btnAddEditClose.Location = New System.Drawing.Point(924, -1)
+        Me.btnAddEditClose.Location = New System.Drawing.Point(925, -1)
         Me.btnAddEditClose.Name = "btnAddEditClose"
         Me.btnAddEditClose.Size = New System.Drawing.Size(102, 51)
         Me.btnAddEditClose.TabIndex = 188
@@ -725,54 +773,6 @@ Partial Class JobOrder
         'timerAnimate
         '
         Me.timerAnimate.Interval = 1
-        '
-        'Button1
-        '
-        Me.Button1.BackColor = System.Drawing.Color.MidnightBlue
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.Color.Gold
-        Me.Button1.Location = New System.Drawing.Point(589, 87)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(119, 26)
-        Me.Button1.TabIndex = 234
-        Me.Button1.Text = "Order"
-        Me.Button1.UseVisualStyleBackColor = False
-        '
-        'Button2
-        '
-        Me.Button2.BackColor = System.Drawing.Color.MidnightBlue
-        Me.Button2.FlatAppearance.BorderSize = 0
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.ForeColor = System.Drawing.Color.Gold
-        Me.Button2.Location = New System.Drawing.Point(889, 87)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(119, 26)
-        Me.Button2.TabIndex = 235
-        Me.Button2.Text = "Choose"
-        Me.Button2.UseVisualStyleBackColor = False
-        '
-        'ColumnHeader1
-        '
-        Me.ColumnHeader1.Text = "Item ID"
-        Me.ColumnHeader1.Width = 0
-        '
-        'ColumnHeader2
-        '
-        Me.ColumnHeader2.Text = "Name"
-        Me.ColumnHeader2.Width = 261
-        '
-        'ColumnHeader3
-        '
-        Me.ColumnHeader3.Text = "ServiceID"
-        Me.ColumnHeader3.Width = 0
-        '
-        'ColumnHeader4
-        '
-        Me.ColumnHeader4.Text = "Service"
-        Me.ColumnHeader4.Width = 262
         '
         'JobOrder
         '

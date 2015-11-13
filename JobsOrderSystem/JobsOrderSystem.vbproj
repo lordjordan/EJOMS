@@ -163,9 +163,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\CarBrands.resx">
       <DependentUpon>CarBrands.vb</DependentUpon>
@@ -236,6 +236,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\userS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\searchs.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

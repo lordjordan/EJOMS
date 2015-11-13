@@ -8,11 +8,6 @@
     Private Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBack.Click
         showUSC(uscMainmenu)
     End Sub
-
-
-
-   
-
     Private Sub btnAddNew_Click(sender As Object, e As EventArgs) Handles btnAddNew.Click
         btnAddNewClick = True
         showAddEdit(True)
@@ -75,11 +70,7 @@
                 Exit Sub
             End If
             pnlAddEdit.Height -= 50
-
         End If
-
-
-        'Application.DoEvents()
     End Sub
 
 
@@ -94,4 +85,8 @@
     '            MessageBox.Show("Testing");
     '        }
     '    }
+
+    Private Sub JobOrder_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class

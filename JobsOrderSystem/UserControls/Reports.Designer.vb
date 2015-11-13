@@ -33,7 +33,7 @@ Partial Class Reports
         Me.btnBack.FlatAppearance.BorderSize = 0
         Me.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnBack.Font = New System.Drawing.Font("Segoe UI Light", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnBack.ForeColor = System.Drawing.Color.White
+        Me.btnBack.ForeColor = System.Drawing.Color.Gold
         Me.btnBack.Location = New System.Drawing.Point(710, 27)
         Me.btnBack.Name = "btnBack"
         Me.btnBack.Size = New System.Drawing.Size(59, 51)
