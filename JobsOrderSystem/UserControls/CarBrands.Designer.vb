@@ -25,8 +25,10 @@ Partial Class CarBrands
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CarBrands))
         Me.pnlMain = New System.Windows.Forms.Panel()
-        Me.btnAddNew = New System.Windows.Forms.Button()
         Me.btnBack = New System.Windows.Forms.Button()
+        Me.btnSearch = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.btnAddNew = New System.Windows.Forms.Button()
         Me.btnPrint = New System.Windows.Forms.Button()
         Me.btnUpdate = New System.Windows.Forms.Button()
         Me.txtSearch = New System.Windows.Forms.TextBox()
@@ -35,7 +37,6 @@ Partial Class CarBrands
         Me.chCBID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.pnlAddEdit = New System.Windows.Forms.Panel()
         Me.txtPercent = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
@@ -47,7 +48,6 @@ Partial Class CarBrands
         Me.btnAddEditClose = New System.Windows.Forms.Button()
         Me.lblAddedit = New System.Windows.Forms.Label()
         Me.timerAnimate = New System.Windows.Forms.Timer(Me.components)
-        Me.btnSearch = New System.Windows.Forms.Button()
         Me.pnlMain.SuspendLayout()
         Me.pnlAddEdit.SuspendLayout()
         Me.SuspendLayout()
@@ -60,33 +60,17 @@ Partial Class CarBrands
         Me.pnlMain.BackColor = System.Drawing.Color.Silver
         Me.pnlMain.Controls.Add(Me.btnBack)
         Me.pnlMain.Controls.Add(Me.btnSearch)
-        Me.pnlMain.Controls.Add(Me.Label1)
         Me.pnlMain.Controls.Add(Me.btnAddNew)
         Me.pnlMain.Controls.Add(Me.btnPrint)
         Me.pnlMain.Controls.Add(Me.btnUpdate)
         Me.pnlMain.Controls.Add(Me.txtSearch)
         Me.pnlMain.Controls.Add(Me.Label3)
         Me.pnlMain.Controls.Add(Me.lvCarBrands)
+        Me.pnlMain.Controls.Add(Me.Label1)
         Me.pnlMain.Location = New System.Drawing.Point(0, 21)
         Me.pnlMain.Name = "pnlMain"
         Me.pnlMain.Size = New System.Drawing.Size(1007, 496)
         Me.pnlMain.TabIndex = 205
-        '
-        'btnAddNew
-        '
-        Me.btnAddNew.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnAddNew.BackColor = System.Drawing.Color.MidnightBlue
-        Me.btnAddNew.FlatAppearance.BorderSize = 0
-        Me.btnAddNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAddNew.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAddNew.ForeColor = System.Drawing.Color.Gold
-        Me.btnAddNew.Location = New System.Drawing.Point(602, 6)
-        Me.btnAddNew.Name = "btnAddNew"
-        Me.btnAddNew.Size = New System.Drawing.Size(102, 51)
-        Me.btnAddNew.TabIndex = 211
-        Me.btnAddNew.Text = "Add new"
-        Me.btnAddNew.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnAddNew.UseVisualStyleBackColor = False
         '
         'btnBack
         '
@@ -103,6 +87,51 @@ Partial Class CarBrands
         Me.btnBack.Text = "Back"
         Me.btnBack.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnBack.UseVisualStyleBackColor = False
+        '
+        'btnSearch
+        '
+        Me.btnSearch.BackColor = System.Drawing.Color.MidnightBlue
+        Me.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.btnSearch.FlatAppearance.BorderSize = 0
+        Me.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSearch.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSearch.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnSearch.Image = CType(resources.GetObject("btnSearch.Image"), System.Drawing.Image)
+        Me.btnSearch.Location = New System.Drawing.Point(284, 80)
+        Me.btnSearch.Name = "btnSearch"
+        Me.btnSearch.Size = New System.Drawing.Size(28, 26)
+        Me.btnSearch.TabIndex = 209
+        Me.btnSearch.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnSearch.UseVisualStyleBackColor = False
+        '
+        'Label1
+        '
+        Me.Label1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label1.BackColor = System.Drawing.Color.MidnightBlue
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI Light", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.Gold
+        Me.Label1.Location = New System.Drawing.Point(-4, 6)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(1016, 51)
+        Me.Label1.TabIndex = 206
+        Me.Label1.Text = "  Car brands"
+        '
+        'btnAddNew
+        '
+        Me.btnAddNew.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnAddNew.BackColor = System.Drawing.Color.MidnightBlue
+        Me.btnAddNew.FlatAppearance.BorderSize = 0
+        Me.btnAddNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAddNew.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAddNew.ForeColor = System.Drawing.Color.Gold
+        Me.btnAddNew.Location = New System.Drawing.Point(602, 6)
+        Me.btnAddNew.Name = "btnAddNew"
+        Me.btnAddNew.Size = New System.Drawing.Size(102, 51)
+        Me.btnAddNew.TabIndex = 211
+        Me.btnAddNew.Text = "Add new"
+        Me.btnAddNew.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnAddNew.UseVisualStyleBackColor = False
         '
         'btnPrint
         '
@@ -186,19 +215,6 @@ Partial Class CarBrands
         '
         Me.ColumnHeader1.Text = "Interest percentage (%)"
         Me.ColumnHeader1.Width = 555
-        '
-        'Label1
-        '
-        Me.Label1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label1.BackColor = System.Drawing.Color.MidnightBlue
-        Me.Label1.Font = New System.Drawing.Font("Segoe UI Light", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.Gold
-        Me.Label1.Location = New System.Drawing.Point(-4, 6)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(1016, 51)
-        Me.Label1.TabIndex = 206
-        Me.Label1.Text = "  Car brands"
         '
         'pnlAddEdit
         '
@@ -328,22 +344,6 @@ Partial Class CarBrands
         'timerAnimate
         '
         Me.timerAnimate.Interval = 1
-        '
-        'btnSearch
-        '
-        Me.btnSearch.BackColor = System.Drawing.Color.MidnightBlue
-        Me.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.btnSearch.FlatAppearance.BorderSize = 0
-        Me.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSearch.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSearch.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnSearch.Image = CType(resources.GetObject("btnSearch.Image"), System.Drawing.Image)
-        Me.btnSearch.Location = New System.Drawing.Point(284, 80)
-        Me.btnSearch.Name = "btnSearch"
-        Me.btnSearch.Size = New System.Drawing.Size(28, 26)
-        Me.btnSearch.TabIndex = 209
-        Me.btnSearch.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnSearch.UseVisualStyleBackColor = False
         '
         'CarBrands
         '

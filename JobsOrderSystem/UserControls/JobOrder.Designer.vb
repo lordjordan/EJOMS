@@ -302,7 +302,7 @@ Partial Class JobOrder
         Me.pnlAddEdit.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.pnlAddEdit.Location = New System.Drawing.Point(0, 26)
         Me.pnlAddEdit.Name = "pnlAddEdit"
-        Me.pnlAddEdit.Size = New System.Drawing.Size(1030, 650)
+        Me.pnlAddEdit.Size = New System.Drawing.Size(1030, 0)
         Me.pnlAddEdit.TabIndex = 194
         Me.pnlAddEdit.Visible = False
         '

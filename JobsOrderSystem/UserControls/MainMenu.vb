@@ -77,4 +77,9 @@
     Private Sub MainMenu_Scroll(sender As Object, e As ScrollEventArgs) Handles Me.Scroll
 
     End Sub
+
+    Private Sub btnAddNewJO_Click(sender As Object, e As EventArgs) Handles btnAddNewJO.Click
+        showUSC(uscJobOrder)
+        uscJobOrder.btnAddNew.PerformClick()
+    End Sub
 End Class
