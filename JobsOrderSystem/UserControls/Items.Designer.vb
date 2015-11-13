@@ -34,7 +34,7 @@ Partial Class Items
         Me.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnBack.Font = New System.Drawing.Font("Segoe UI Light", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBack.ForeColor = System.Drawing.Color.Gold
-        Me.btnBack.Location = New System.Drawing.Point(632, 27)
+        Me.btnBack.Location = New System.Drawing.Point(777, 27)
         Me.btnBack.Name = "btnBack"
         Me.btnBack.Size = New System.Drawing.Size(59, 51)
         Me.btnBack.TabIndex = 190
@@ -50,7 +50,7 @@ Partial Class Items
         Me.Label1.ForeColor = System.Drawing.Color.Gold
         Me.Label1.Location = New System.Drawing.Point(0, 27)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(718, 51)
+        Me.Label1.Size = New System.Drawing.Size(863, 51)
         Me.Label1.TabIndex = 191
         Me.Label1.Text = "  Items"
         '
@@ -61,7 +61,7 @@ Partial Class Items
         Me.Controls.Add(Me.btnBack)
         Me.Controls.Add(Me.Label1)
         Me.Name = "Items"
-        Me.Size = New System.Drawing.Size(718, 391)
+        Me.Size = New System.Drawing.Size(863, 426)
         Me.ResumeLayout(False)
 
     End Sub

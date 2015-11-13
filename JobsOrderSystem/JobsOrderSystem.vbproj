@@ -105,10 +105,10 @@
     <Compile Include="UserControls\CarBrands.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\Clients.Designer.vb">
-      <DependentUpon>Clients.vb</DependentUpon>
+    <Compile Include="UserControls\Cars.Designer.vb">
+      <DependentUpon>Cars.vb</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\Clients.vb">
+    <Compile Include="UserControls\Cars.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControls\Items.Designer.vb">
@@ -170,8 +170,8 @@
     <EmbeddedResource Include="UserControls\CarBrands.resx">
       <DependentUpon>CarBrands.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\Clients.resx">
-      <DependentUpon>Clients.vb</DependentUpon>
+    <EmbeddedResource Include="UserControls\Cars.resx">
+      <DependentUpon>Cars.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Items.resx">
       <DependentUpon>Items.vb</DependentUpon>
@@ -239,6 +239,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\searchs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\brands.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\brands1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\spark.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

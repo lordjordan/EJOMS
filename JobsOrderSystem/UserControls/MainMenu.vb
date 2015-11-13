@@ -22,7 +22,7 @@
     End Sub
 
     Private Sub btnClients_Click(sender As Object, e As EventArgs)
-        showUSC(uscClients)
+        showUSC(uscCars)
     End Sub
 
     Private Sub btnSalesInvoice_Click(sender As Object, e As EventArgs) Handles btnSalesInvoice.Click
@@ -51,7 +51,7 @@
 
  
     Private Sub btnClients_Click_1(sender As Object, e As EventArgs) Handles btnClients.Click
-        showUSC(uscClients)
+        showUSC(uscCars)
     End Sub
 
     Private Sub btnCarBrands_Click(sender As Object, e As EventArgs) Handles btnCarBrands.Click

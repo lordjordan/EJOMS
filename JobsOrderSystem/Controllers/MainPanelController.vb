@@ -4,7 +4,7 @@
     Public uscJobOrder As New JobOrder
     Public uscItem As New Items
     Public uscServices As New Services
-    Public uscClients As New Clients
+    Public uscCars As New Cars
     Public uscSupplierInvoice As New SupplierInvoice
     Public uscSystemUsers As New SystemUsers
     Public uscReports As New Reports
