@@ -11,9 +11,8 @@
     Private Sub btnAddNew_Click(sender As Object, e As EventArgs) Handles btnAddNew.Click
         btnAddNewClick = True
         showAddEdit(True)
-        If pnlAddEdit.Height <> 950 Then
+        If pnlAddEdit.Height <> 650 Then
             lblAddedit.Text = "   Add new job order"
-
             timerAnimate.Start()
         End If
 
@@ -42,7 +41,7 @@
         'opening
         If btnAddNewClick = True Then
             timerStopper = pnlAddEdit.Height
-            If timerStopper = 600 Then
+            If timerStopper = 650 Then
                 timerAnimate.Stop()
                 btnAddNewClick = False
                 Exit Sub
@@ -51,7 +50,7 @@
 
         ElseIf btnEditClick = True Then
             timerStopper = pnlAddEdit.Height
-            If timerStopper = 600 Then
+            If timerStopper = 650 Then
 
                 timerAnimate.Stop()
                 btnEditClick = False

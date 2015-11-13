@@ -37,11 +37,11 @@ Partial Class JobOrder
         Me.chJobID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.pnlAddEdit = New System.Windows.Forms.Panel()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.TextBox8 = New System.Windows.Forms.TextBox()
+        Me.btnChooseSer = New System.Windows.Forms.Button()
+        Me.btnOrder = New System.Windows.Forms.Button()
+        Me.txtRemarks = New System.Windows.Forms.TextBox()
         Me.Label19 = New System.Windows.Forms.Label()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.txtFindings = New System.Windows.Forms.TextBox()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.btnViewImg = New System.Windows.Forms.Button()
         Me.Label10 = New System.Windows.Forms.Label()
@@ -57,33 +57,35 @@ Partial Class JobOrder
         Me.btnBrowseInspect = New System.Windows.Forms.Button()
         Me.TextBox14 = New System.Windows.Forms.TextBox()
         Me.Label17 = New System.Windows.Forms.Label()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.cbxFuel = New System.Windows.Forms.ComboBox()
         Me.Label16 = New System.Windows.Forms.Label()
-        Me.TextBox13 = New System.Windows.Forms.TextBox()
+        Me.txtEngine = New System.Windows.Forms.TextBox()
         Me.Label15 = New System.Windows.Forms.Label()
-        Me.TextBox12 = New System.Windows.Forms.TextBox()
+        Me.txtColor = New System.Windows.Forms.TextBox()
         Me.Label14 = New System.Windows.Forms.Label()
-        Me.TextBox11 = New System.Windows.Forms.TextBox()
+        Me.txtMileage = New System.Windows.Forms.TextBox()
         Me.Label13 = New System.Windows.Forms.Label()
-        Me.TextBox10 = New System.Windows.Forms.TextBox()
+        Me.txtVin = New System.Windows.Forms.TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
-        Me.TextBox9 = New System.Windows.Forms.TextBox()
+        Me.txtPlateno = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.TextBox7 = New System.Windows.Forms.TextBox()
+        Me.txtAddress = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
+        Me.txtContact = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
+        Me.txtEmail = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.txtName = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.txtDateReceived = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtJobID = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.btnAddEditClose = New System.Windows.Forms.Button()
         Me.lblAddedit = New System.Windows.Forms.Label()
         Me.timerAnimate = New System.Windows.Forms.Timer(Me.components)
+        Me.txtCarMod = New System.Windows.Forms.TextBox()
+        Me.Label20 = New System.Windows.Forms.Label()
         Me.pnlMain.SuspendLayout()
         Me.pnlAddEdit.SuspendLayout()
         Me.SuspendLayout()
@@ -253,11 +255,13 @@ Partial Class JobOrder
         Me.pnlAddEdit.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.pnlAddEdit.BackColor = System.Drawing.Color.Silver
         Me.pnlAddEdit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.pnlAddEdit.Controls.Add(Me.Button2)
-        Me.pnlAddEdit.Controls.Add(Me.Button1)
-        Me.pnlAddEdit.Controls.Add(Me.TextBox8)
+        Me.pnlAddEdit.Controls.Add(Me.txtCarMod)
+        Me.pnlAddEdit.Controls.Add(Me.Label20)
+        Me.pnlAddEdit.Controls.Add(Me.btnChooseSer)
+        Me.pnlAddEdit.Controls.Add(Me.btnOrder)
+        Me.pnlAddEdit.Controls.Add(Me.txtRemarks)
         Me.pnlAddEdit.Controls.Add(Me.Label19)
-        Me.pnlAddEdit.Controls.Add(Me.TextBox3)
+        Me.pnlAddEdit.Controls.Add(Me.txtFindings)
         Me.pnlAddEdit.Controls.Add(Me.Label18)
         Me.pnlAddEdit.Controls.Add(Me.btnViewImg)
         Me.pnlAddEdit.Controls.Add(Me.Label10)
@@ -269,102 +273,102 @@ Partial Class JobOrder
         Me.pnlAddEdit.Controls.Add(Me.btnBrowseInspect)
         Me.pnlAddEdit.Controls.Add(Me.TextBox14)
         Me.pnlAddEdit.Controls.Add(Me.Label17)
-        Me.pnlAddEdit.Controls.Add(Me.ComboBox1)
+        Me.pnlAddEdit.Controls.Add(Me.cbxFuel)
         Me.pnlAddEdit.Controls.Add(Me.Label16)
-        Me.pnlAddEdit.Controls.Add(Me.TextBox13)
+        Me.pnlAddEdit.Controls.Add(Me.txtEngine)
         Me.pnlAddEdit.Controls.Add(Me.Label15)
-        Me.pnlAddEdit.Controls.Add(Me.TextBox12)
+        Me.pnlAddEdit.Controls.Add(Me.txtColor)
         Me.pnlAddEdit.Controls.Add(Me.Label14)
-        Me.pnlAddEdit.Controls.Add(Me.TextBox11)
+        Me.pnlAddEdit.Controls.Add(Me.txtMileage)
         Me.pnlAddEdit.Controls.Add(Me.Label13)
-        Me.pnlAddEdit.Controls.Add(Me.TextBox10)
+        Me.pnlAddEdit.Controls.Add(Me.txtVin)
         Me.pnlAddEdit.Controls.Add(Me.Label12)
-        Me.pnlAddEdit.Controls.Add(Me.TextBox9)
+        Me.pnlAddEdit.Controls.Add(Me.txtPlateno)
         Me.pnlAddEdit.Controls.Add(Me.Label11)
-        Me.pnlAddEdit.Controls.Add(Me.TextBox7)
+        Me.pnlAddEdit.Controls.Add(Me.txtAddress)
         Me.pnlAddEdit.Controls.Add(Me.Label9)
-        Me.pnlAddEdit.Controls.Add(Me.TextBox6)
+        Me.pnlAddEdit.Controls.Add(Me.txtContact)
         Me.pnlAddEdit.Controls.Add(Me.Label8)
-        Me.pnlAddEdit.Controls.Add(Me.TextBox5)
+        Me.pnlAddEdit.Controls.Add(Me.txtEmail)
         Me.pnlAddEdit.Controls.Add(Me.Label7)
-        Me.pnlAddEdit.Controls.Add(Me.TextBox4)
+        Me.pnlAddEdit.Controls.Add(Me.txtName)
         Me.pnlAddEdit.Controls.Add(Me.Label6)
-        Me.pnlAddEdit.Controls.Add(Me.TextBox2)
+        Me.pnlAddEdit.Controls.Add(Me.txtDateReceived)
         Me.pnlAddEdit.Controls.Add(Me.Label2)
-        Me.pnlAddEdit.Controls.Add(Me.TextBox1)
+        Me.pnlAddEdit.Controls.Add(Me.txtJobID)
         Me.pnlAddEdit.Controls.Add(Me.Label4)
         Me.pnlAddEdit.Controls.Add(Me.btnAddEditClose)
         Me.pnlAddEdit.Controls.Add(Me.lblAddedit)
         Me.pnlAddEdit.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.pnlAddEdit.Location = New System.Drawing.Point(0, 26)
         Me.pnlAddEdit.Name = "pnlAddEdit"
-        Me.pnlAddEdit.Size = New System.Drawing.Size(1030, 600)
+        Me.pnlAddEdit.Size = New System.Drawing.Size(1030, 650)
         Me.pnlAddEdit.TabIndex = 194
         Me.pnlAddEdit.Visible = False
         '
-        'Button2
+        'btnChooseSer
         '
-        Me.Button2.BackColor = System.Drawing.Color.MidnightBlue
-        Me.Button2.FlatAppearance.BorderSize = 0
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.ForeColor = System.Drawing.Color.Gold
-        Me.Button2.Location = New System.Drawing.Point(889, 87)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(119, 26)
-        Me.Button2.TabIndex = 235
-        Me.Button2.Text = "Choose"
-        Me.Button2.UseVisualStyleBackColor = False
+        Me.btnChooseSer.BackColor = System.Drawing.Color.MidnightBlue
+        Me.btnChooseSer.FlatAppearance.BorderSize = 0
+        Me.btnChooseSer.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnChooseSer.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnChooseSer.ForeColor = System.Drawing.Color.Gold
+        Me.btnChooseSer.Location = New System.Drawing.Point(889, 87)
+        Me.btnChooseSer.Name = "btnChooseSer"
+        Me.btnChooseSer.Size = New System.Drawing.Size(119, 26)
+        Me.btnChooseSer.TabIndex = 235
+        Me.btnChooseSer.Text = "Choose"
+        Me.btnChooseSer.UseVisualStyleBackColor = False
         '
-        'Button1
+        'btnOrder
         '
-        Me.Button1.BackColor = System.Drawing.Color.MidnightBlue
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.Color.Gold
-        Me.Button1.Location = New System.Drawing.Point(589, 87)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(119, 26)
-        Me.Button1.TabIndex = 234
-        Me.Button1.Text = "Order"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.btnOrder.BackColor = System.Drawing.Color.MidnightBlue
+        Me.btnOrder.FlatAppearance.BorderSize = 0
+        Me.btnOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnOrder.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnOrder.ForeColor = System.Drawing.Color.Gold
+        Me.btnOrder.Location = New System.Drawing.Point(589, 87)
+        Me.btnOrder.Name = "btnOrder"
+        Me.btnOrder.Size = New System.Drawing.Size(119, 26)
+        Me.btnOrder.TabIndex = 234
+        Me.btnOrder.Text = "Order"
+        Me.btnOrder.UseVisualStyleBackColor = False
         '
-        'TextBox8
+        'txtRemarks
         '
-        Me.TextBox8.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
-        Me.TextBox8.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox8.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox8.Location = New System.Drawing.Point(442, 439)
-        Me.TextBox8.Multiline = True
-        Me.TextBox8.Name = "TextBox8"
-        Me.TextBox8.Size = New System.Drawing.Size(566, 55)
-        Me.TextBox8.TabIndex = 233
+        Me.txtRemarks.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+        Me.txtRemarks.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtRemarks.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtRemarks.Location = New System.Drawing.Point(442, 471)
+        Me.txtRemarks.Multiline = True
+        Me.txtRemarks.Name = "txtRemarks"
+        Me.txtRemarks.Size = New System.Drawing.Size(566, 55)
+        Me.txtRemarks.TabIndex = 233
         '
         'Label19
         '
         Me.Label19.AutoSize = True
-        Me.Label19.Location = New System.Drawing.Point(438, 415)
+        Me.Label19.Location = New System.Drawing.Point(438, 447)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(70, 21)
         Me.Label19.TabIndex = 232
         Me.Label19.Text = "Remarks:"
         '
-        'TextBox3
+        'txtFindings
         '
-        Me.TextBox3.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
-        Me.TextBox3.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox3.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox3.Location = New System.Drawing.Point(442, 353)
-        Me.TextBox3.Multiline = True
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(566, 52)
-        Me.TextBox3.TabIndex = 231
+        Me.txtFindings.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+        Me.txtFindings.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtFindings.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtFindings.Location = New System.Drawing.Point(442, 385)
+        Me.txtFindings.Multiline = True
+        Me.txtFindings.Name = "txtFindings"
+        Me.txtFindings.Size = New System.Drawing.Size(566, 52)
+        Me.txtFindings.TabIndex = 231
         '
         'Label18
         '
         Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(438, 329)
+        Me.Label18.Location = New System.Drawing.Point(438, 361)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(200, 21)
         Me.Label18.TabIndex = 230
@@ -378,7 +382,7 @@ Partial Class JobOrder
         Me.btnViewImg.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnViewImg.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnViewImg.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnViewImg.Location = New System.Drawing.Point(351, 553)
+        Me.btnViewImg.Location = New System.Drawing.Point(351, 595)
         Me.btnViewImg.Name = "btnViewImg"
         Me.btnViewImg.Size = New System.Drawing.Size(28, 26)
         Me.btnViewImg.TabIndex = 228
@@ -401,7 +405,7 @@ Partial Class JobOrder
         Me.lvServices.GridLines = True
         Me.lvServices.Location = New System.Drawing.Point(742, 113)
         Me.lvServices.Name = "lvServices"
-        Me.lvServices.Size = New System.Drawing.Size(266, 192)
+        Me.lvServices.Size = New System.Drawing.Size(266, 218)
         Me.lvServices.TabIndex = 226
         Me.lvServices.UseCompatibleStateImageBehavior = False
         Me.lvServices.View = System.Windows.Forms.View.Details
@@ -432,7 +436,7 @@ Partial Class JobOrder
         Me.lvParts.GridLines = True
         Me.lvParts.Location = New System.Drawing.Point(442, 113)
         Me.lvParts.Name = "lvParts"
-        Me.lvParts.Size = New System.Drawing.Size(266, 192)
+        Me.lvParts.Size = New System.Drawing.Size(266, 218)
         Me.lvParts.TabIndex = 224
         Me.lvParts.UseCompatibleStateImageBehavior = False
         Me.lvParts.View = System.Windows.Forms.View.Details
@@ -486,7 +490,7 @@ Partial Class JobOrder
         Me.btnBrowseInspect.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnBrowseInspect.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBrowseInspect.ForeColor = System.Drawing.Color.Gold
-        Me.btnBrowseInspect.Location = New System.Drawing.Point(260, 521)
+        Me.btnBrowseInspect.Location = New System.Drawing.Point(260, 563)
         Me.btnBrowseInspect.Name = "btnBrowseInspect"
         Me.btnBrowseInspect.Size = New System.Drawing.Size(119, 26)
         Me.btnBrowseInspect.TabIndex = 221
@@ -498,7 +502,7 @@ Partial Class JobOrder
         Me.TextBox14.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
         Me.TextBox14.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TextBox14.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox14.Location = New System.Drawing.Point(32, 553)
+        Me.TextBox14.Location = New System.Drawing.Point(32, 595)
         Me.TextBox14.Name = "TextBox14"
         Me.TextBox14.Size = New System.Drawing.Size(319, 26)
         Me.TextBox14.TabIndex = 220
@@ -506,235 +510,235 @@ Partial Class JobOrder
         'Label17
         '
         Me.Label17.AutoSize = True
-        Me.Label17.Location = New System.Drawing.Point(28, 524)
+        Me.Label17.Location = New System.Drawing.Point(28, 566)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(166, 21)
         Me.Label17.TabIndex = 219
         Me.Label17.Text = "Upload Inspection form"
         '
-        'ComboBox1
+        'cbxFuel
         '
-        Me.ComboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(135, 465)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(244, 29)
-        Me.ComboBox1.TabIndex = 218
+        Me.cbxFuel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cbxFuel.FormattingEnabled = True
+        Me.cbxFuel.Location = New System.Drawing.Point(135, 497)
+        Me.cbxFuel.Name = "cbxFuel"
+        Me.cbxFuel.Size = New System.Drawing.Size(244, 29)
+        Me.cbxFuel.TabIndex = 218
         '
         'Label16
         '
         Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(28, 465)
+        Me.Label16.Location = New System.Drawing.Point(24, 500)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(37, 21)
         Me.Label16.TabIndex = 217
         Me.Label16.Text = "Fuel"
         '
-        'TextBox13
+        'txtEngine
         '
-        Me.TextBox13.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
-        Me.TextBox13.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox13.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox13.Location = New System.Drawing.Point(135, 433)
-        Me.TextBox13.Name = "TextBox13"
-        Me.TextBox13.Size = New System.Drawing.Size(244, 26)
-        Me.TextBox13.TabIndex = 216
+        Me.txtEngine.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+        Me.txtEngine.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtEngine.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtEngine.Location = New System.Drawing.Point(135, 465)
+        Me.txtEngine.Name = "txtEngine"
+        Me.txtEngine.Size = New System.Drawing.Size(244, 26)
+        Me.txtEngine.TabIndex = 216
         '
         'Label15
         '
         Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(28, 433)
+        Me.Label15.Location = New System.Drawing.Point(24, 463)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(82, 21)
         Me.Label15.TabIndex = 215
         Me.Label15.Text = "Engine no."
         '
-        'TextBox12
+        'txtColor
         '
-        Me.TextBox12.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
-        Me.TextBox12.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox12.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox12.Location = New System.Drawing.Point(135, 401)
-        Me.TextBox12.Name = "TextBox12"
-        Me.TextBox12.Size = New System.Drawing.Size(244, 26)
-        Me.TextBox12.TabIndex = 214
+        Me.txtColor.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+        Me.txtColor.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtColor.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtColor.Location = New System.Drawing.Point(135, 401)
+        Me.txtColor.Name = "txtColor"
+        Me.txtColor.Size = New System.Drawing.Size(244, 26)
+        Me.txtColor.TabIndex = 214
         '
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(28, 401)
+        Me.Label14.Location = New System.Drawing.Point(24, 404)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(46, 21)
         Me.Label14.TabIndex = 213
         Me.Label14.Text = "Color"
         '
-        'TextBox11
+        'txtMileage
         '
-        Me.TextBox11.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
-        Me.TextBox11.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox11.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox11.Location = New System.Drawing.Point(135, 369)
-        Me.TextBox11.Name = "TextBox11"
-        Me.TextBox11.Size = New System.Drawing.Size(244, 26)
-        Me.TextBox11.TabIndex = 212
+        Me.txtMileage.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+        Me.txtMileage.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtMileage.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtMileage.Location = New System.Drawing.Point(135, 433)
+        Me.txtMileage.Name = "txtMileage"
+        Me.txtMileage.Size = New System.Drawing.Size(244, 26)
+        Me.txtMileage.TabIndex = 212
         '
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(28, 372)
+        Me.Label13.Location = New System.Drawing.Point(24, 432)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(62, 21)
         Me.Label13.TabIndex = 211
         Me.Label13.Text = "Mileage"
         '
-        'TextBox10
+        'txtVin
         '
-        Me.TextBox10.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
-        Me.TextBox10.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox10.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox10.Location = New System.Drawing.Point(135, 337)
-        Me.TextBox10.Name = "TextBox10"
-        Me.TextBox10.Size = New System.Drawing.Size(244, 26)
-        Me.TextBox10.TabIndex = 210
+        Me.txtVin.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+        Me.txtVin.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtVin.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtVin.Location = New System.Drawing.Point(135, 369)
+        Me.txtVin.Name = "txtVin"
+        Me.txtVin.Size = New System.Drawing.Size(244, 26)
+        Me.txtVin.TabIndex = 210
         '
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(28, 340)
+        Me.Label12.Location = New System.Drawing.Point(24, 372)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(112, 21)
         Me.Label12.TabIndex = 209
         Me.Label12.Text = "Vin/Chassis no."
         '
-        'TextBox9
+        'txtPlateno
         '
-        Me.TextBox9.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
-        Me.TextBox9.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox9.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox9.Location = New System.Drawing.Point(135, 145)
-        Me.TextBox9.Name = "TextBox9"
-        Me.TextBox9.Size = New System.Drawing.Size(216, 26)
-        Me.TextBox9.TabIndex = 208
+        Me.txtPlateno.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+        Me.txtPlateno.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtPlateno.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPlateno.Location = New System.Drawing.Point(135, 145)
+        Me.txtPlateno.Name = "txtPlateno"
+        Me.txtPlateno.Size = New System.Drawing.Size(216, 26)
+        Me.txtPlateno.TabIndex = 208
         '
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(28, 148)
+        Me.Label11.Location = New System.Drawing.Point(24, 148)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(69, 21)
         Me.Label11.TabIndex = 207
         Me.Label11.Text = "Plate no."
         '
-        'TextBox7
+        'txtAddress
         '
-        Me.TextBox7.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
-        Me.TextBox7.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox7.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox7.Location = New System.Drawing.Point(135, 273)
-        Me.TextBox7.Multiline = True
-        Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.Size = New System.Drawing.Size(244, 58)
-        Me.TextBox7.TabIndex = 203
+        Me.txtAddress.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+        Me.txtAddress.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtAddress.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtAddress.Location = New System.Drawing.Point(135, 273)
+        Me.txtAddress.Multiline = True
+        Me.txtAddress.Name = "txtAddress"
+        Me.txtAddress.Size = New System.Drawing.Size(244, 58)
+        Me.txtAddress.TabIndex = 203
         '
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(28, 276)
+        Me.Label9.Location = New System.Drawing.Point(24, 276)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(67, 21)
         Me.Label9.TabIndex = 202
         Me.Label9.Text = "Address:"
         '
-        'TextBox6
+        'txtContact
         '
-        Me.TextBox6.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
-        Me.TextBox6.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox6.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox6.Location = New System.Drawing.Point(135, 209)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(244, 26)
-        Me.TextBox6.TabIndex = 201
+        Me.txtContact.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+        Me.txtContact.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtContact.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtContact.Location = New System.Drawing.Point(135, 209)
+        Me.txtContact.Name = "txtContact"
+        Me.txtContact.Size = New System.Drawing.Size(244, 26)
+        Me.txtContact.TabIndex = 201
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(28, 210)
+        Me.Label8.Location = New System.Drawing.Point(24, 210)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(89, 21)
         Me.Label8.TabIndex = 200
         Me.Label8.Text = "Contact no."
         '
-        'TextBox5
+        'txtEmail
         '
-        Me.TextBox5.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
-        Me.TextBox5.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox5.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox5.Location = New System.Drawing.Point(135, 241)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(244, 26)
-        Me.TextBox5.TabIndex = 199
+        Me.txtEmail.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+        Me.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtEmail.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtEmail.Location = New System.Drawing.Point(135, 241)
+        Me.txtEmail.Name = "txtEmail"
+        Me.txtEmail.Size = New System.Drawing.Size(244, 26)
+        Me.txtEmail.TabIndex = 199
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(28, 244)
+        Me.Label7.Location = New System.Drawing.Point(24, 244)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(45, 21)
         Me.Label7.TabIndex = 198
         Me.Label7.Text = "Email"
         '
-        'TextBox4
+        'txtName
         '
-        Me.TextBox4.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
-        Me.TextBox4.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox4.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox4.Location = New System.Drawing.Point(135, 177)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(244, 26)
-        Me.TextBox4.TabIndex = 197
+        Me.txtName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+        Me.txtName.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtName.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtName.Location = New System.Drawing.Point(135, 177)
+        Me.txtName.Name = "txtName"
+        Me.txtName.Size = New System.Drawing.Size(244, 26)
+        Me.txtName.TabIndex = 197
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(28, 180)
+        Me.Label6.Location = New System.Drawing.Point(24, 180)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(50, 21)
         Me.Label6.TabIndex = 196
         Me.Label6.Text = "Name"
         '
-        'TextBox2
+        'txtDateReceived
         '
-        Me.TextBox2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
-        Me.TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox2.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox2.Location = New System.Drawing.Point(135, 113)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(244, 26)
-        Me.TextBox2.TabIndex = 192
+        Me.txtDateReceived.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+        Me.txtDateReceived.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtDateReceived.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtDateReceived.Location = New System.Drawing.Point(135, 113)
+        Me.txtDateReceived.Name = "txtDateReceived"
+        Me.txtDateReceived.Size = New System.Drawing.Size(244, 26)
+        Me.txtDateReceived.TabIndex = 192
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(28, 116)
+        Me.Label2.Location = New System.Drawing.Point(24, 116)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(101, 21)
         Me.Label2.TabIndex = 191
         Me.Label2.Text = "Date received"
         '
-        'TextBox1
+        'txtJobID
         '
-        Me.TextBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
-        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox1.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(135, 81)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(244, 26)
-        Me.TextBox1.TabIndex = 190
+        Me.txtJobID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+        Me.txtJobID.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtJobID.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtJobID.Location = New System.Drawing.Point(135, 81)
+        Me.txtJobID.Name = "txtJobID"
+        Me.txtJobID.Size = New System.Drawing.Size(244, 26)
+        Me.txtJobID.TabIndex = 190
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(28, 84)
+        Me.Label4.Location = New System.Drawing.Point(24, 84)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(52, 21)
         Me.Label4.TabIndex = 189
@@ -774,6 +778,25 @@ Partial Class JobOrder
         '
         Me.timerAnimate.Interval = 1
         '
+        'txtCarMod
+        '
+        Me.txtCarMod.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+        Me.txtCarMod.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtCarMod.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCarMod.Location = New System.Drawing.Point(135, 337)
+        Me.txtCarMod.Name = "txtCarMod"
+        Me.txtCarMod.Size = New System.Drawing.Size(244, 26)
+        Me.txtCarMod.TabIndex = 237
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Location = New System.Drawing.Point(24, 340)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(113, 21)
+        Me.Label20.TabIndex = 236
+        Me.Label20.Text = "Car model/Year"
+        '
         'JobOrder
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -808,28 +831,28 @@ Partial Class JobOrder
     Friend WithEvents btnAddEditClose As System.Windows.Forms.Button
     Friend WithEvents lblAddedit As System.Windows.Forms.Label
     Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
+    Friend WithEvents txtJobID As System.Windows.Forms.TextBox
+    Friend WithEvents txtDateReceived As System.Windows.Forms.TextBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents TextBox4 As System.Windows.Forms.TextBox
+    Friend WithEvents txtName As System.Windows.Forms.TextBox
     Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents TextBox7 As System.Windows.Forms.TextBox
+    Friend WithEvents txtAddress As System.Windows.Forms.TextBox
     Friend WithEvents Label9 As System.Windows.Forms.Label
-    Friend WithEvents TextBox6 As System.Windows.Forms.TextBox
+    Friend WithEvents txtContact As System.Windows.Forms.TextBox
     Friend WithEvents Label8 As System.Windows.Forms.Label
-    Friend WithEvents TextBox5 As System.Windows.Forms.TextBox
+    Friend WithEvents txtEmail As System.Windows.Forms.TextBox
     Friend WithEvents Label7 As System.Windows.Forms.Label
-    Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
+    Friend WithEvents cbxFuel As System.Windows.Forms.ComboBox
     Friend WithEvents Label16 As System.Windows.Forms.Label
-    Friend WithEvents TextBox13 As System.Windows.Forms.TextBox
+    Friend WithEvents txtEngine As System.Windows.Forms.TextBox
     Friend WithEvents Label15 As System.Windows.Forms.Label
-    Friend WithEvents TextBox12 As System.Windows.Forms.TextBox
+    Friend WithEvents txtColor As System.Windows.Forms.TextBox
     Friend WithEvents Label14 As System.Windows.Forms.Label
-    Friend WithEvents TextBox11 As System.Windows.Forms.TextBox
+    Friend WithEvents txtMileage As System.Windows.Forms.TextBox
     Friend WithEvents Label13 As System.Windows.Forms.Label
-    Friend WithEvents TextBox10 As System.Windows.Forms.TextBox
+    Friend WithEvents txtVin As System.Windows.Forms.TextBox
     Friend WithEvents Label12 As System.Windows.Forms.Label
-    Friend WithEvents TextBox9 As System.Windows.Forms.TextBox
+    Friend WithEvents txtPlateno As System.Windows.Forms.TextBox
     Friend WithEvents Label11 As System.Windows.Forms.Label
     Friend WithEvents btnBrowseInspect As System.Windows.Forms.Button
     Friend WithEvents TextBox14 As System.Windows.Forms.TextBox
@@ -841,15 +864,17 @@ Partial Class JobOrder
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents lvParts As System.Windows.Forms.ListView
     Friend WithEvents btnViewImg As System.Windows.Forms.Button
-    Friend WithEvents TextBox8 As System.Windows.Forms.TextBox
+    Friend WithEvents txtRemarks As System.Windows.Forms.TextBox
     Friend WithEvents Label19 As System.Windows.Forms.Label
-    Friend WithEvents TextBox3 As System.Windows.Forms.TextBox
+    Friend WithEvents txtFindings As System.Windows.Forms.TextBox
     Friend WithEvents Label18 As System.Windows.Forms.Label
-    Friend WithEvents Button2 As System.Windows.Forms.Button
-    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents btnChooseSer As System.Windows.Forms.Button
+    Friend WithEvents btnOrder As System.Windows.Forms.Button
     Friend WithEvents ColumnHeader3 As System.Windows.Forms.ColumnHeader
     Friend WithEvents ColumnHeader4 As System.Windows.Forms.ColumnHeader
     Friend WithEvents ColumnHeader1 As System.Windows.Forms.ColumnHeader
     Friend WithEvents ColumnHeader2 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents txtCarMod As System.Windows.Forms.TextBox
+    Friend WithEvents Label20 As System.Windows.Forms.Label
 
 End Class

@@ -37,11 +37,11 @@ Partial Class CarBrands
         Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Label1 = New System.Windows.Forms.Label()
         Me.pnlAddEdit = New System.Windows.Forms.Panel()
-        Me.TextBox9 = New System.Windows.Forms.TextBox()
+        Me.txtPercent = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.txtCarName = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtCBID = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.btnSave = New System.Windows.Forms.Button()
         Me.btnAddEditClose = New System.Windows.Forms.Button()
@@ -204,11 +204,11 @@ Partial Class CarBrands
         '
         Me.pnlAddEdit.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.pnlAddEdit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.pnlAddEdit.Controls.Add(Me.TextBox9)
+        Me.pnlAddEdit.Controls.Add(Me.txtPercent)
         Me.pnlAddEdit.Controls.Add(Me.Label11)
-        Me.pnlAddEdit.Controls.Add(Me.TextBox2)
+        Me.pnlAddEdit.Controls.Add(Me.txtCarName)
         Me.pnlAddEdit.Controls.Add(Me.Label2)
-        Me.pnlAddEdit.Controls.Add(Me.TextBox1)
+        Me.pnlAddEdit.Controls.Add(Me.txtCBID)
         Me.pnlAddEdit.Controls.Add(Me.Label4)
         Me.pnlAddEdit.Controls.Add(Me.btnSave)
         Me.pnlAddEdit.Controls.Add(Me.btnAddEditClose)
@@ -219,15 +219,15 @@ Partial Class CarBrands
         Me.pnlAddEdit.TabIndex = 214
         Me.pnlAddEdit.Visible = False
         '
-        'TextBox9
+        'txtPercent
         '
-        Me.TextBox9.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
-        Me.TextBox9.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox9.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox9.Location = New System.Drawing.Point(130, 142)
-        Me.TextBox9.Name = "TextBox9"
-        Me.TextBox9.Size = New System.Drawing.Size(128, 26)
-        Me.TextBox9.TabIndex = 232
+        Me.txtPercent.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+        Me.txtPercent.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtPercent.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPercent.Location = New System.Drawing.Point(130, 142)
+        Me.txtPercent.Name = "txtPercent"
+        Me.txtPercent.Size = New System.Drawing.Size(128, 26)
+        Me.txtPercent.TabIndex = 232
         '
         'Label11
         '
@@ -239,15 +239,15 @@ Partial Class CarBrands
         Me.Label11.TabIndex = 231
         Me.Label11.Text = "Percentage"
         '
-        'TextBox2
+        'txtCarName
         '
-        Me.TextBox2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
-        Me.TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox2.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox2.Location = New System.Drawing.Point(130, 110)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(244, 26)
-        Me.TextBox2.TabIndex = 230
+        Me.txtCarName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+        Me.txtCarName.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtCarName.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCarName.Location = New System.Drawing.Point(130, 110)
+        Me.txtCarName.Name = "txtCarName"
+        Me.txtCarName.Size = New System.Drawing.Size(244, 26)
+        Me.txtCarName.TabIndex = 230
         '
         'Label2
         '
@@ -259,15 +259,15 @@ Partial Class CarBrands
         Me.Label2.TabIndex = 229
         Me.Label2.Text = "Name"
         '
-        'TextBox1
+        'txtCBID
         '
-        Me.TextBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
-        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox1.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(130, 78)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(128, 26)
-        Me.TextBox1.TabIndex = 228
+        Me.txtCBID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+        Me.txtCBID.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtCBID.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCBID.Location = New System.Drawing.Point(130, 78)
+        Me.txtCBID.Name = "txtCBID"
+        Me.txtCBID.Size = New System.Drawing.Size(128, 26)
+        Me.txtCBID.TabIndex = 228
         '
         'Label4
         '
@@ -378,11 +378,11 @@ Partial Class CarBrands
     Friend WithEvents btnAddEditClose As System.Windows.Forms.Button
     Friend WithEvents lblAddedit As System.Windows.Forms.Label
     Friend WithEvents timerAnimate As System.Windows.Forms.Timer
-    Friend WithEvents TextBox9 As System.Windows.Forms.TextBox
+    Friend WithEvents txtPercent As System.Windows.Forms.TextBox
     Friend WithEvents Label11 As System.Windows.Forms.Label
-    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
+    Friend WithEvents txtCarName As System.Windows.Forms.TextBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents txtCBID As System.Windows.Forms.TextBox
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents ColumnHeader1 As System.Windows.Forms.ColumnHeader
 
