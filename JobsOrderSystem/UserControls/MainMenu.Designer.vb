@@ -22,6 +22,7 @@ Partial Class MainMenu
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainMenu))
         Me.lblMainMenu = New System.Windows.Forms.Label()
         Me.btnJobOrderList = New System.Windows.Forms.Button()
@@ -33,7 +34,10 @@ Partial Class MainMenu
         Me.btnCarBrands = New System.Windows.Forms.Button()
         Me.btnAddNewJO = New System.Windows.Forms.Button()
         Me.btnSalesInvoice = New System.Windows.Forms.Button()
-        Me.btnBack = New System.Windows.Forms.Button()
+        Me.btnLogOut = New System.Windows.Forms.Button()
+        Me.lblDate = New System.Windows.Forms.Label()
+        Me.lblTime = New System.Windows.Forms.Label()
+        Me.tmrTimeDate = New System.Windows.Forms.Timer(Me.components)
         Me.SuspendLayout()
         '
         'lblMainMenu
@@ -45,16 +49,17 @@ Partial Class MainMenu
         Me.lblMainMenu.ForeColor = System.Drawing.Color.Gold
         Me.lblMainMenu.Location = New System.Drawing.Point(0, 27)
         Me.lblMainMenu.Name = "lblMainMenu"
-        Me.lblMainMenu.Size = New System.Drawing.Size(1034, 51)
+        Me.lblMainMenu.Size = New System.Drawing.Size(1000, 51)
         Me.lblMainMenu.TabIndex = 175
         Me.lblMainMenu.Text = "  Main Menu"
+        Me.lblMainMenu.TextAlign = System.Drawing.ContentAlignment.BottomLeft
         '
         'btnJobOrderList
         '
         Me.btnJobOrderList.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(171, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.btnJobOrderList.FlatAppearance.BorderSize = 0
         Me.btnJobOrderList.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnJobOrderList.Font = New System.Drawing.Font("Segoe UI Light", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnJobOrderList.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnJobOrderList.ForeColor = System.Drawing.Color.White
         Me.btnJobOrderList.Image = Global.JobsOrderSystem.My.Resources.Resources.job
         Me.btnJobOrderList.Location = New System.Drawing.Point(27, 109)
@@ -70,7 +75,7 @@ Partial Class MainMenu
         Me.btnClients.BackColor = System.Drawing.Color.DodgerBlue
         Me.btnClients.FlatAppearance.BorderSize = 0
         Me.btnClients.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnClients.Font = New System.Drawing.Font("Segoe UI Light", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnClients.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnClients.ForeColor = System.Drawing.Color.White
         Me.btnClients.Image = CType(resources.GetObject("btnClients.Image"), System.Drawing.Image)
         Me.btnClients.Location = New System.Drawing.Point(320, 238)
@@ -86,7 +91,7 @@ Partial Class MainMenu
         Me.btnItems.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(80, Byte), Integer), CType(CType(239, Byte), Integer))
         Me.btnItems.FlatAppearance.BorderSize = 0
         Me.btnItems.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnItems.Font = New System.Drawing.Font("Segoe UI Light", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnItems.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnItems.ForeColor = System.Drawing.Color.White
         Me.btnItems.Image = Global.JobsOrderSystem.My.Resources.Resources.items
         Me.btnItems.Location = New System.Drawing.Point(27, 363)
@@ -102,7 +107,7 @@ Partial Class MainMenu
         Me.btnServices.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(118, Byte), Integer), CType(CType(135, Byte), Integer))
         Me.btnServices.FlatAppearance.BorderSize = 0
         Me.btnServices.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnServices.Font = New System.Drawing.Font("Segoe UI Light", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnServices.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnServices.ForeColor = System.Drawing.Color.White
         Me.btnServices.Image = Global.JobsOrderSystem.My.Resources.Resources.serviceSM
         Me.btnServices.Location = New System.Drawing.Point(27, 492)
@@ -118,7 +123,7 @@ Partial Class MainMenu
         Me.btnUsers.BackColor = System.Drawing.Color.FromArgb(CType(CType(118, Byte), Integer), CType(CType(96, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.btnUsers.FlatAppearance.BorderSize = 0
         Me.btnUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnUsers.Font = New System.Drawing.Font("Segoe UI Light", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnUsers.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnUsers.ForeColor = System.Drawing.Color.White
         Me.btnUsers.Image = Global.JobsOrderSystem.My.Resources.Resources.userS
         Me.btnUsers.Location = New System.Drawing.Point(467, 492)
@@ -134,7 +139,7 @@ Partial Class MainMenu
         Me.btnReports.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnReports.FlatAppearance.BorderSize = 0
         Me.btnReports.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnReports.Font = New System.Drawing.Font("Segoe UI Light", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnReports.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnReports.ForeColor = System.Drawing.Color.White
         Me.btnReports.Image = Global.JobsOrderSystem.My.Resources.Resources.report
         Me.btnReports.Location = New System.Drawing.Point(613, 109)
@@ -150,7 +155,7 @@ Partial Class MainMenu
         Me.btnCarBrands.BackColor = System.Drawing.Color.FromArgb(CType(CType(106, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.btnCarBrands.FlatAppearance.BorderSize = 0
         Me.btnCarBrands.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCarBrands.Font = New System.Drawing.Font("Segoe UI Light", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCarBrands.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCarBrands.ForeColor = System.Drawing.Color.White
         Me.btnCarBrands.Image = Global.JobsOrderSystem.My.Resources.Resources.carS
         Me.btnCarBrands.Location = New System.Drawing.Point(613, 363)
@@ -166,9 +171,9 @@ Partial Class MainMenu
         Me.btnAddNewJO.BackColor = System.Drawing.Color.Green
         Me.btnAddNewJO.FlatAppearance.BorderSize = 0
         Me.btnAddNewJO.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAddNewJO.Font = New System.Drawing.Font("Segoe UI Light", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAddNewJO.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAddNewJO.ForeColor = System.Drawing.Color.White
-        Me.btnAddNewJO.Image = Global.JobsOrderSystem.My.Resources.Resources.new_job_order
+        Me.btnAddNewJO.Image = Global.JobsOrderSystem.My.Resources.Resources.new_jobOrder
         Me.btnAddNewJO.Location = New System.Drawing.Point(320, 109)
         Me.btnAddNewJO.Name = "btnAddNewJO"
         Me.btnAddNewJO.Size = New System.Drawing.Size(287, 123)
@@ -182,9 +187,9 @@ Partial Class MainMenu
         Me.btnSalesInvoice.BackColor = System.Drawing.Color.FromArgb(CType(CType(229, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnSalesInvoice.FlatAppearance.BorderSize = 0
         Me.btnSalesInvoice.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSalesInvoice.Font = New System.Drawing.Font("Segoe UI Light", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSalesInvoice.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSalesInvoice.ForeColor = System.Drawing.Color.White
-        Me.btnSalesInvoice.Image = Global.JobsOrderSystem.My.Resources.Resources.Sale_invoice
+        Me.btnSalesInvoice.Image = CType(resources.GetObject("btnSalesInvoice.Image"), System.Drawing.Image)
         Me.btnSalesInvoice.Location = New System.Drawing.Point(320, 492)
         Me.btnSalesInvoice.Name = "btnSalesInvoice"
         Me.btnSalesInvoice.Size = New System.Drawing.Size(140, 123)
@@ -193,26 +198,63 @@ Partial Class MainMenu
         Me.btnSalesInvoice.TextAlign = System.Drawing.ContentAlignment.BottomLeft
         Me.btnSalesInvoice.UseVisualStyleBackColor = False
         '
-        'btnBack
+        'btnLogOut
         '
-        Me.btnBack.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnBack.BackColor = System.Drawing.Color.MidnightBlue
-        Me.btnBack.FlatAppearance.BorderSize = 0
-        Me.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnBack.Font = New System.Drawing.Font("Segoe UI Light", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnBack.ForeColor = System.Drawing.Color.White
-        Me.btnBack.Location = New System.Drawing.Point(946, 27)
-        Me.btnBack.Name = "btnBack"
-        Me.btnBack.Size = New System.Drawing.Size(64, 51)
-        Me.btnBack.TabIndex = 193
-        Me.btnBack.Text = "Log out"
-        Me.btnBack.UseVisualStyleBackColor = False
+        Me.btnLogOut.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnLogOut.BackColor = System.Drawing.Color.MidnightBlue
+        Me.btnLogOut.FlatAppearance.BorderSize = 0
+        Me.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnLogOut.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnLogOut.ForeColor = System.Drawing.Color.Gold
+        Me.btnLogOut.Location = New System.Drawing.Point(900, 27)
+        Me.btnLogOut.Name = "btnLogOut"
+        Me.btnLogOut.Size = New System.Drawing.Size(76, 51)
+        Me.btnLogOut.TabIndex = 193
+        Me.btnLogOut.Text = "Log out"
+        Me.btnLogOut.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnLogOut.UseVisualStyleBackColor = False
+        '
+        'lblDate
+        '
+        Me.lblDate.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblDate.BackColor = System.Drawing.Color.Transparent
+        Me.lblDate.Font = New System.Drawing.Font("Segoe UI Light", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDate.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.lblDate.Location = New System.Drawing.Point(459, 622)
+        Me.lblDate.Name = "lblDate"
+        Me.lblDate.Size = New System.Drawing.Size(528, 59)
+        Me.lblDate.TabIndex = 195
+        Me.lblDate.Text = "Calculating the date..."
+        Me.lblDate.TextAlign = System.Drawing.ContentAlignment.TopRight
+        '
+        'lblTime
+        '
+        Me.lblTime.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblTime.BackColor = System.Drawing.Color.Transparent
+        Me.lblTime.Font = New System.Drawing.Font("Segoe UI Light", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTime.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.lblTime.ImageAlign = System.Drawing.ContentAlignment.BottomRight
+        Me.lblTime.Location = New System.Drawing.Point(649, 572)
+        Me.lblTime.Name = "lblTime"
+        Me.lblTime.Size = New System.Drawing.Size(338, 55)
+        Me.lblTime.TabIndex = 194
+        Me.lblTime.Text = "Setting up the time..."
+        Me.lblTime.TextAlign = System.Drawing.ContentAlignment.TopRight
+        '
+        'tmrTimeDate
+        '
+        Me.tmrTimeDate.Enabled = True
+        Me.tmrTimeDate.Interval = 1000
         '
         'MainMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.Controls.Add(Me.btnBack)
+        Me.AutoScroll = True
+        Me.BackColor = System.Drawing.SystemColors.Control
+        Me.Controls.Add(Me.lblDate)
+        Me.Controls.Add(Me.lblTime)
+        Me.Controls.Add(Me.btnLogOut)
         Me.Controls.Add(Me.btnSalesInvoice)
         Me.Controls.Add(Me.btnAddNewJO)
         Me.Controls.Add(Me.btnReports)
@@ -225,7 +267,7 @@ Partial Class MainMenu
         Me.Controls.Add(Me.btnCarBrands)
         Me.Font = New System.Drawing.Font("Segoe UI Light", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Name = "MainMenu"
-        Me.Size = New System.Drawing.Size(1034, 767)
+        Me.Size = New System.Drawing.Size(1000, 696)
         Me.ResumeLayout(False)
 
     End Sub
@@ -239,6 +281,9 @@ Partial Class MainMenu
     Friend WithEvents btnCarBrands As System.Windows.Forms.Button
     Friend WithEvents btnAddNewJO As System.Windows.Forms.Button
     Friend WithEvents btnSalesInvoice As System.Windows.Forms.Button
-    Friend WithEvents btnBack As System.Windows.Forms.Button
+    Friend WithEvents btnLogOut As System.Windows.Forms.Button
+    Friend WithEvents lblDate As System.Windows.Forms.Label
+    Friend WithEvents lblTime As System.Windows.Forms.Label
+    Friend WithEvents tmrTimeDate As System.Windows.Forms.Timer
 
 End Class

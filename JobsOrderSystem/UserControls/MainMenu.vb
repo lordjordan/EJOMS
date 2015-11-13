@@ -11,10 +11,13 @@
         showUSC(uscServices)
     End Sub
 
-    Private Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBack.Click
+    Private Sub btnLogout_Click(sender As Object, e As EventArgs) Handles btnLogOut.Click
+        Select Case MessageBox.Show("Log out?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+            Case Windows.Forms.DialogResult.Yes
+                frmLogin.Show()
+                frmMain.Hide()
+        End Select
 
-        frmLogin.Show()
-        frmMain.Hide()
 
     End Sub
 
@@ -34,7 +37,44 @@
         showUSC(uscReports)
     End Sub
 
+
+
+    Private Sub tmrTimeDate_Tick(sender As Object, e As EventArgs) Handles tmrTimeDate.Tick
+        tmrTimeDate.Enabled = False
+        'lblDate.Text = Now.DayOfWeek.ToString & ", " & Now.Day.ToString & " " & Now.mo.ToString
+        lblTime.Text = Format(Now, "long time") 'Now.Hour.ToString & ":" & Now.Minute.ToString
+        'lblDate.Text = Format(Now, "dddd, d MMMM")
+        lblDate.Text = Format(Now, "long date")
+
+        tmrTimeDate.Enabled = True
+    End Sub
+
+ 
+    Private Sub btnClients_Click_1(sender As Object, e As EventArgs) Handles btnClients.Click
+        showUSC(uscClients)
+    End Sub
+
     Private Sub btnCarBrands_Click(sender As Object, e As EventArgs) Handles btnCarBrands.Click
         showUSC(uscCarBrands)
+    End Sub
+
+    Private Sub MainMenu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    Private Sub MainMenu_Resize(sender As Object, e As EventArgs) Handles Me.Resize
+        If lblTime.Location.X < 613 Or lblTime.Location.Y < 572 Then
+            lblTime.Visible = False
+            lblDate.Visible = False
+        Else
+            lblTime.Visible = True
+            lblDate.Visible = True
+        End If
+
+    End Sub
+
+   
+    Private Sub MainMenu_Scroll(sender As Object, e As ScrollEventArgs) Handles Me.Scroll
+
     End Sub
 End Class
