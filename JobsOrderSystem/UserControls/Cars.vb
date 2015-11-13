@@ -8,4 +8,8 @@
     Private Sub btn_back_Click(sender As Object, e As EventArgs) Handles btnBack.Click
 
     End Sub
+
+    Private Sub btnAddNew_Click(sender As Object, e As EventArgs) Handles btnAddNew.Click
+
+    End Sub
 End Class

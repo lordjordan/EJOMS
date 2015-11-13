@@ -58,15 +58,15 @@ Partial Class CarBrands
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.pnlMain.BackColor = System.Drawing.Color.Silver
-        Me.pnlMain.Controls.Add(Me.btnAddNew)
         Me.pnlMain.Controls.Add(Me.btnBack)
         Me.pnlMain.Controls.Add(Me.btnSearch)
+        Me.pnlMain.Controls.Add(Me.Label1)
+        Me.pnlMain.Controls.Add(Me.btnAddNew)
         Me.pnlMain.Controls.Add(Me.btnPrint)
         Me.pnlMain.Controls.Add(Me.btnUpdate)
         Me.pnlMain.Controls.Add(Me.txtSearch)
         Me.pnlMain.Controls.Add(Me.Label3)
         Me.pnlMain.Controls.Add(Me.lvCarBrands)
-        Me.pnlMain.Controls.Add(Me.Label1)
         Me.pnlMain.Location = New System.Drawing.Point(0, 21)
         Me.pnlMain.Name = "pnlMain"
         Me.pnlMain.Size = New System.Drawing.Size(1007, 496)
@@ -350,8 +350,8 @@ Partial Class CarBrands
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Silver
-        Me.Controls.Add(Me.pnlMain)
         Me.Controls.Add(Me.pnlAddEdit)
+        Me.Controls.Add(Me.pnlMain)
         Me.Name = "CarBrands"
         Me.Size = New System.Drawing.Size(1007, 519)
         Me.pnlMain.ResumeLayout(False)
