@@ -37,8 +37,8 @@ Partial Class JobOrder
         Me.chJobID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.pnlAddEdit = New System.Windows.Forms.Panel()
-        Me.btnChooseSer = New System.Windows.Forms.Button()
-        Me.btnOrder = New System.Windows.Forms.Button()
+        Me.txtCarMod = New System.Windows.Forms.TextBox()
+        Me.Label20 = New System.Windows.Forms.Label()
         Me.txtRemarks = New System.Windows.Forms.TextBox()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.txtFindings = New System.Windows.Forms.TextBox()
@@ -84,8 +84,8 @@ Partial Class JobOrder
         Me.btnAddEditClose = New System.Windows.Forms.Button()
         Me.lblAddedit = New System.Windows.Forms.Label()
         Me.timerAnimate = New System.Windows.Forms.Timer(Me.components)
-        Me.txtCarMod = New System.Windows.Forms.TextBox()
-        Me.Label20 = New System.Windows.Forms.Label()
+        Me.btnSearchParts = New System.Windows.Forms.Button()
+        Me.btnSearchService = New System.Windows.Forms.Button()
         Me.pnlMain.SuspendLayout()
         Me.pnlAddEdit.SuspendLayout()
         Me.SuspendLayout()
@@ -194,7 +194,7 @@ Partial Class JobOrder
         Me.txtSearch.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
         Me.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtSearch.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtSearch.Location = New System.Drawing.Point(76, 87)
+        Me.txtSearch.Location = New System.Drawing.Point(77, 87)
         Me.txtSearch.Name = "txtSearch"
         Me.txtSearch.Size = New System.Drawing.Size(222, 26)
         Me.txtSearch.TabIndex = 4
@@ -255,10 +255,10 @@ Partial Class JobOrder
         Me.pnlAddEdit.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.pnlAddEdit.BackColor = System.Drawing.Color.Silver
         Me.pnlAddEdit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pnlAddEdit.Controls.Add(Me.btnSearchService)
+        Me.pnlAddEdit.Controls.Add(Me.btnSearchParts)
         Me.pnlAddEdit.Controls.Add(Me.txtCarMod)
         Me.pnlAddEdit.Controls.Add(Me.Label20)
-        Me.pnlAddEdit.Controls.Add(Me.btnChooseSer)
-        Me.pnlAddEdit.Controls.Add(Me.btnOrder)
         Me.pnlAddEdit.Controls.Add(Me.txtRemarks)
         Me.pnlAddEdit.Controls.Add(Me.Label19)
         Me.pnlAddEdit.Controls.Add(Me.txtFindings)
@@ -302,37 +302,28 @@ Partial Class JobOrder
         Me.pnlAddEdit.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.pnlAddEdit.Location = New System.Drawing.Point(0, 26)
         Me.pnlAddEdit.Name = "pnlAddEdit"
-        Me.pnlAddEdit.Size = New System.Drawing.Size(1030, 0)
+        Me.pnlAddEdit.Size = New System.Drawing.Size(1030, 650)
         Me.pnlAddEdit.TabIndex = 194
         Me.pnlAddEdit.Visible = False
         '
-        'btnChooseSer
+        'txtCarMod
         '
-        Me.btnChooseSer.BackColor = System.Drawing.Color.MidnightBlue
-        Me.btnChooseSer.FlatAppearance.BorderSize = 0
-        Me.btnChooseSer.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnChooseSer.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnChooseSer.ForeColor = System.Drawing.Color.Gold
-        Me.btnChooseSer.Location = New System.Drawing.Point(889, 87)
-        Me.btnChooseSer.Name = "btnChooseSer"
-        Me.btnChooseSer.Size = New System.Drawing.Size(119, 26)
-        Me.btnChooseSer.TabIndex = 235
-        Me.btnChooseSer.Text = "Choose"
-        Me.btnChooseSer.UseVisualStyleBackColor = False
+        Me.txtCarMod.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+        Me.txtCarMod.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtCarMod.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCarMod.Location = New System.Drawing.Point(135, 337)
+        Me.txtCarMod.Name = "txtCarMod"
+        Me.txtCarMod.Size = New System.Drawing.Size(244, 26)
+        Me.txtCarMod.TabIndex = 237
         '
-        'btnOrder
+        'Label20
         '
-        Me.btnOrder.BackColor = System.Drawing.Color.MidnightBlue
-        Me.btnOrder.FlatAppearance.BorderSize = 0
-        Me.btnOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnOrder.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnOrder.ForeColor = System.Drawing.Color.Gold
-        Me.btnOrder.Location = New System.Drawing.Point(589, 87)
-        Me.btnOrder.Name = "btnOrder"
-        Me.btnOrder.Size = New System.Drawing.Size(119, 26)
-        Me.btnOrder.TabIndex = 234
-        Me.btnOrder.Text = "Order"
-        Me.btnOrder.UseVisualStyleBackColor = False
+        Me.Label20.AutoSize = True
+        Me.Label20.Location = New System.Drawing.Point(24, 340)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(113, 21)
+        Me.Label20.TabIndex = 236
+        Me.Label20.Text = "Car model/Year"
         '
         'txtRemarks
         '
@@ -778,24 +769,37 @@ Partial Class JobOrder
         '
         Me.timerAnimate.Interval = 1
         '
-        'txtCarMod
+        'btnSearchParts
         '
-        Me.txtCarMod.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
-        Me.txtCarMod.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtCarMod.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCarMod.Location = New System.Drawing.Point(135, 337)
-        Me.txtCarMod.Name = "txtCarMod"
-        Me.txtCarMod.Size = New System.Drawing.Size(244, 26)
-        Me.txtCarMod.TabIndex = 237
+        Me.btnSearchParts.BackColor = System.Drawing.Color.MidnightBlue
+        Me.btnSearchParts.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.btnSearchParts.FlatAppearance.BorderSize = 0
+        Me.btnSearchParts.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSearchParts.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSearchParts.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnSearchParts.Image = CType(resources.GetObject("btnSearchParts.Image"), System.Drawing.Image)
+        Me.btnSearchParts.Location = New System.Drawing.Point(680, 88)
+        Me.btnSearchParts.Name = "btnSearchParts"
+        Me.btnSearchParts.Size = New System.Drawing.Size(28, 26)
+        Me.btnSearchParts.TabIndex = 238
+        Me.btnSearchParts.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnSearchParts.UseVisualStyleBackColor = False
         '
-        'Label20
+        'btnSearchService
         '
-        Me.Label20.AutoSize = True
-        Me.Label20.Location = New System.Drawing.Point(24, 340)
-        Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(113, 21)
-        Me.Label20.TabIndex = 236
-        Me.Label20.Text = "Car model/Year"
+        Me.btnSearchService.BackColor = System.Drawing.Color.MidnightBlue
+        Me.btnSearchService.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.btnSearchService.FlatAppearance.BorderSize = 0
+        Me.btnSearchService.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSearchService.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSearchService.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnSearchService.Image = CType(resources.GetObject("btnSearchService.Image"), System.Drawing.Image)
+        Me.btnSearchService.Location = New System.Drawing.Point(980, 87)
+        Me.btnSearchService.Name = "btnSearchService"
+        Me.btnSearchService.Size = New System.Drawing.Size(28, 26)
+        Me.btnSearchService.TabIndex = 239
+        Me.btnSearchService.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnSearchService.UseVisualStyleBackColor = False
         '
         'JobOrder
         '
@@ -868,13 +872,13 @@ Partial Class JobOrder
     Friend WithEvents Label19 As System.Windows.Forms.Label
     Friend WithEvents txtFindings As System.Windows.Forms.TextBox
     Friend WithEvents Label18 As System.Windows.Forms.Label
-    Friend WithEvents btnChooseSer As System.Windows.Forms.Button
-    Friend WithEvents btnOrder As System.Windows.Forms.Button
     Friend WithEvents ColumnHeader3 As System.Windows.Forms.ColumnHeader
     Friend WithEvents ColumnHeader4 As System.Windows.Forms.ColumnHeader
     Friend WithEvents ColumnHeader1 As System.Windows.Forms.ColumnHeader
     Friend WithEvents ColumnHeader2 As System.Windows.Forms.ColumnHeader
     Friend WithEvents txtCarMod As System.Windows.Forms.TextBox
     Friend WithEvents Label20 As System.Windows.Forms.Label
+    Friend WithEvents btnSearchService As System.Windows.Forms.Button
+    Friend WithEvents btnSearchParts As System.Windows.Forms.Button
 
 End Class

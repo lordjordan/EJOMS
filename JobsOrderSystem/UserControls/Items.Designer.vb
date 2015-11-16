@@ -45,7 +45,7 @@ Partial Class Items
         Me.Label5 = New System.Windows.Forms.Label()
         Me.txtPartsname = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtItemID = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.btnSave = New System.Windows.Forms.Button()
         Me.btnAddEditClose = New System.Windows.Forms.Button()
@@ -174,7 +174,7 @@ Partial Class Items
         Me.txtSearch.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
         Me.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtSearch.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtSearch.Location = New System.Drawing.Point(61, 80)
+        Me.txtSearch.Location = New System.Drawing.Point(62, 80)
         Me.txtSearch.Name = "txtSearch"
         Me.txtSearch.Size = New System.Drawing.Size(222, 26)
         Me.txtSearch.TabIndex = 208
@@ -198,7 +198,7 @@ Partial Class Items
         Me.lvCarBrands.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.chCBID, Me.chName, Me.ColumnHeader1, Me.ColumnHeader2})
         Me.lvCarBrands.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lvCarBrands.GridLines = True
-        Me.lvCarBrands.Location = New System.Drawing.Point(13, 112)
+        Me.lvCarBrands.Location = New System.Drawing.Point(10, 112)
         Me.lvCarBrands.Name = "lvCarBrands"
         Me.lvCarBrands.Size = New System.Drawing.Size(866, 288)
         Me.lvCarBrands.TabIndex = 210
@@ -235,7 +235,7 @@ Partial Class Items
         Me.pnlAddEdit.Controls.Add(Me.Label5)
         Me.pnlAddEdit.Controls.Add(Me.txtPartsname)
         Me.pnlAddEdit.Controls.Add(Me.Label11)
-        Me.pnlAddEdit.Controls.Add(Me.TextBox1)
+        Me.pnlAddEdit.Controls.Add(Me.txtItemID)
         Me.pnlAddEdit.Controls.Add(Me.Label4)
         Me.pnlAddEdit.Controls.Add(Me.btnSave)
         Me.pnlAddEdit.Controls.Add(Me.btnAddEditClose)
@@ -307,15 +307,16 @@ Partial Class Items
         Me.Label11.TabIndex = 231
         Me.Label11.Text = "Name"
         '
-        'TextBox1
+        'txtItemID
         '
-        Me.TextBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
-        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox1.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(132, 86)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(128, 26)
-        Me.TextBox1.TabIndex = 228
+        Me.txtItemID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+        Me.txtItemID.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtItemID.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtItemID.Location = New System.Drawing.Point(132, 86)
+        Me.txtItemID.Name = "txtItemID"
+        Me.txtItemID.ReadOnly = True
+        Me.txtItemID.Size = New System.Drawing.Size(128, 26)
+        Me.txtItemID.TabIndex = 228
         '
         'Label4
         '
@@ -414,7 +415,7 @@ Partial Class Items
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents txtPartsname As System.Windows.Forms.TextBox
     Friend WithEvents Label11 As System.Windows.Forms.Label
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents txtItemID As System.Windows.Forms.TextBox
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents btnSave As System.Windows.Forms.Button
     Friend WithEvents btnAddEditClose As System.Windows.Forms.Button
