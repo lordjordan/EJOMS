@@ -289,6 +289,7 @@ Partial Class Services
         Me.txtServices.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtServices.Location = New System.Drawing.Point(163, 79)
         Me.txtServices.Name = "txtServices"
+        Me.txtServices.ReadOnly = True
         Me.txtServices.Size = New System.Drawing.Size(128, 26)
         Me.txtServices.TabIndex = 228
         '

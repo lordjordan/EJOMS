@@ -282,6 +282,7 @@ Partial Class CarBrands
         Me.txtCBID.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtCBID.Location = New System.Drawing.Point(130, 78)
         Me.txtCBID.Name = "txtCBID"
+        Me.txtCBID.ReadOnly = True
         Me.txtCBID.Size = New System.Drawing.Size(128, 26)
         Me.txtCBID.TabIndex = 228
         '

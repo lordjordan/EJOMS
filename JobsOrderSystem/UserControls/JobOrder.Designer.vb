@@ -723,6 +723,7 @@ Partial Class JobOrder
         Me.txtJobID.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtJobID.Location = New System.Drawing.Point(135, 81)
         Me.txtJobID.Name = "txtJobID"
+        Me.txtJobID.ReadOnly = True
         Me.txtJobID.Size = New System.Drawing.Size(244, 26)
         Me.txtJobID.TabIndex = 190
         '
