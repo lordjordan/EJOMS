@@ -37,6 +37,8 @@ Partial Class JobOrder
         Me.chJobID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.pnlAddEdit = New System.Windows.Forms.Panel()
+        Me.btnSearchService = New System.Windows.Forms.Button()
+        Me.btnSearchParts = New System.Windows.Forms.Button()
         Me.txtCarMod = New System.Windows.Forms.TextBox()
         Me.Label20 = New System.Windows.Forms.Label()
         Me.txtRemarks = New System.Windows.Forms.TextBox()
@@ -84,8 +86,6 @@ Partial Class JobOrder
         Me.btnAddEditClose = New System.Windows.Forms.Button()
         Me.lblAddedit = New System.Windows.Forms.Label()
         Me.timerAnimate = New System.Windows.Forms.Timer(Me.components)
-        Me.btnSearchParts = New System.Windows.Forms.Button()
-        Me.btnSearchService = New System.Windows.Forms.Button()
         Me.pnlMain.SuspendLayout()
         Me.pnlAddEdit.SuspendLayout()
         Me.SuspendLayout()
@@ -305,6 +305,38 @@ Partial Class JobOrder
         Me.pnlAddEdit.Size = New System.Drawing.Size(1030, 650)
         Me.pnlAddEdit.TabIndex = 194
         Me.pnlAddEdit.Visible = False
+        '
+        'btnSearchService
+        '
+        Me.btnSearchService.BackColor = System.Drawing.Color.MidnightBlue
+        Me.btnSearchService.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.btnSearchService.FlatAppearance.BorderSize = 0
+        Me.btnSearchService.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSearchService.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSearchService.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnSearchService.Image = CType(resources.GetObject("btnSearchService.Image"), System.Drawing.Image)
+        Me.btnSearchService.Location = New System.Drawing.Point(980, 87)
+        Me.btnSearchService.Name = "btnSearchService"
+        Me.btnSearchService.Size = New System.Drawing.Size(28, 26)
+        Me.btnSearchService.TabIndex = 239
+        Me.btnSearchService.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnSearchService.UseVisualStyleBackColor = False
+        '
+        'btnSearchParts
+        '
+        Me.btnSearchParts.BackColor = System.Drawing.Color.MidnightBlue
+        Me.btnSearchParts.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.btnSearchParts.FlatAppearance.BorderSize = 0
+        Me.btnSearchParts.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSearchParts.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSearchParts.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnSearchParts.Image = CType(resources.GetObject("btnSearchParts.Image"), System.Drawing.Image)
+        Me.btnSearchParts.Location = New System.Drawing.Point(680, 88)
+        Me.btnSearchParts.Name = "btnSearchParts"
+        Me.btnSearchParts.Size = New System.Drawing.Size(28, 26)
+        Me.btnSearchParts.TabIndex = 238
+        Me.btnSearchParts.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnSearchParts.UseVisualStyleBackColor = False
         '
         'txtCarMod
         '
@@ -769,38 +801,6 @@ Partial Class JobOrder
         'timerAnimate
         '
         Me.timerAnimate.Interval = 1
-        '
-        'btnSearchParts
-        '
-        Me.btnSearchParts.BackColor = System.Drawing.Color.MidnightBlue
-        Me.btnSearchParts.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.btnSearchParts.FlatAppearance.BorderSize = 0
-        Me.btnSearchParts.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSearchParts.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSearchParts.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnSearchParts.Image = CType(resources.GetObject("btnSearchParts.Image"), System.Drawing.Image)
-        Me.btnSearchParts.Location = New System.Drawing.Point(680, 88)
-        Me.btnSearchParts.Name = "btnSearchParts"
-        Me.btnSearchParts.Size = New System.Drawing.Size(28, 26)
-        Me.btnSearchParts.TabIndex = 238
-        Me.btnSearchParts.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnSearchParts.UseVisualStyleBackColor = False
-        '
-        'btnSearchService
-        '
-        Me.btnSearchService.BackColor = System.Drawing.Color.MidnightBlue
-        Me.btnSearchService.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.btnSearchService.FlatAppearance.BorderSize = 0
-        Me.btnSearchService.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSearchService.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSearchService.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnSearchService.Image = CType(resources.GetObject("btnSearchService.Image"), System.Drawing.Image)
-        Me.btnSearchService.Location = New System.Drawing.Point(980, 87)
-        Me.btnSearchService.Name = "btnSearchService"
-        Me.btnSearchService.Size = New System.Drawing.Size(28, 26)
-        Me.btnSearchService.TabIndex = 239
-        Me.btnSearchService.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnSearchService.UseVisualStyleBackColor = False
         '
         'JobOrder
         '
