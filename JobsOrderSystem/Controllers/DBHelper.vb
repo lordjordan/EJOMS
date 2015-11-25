@@ -44,6 +44,7 @@ Public Class DBHelper
     End Sub
 
     Public Function ExecuteReader(commandText As String, Optional params As Dictionary(Of String, Object) = Nothing) As SqlDataReader
+        cmd.Parameters.Clear()
         cmd.CommandText = commandText
         Using cmd
             BuildCommand(cmd, params)
@@ -54,6 +55,7 @@ Public Class DBHelper
     End Function
 
     Public Function ExecuteNonQuery(commandText As String, Optional params As Dictionary(Of String, Object) = Nothing) As Long
+        cmd.Parameters.Clear()
         cmd.CommandText = commandText
         Using cmd
             BuildCommand(cmd, params)

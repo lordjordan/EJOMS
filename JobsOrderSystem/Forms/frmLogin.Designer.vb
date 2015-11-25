@@ -27,6 +27,7 @@ Partial Class frmLogin
         Me.txtPassword = New System.Windows.Forms.TextBox()
         Me.btnLog = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.lbl_utype = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'txtUsername
@@ -72,12 +73,22 @@ Partial Class frmLogin
         Me.Label3.TabIndex = 174
         Me.Label3.Text = "Euro shop" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Job Order System V.1"
         '
+        'lbl_utype
+        '
+        Me.lbl_utype.AutoSize = True
+        Me.lbl_utype.Location = New System.Drawing.Point(18, 71)
+        Me.lbl_utype.Name = "lbl_utype"
+        Me.lbl_utype.Size = New System.Drawing.Size(0, 13)
+        Me.lbl_utype.TabIndex = 175
+        Me.lbl_utype.Visible = False
+        '
         'frmLogin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.MidnightBlue
         Me.ClientSize = New System.Drawing.Size(470, 200)
+        Me.Controls.Add(Me.lbl_utype)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.btnLog)
         Me.Controls.Add(Me.txtPassword)
@@ -96,4 +107,5 @@ Partial Class frmLogin
     Friend WithEvents txtPassword As System.Windows.Forms.TextBox
     Friend WithEvents btnLog As System.Windows.Forms.Button
     Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents lbl_utype As System.Windows.Forms.Label
 End Class

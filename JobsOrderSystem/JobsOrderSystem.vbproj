@@ -71,6 +71,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\DBHelper.vb" />
+    <Compile Include="Controllers\GeneralMethods.vb" />
     <Compile Include="Controllers\MainPanelController.vb" />
     <Compile Include="Forms\frmLogin.Designer.vb">
       <DependentUpon>frmLogin.vb</DependentUpon>

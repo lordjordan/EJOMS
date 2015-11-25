@@ -14,6 +14,7 @@
     Private Sub btnLogout_Click(sender As Object, e As EventArgs) Handles btnLogOut.Click
         Select Case MessageBox.Show("Log out?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
             Case Windows.Forms.DialogResult.Yes
+                frmLogin.reset()
                 frmLogin.Show()
                 frmMain.Hide()
         End Select

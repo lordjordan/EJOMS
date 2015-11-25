@@ -35,7 +35,6 @@ Partial Class CarBrands
         Me.lvCarBrands = New System.Windows.Forms.ListView()
         Me.chCBID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Label1 = New System.Windows.Forms.Label()
         Me.pnlAddEdit = New System.Windows.Forms.Panel()
         Me.txtPercent = New System.Windows.Forms.TextBox()
@@ -48,6 +47,7 @@ Partial Class CarBrands
         Me.btnAddEditClose = New System.Windows.Forms.Button()
         Me.lblAddedit = New System.Windows.Forms.Label()
         Me.timerAnimate = New System.Windows.Forms.Timer(Me.components)
+        Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.pnlMain.SuspendLayout()
         Me.pnlAddEdit.SuspendLayout()
         Me.SuspendLayout()
@@ -180,6 +180,7 @@ Partial Class CarBrands
         Me.lvCarBrands.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.lvCarBrands.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.chCBID, Me.chName, Me.ColumnHeader1})
         Me.lvCarBrands.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lvCarBrands.FullRowSelect = True
         Me.lvCarBrands.GridLines = True
         Me.lvCarBrands.Location = New System.Drawing.Point(8, 112)
         Me.lvCarBrands.Name = "lvCarBrands"
@@ -197,11 +198,6 @@ Partial Class CarBrands
         '
         Me.chName.Text = "Name"
         Me.chName.Width = 302
-        '
-        'ColumnHeader1
-        '
-        Me.ColumnHeader1.Text = "Interest percentage (%)"
-        Me.ColumnHeader1.Width = 555
         '
         'Label1
         '
@@ -279,6 +275,7 @@ Partial Class CarBrands
         '
         Me.txtCBID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
         Me.txtCBID.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtCBID.Enabled = False
         Me.txtCBID.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtCBID.Location = New System.Drawing.Point(130, 78)
         Me.txtCBID.Name = "txtCBID"
@@ -345,6 +342,11 @@ Partial Class CarBrands
         'timerAnimate
         '
         Me.timerAnimate.Interval = 1
+        '
+        'ColumnHeader1
+        '
+        Me.ColumnHeader1.Text = "Interest percentage (%)"
+        Me.ColumnHeader1.Width = 555
         '
         'CarBrands
         '

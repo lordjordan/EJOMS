@@ -25,6 +25,7 @@ Partial Class Services
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Services))
         Me.pnlMain = New System.Windows.Forms.Panel()
+        Me.btn_PricePerCarBrand = New System.Windows.Forms.Button()
         Me.btnAddNew = New System.Windows.Forms.Button()
         Me.btnBack = New System.Windows.Forms.Button()
         Me.btnSearch = New System.Windows.Forms.Button()
@@ -32,7 +33,7 @@ Partial Class Services
         Me.btnUpdate = New System.Windows.Forms.Button()
         Me.txtSearch = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.lvCarBrands = New System.Windows.Forms.ListView()
+        Me.lvServices = New System.Windows.Forms.ListView()
         Me.chSerID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chSerName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -43,13 +44,38 @@ Partial Class Services
         Me.Label5 = New System.Windows.Forms.Label()
         Me.txtServiceName = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.txtServices = New System.Windows.Forms.TextBox()
+        Me.txtServiceID = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.btnSave = New System.Windows.Forms.Button()
         Me.btnAddEditClose = New System.Windows.Forms.Button()
         Me.lblAddedit = New System.Windows.Forms.Label()
+        Me.pnl_PerCarBrand = New System.Windows.Forms.Panel()
+        Me.pnl_PerCarBrandForm = New System.Windows.Forms.Panel()
+        Me.btn_PerCarBrandCancel = New System.Windows.Forms.Button()
+        Me.cbo_carbrand = New System.Windows.Forms.ComboBox()
+        Me.txt_adjusted_price = New System.Windows.Forms.TextBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.btn_PerCarBrandSave = New System.Windows.Forms.Button()
+        Me.txt_PCB_service_fee = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.txt_PCB_service_name = New System.Windows.Forms.TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.txt_PCB_ID = New System.Windows.Forms.TextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.btn_PerCarBrandAddNew = New System.Windows.Forms.Button()
+        Me.btn_PerCarBrandUpdate = New System.Windows.Forms.Button()
+        Me.btn_PerCarBrandClose = New System.Windows.Forms.Button()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.lvw_PerCarBrand = New System.Windows.Forms.ListView()
+        Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.lbl_scb_id = New System.Windows.Forms.Label()
         Me.pnlMain.SuspendLayout()
         Me.pnlAddEdit.SuspendLayout()
+        Me.pnl_PerCarBrand.SuspendLayout()
+        Me.pnl_PerCarBrandForm.SuspendLayout()
         Me.SuspendLayout()
         '
         'pnlMain
@@ -58,6 +84,7 @@ Partial Class Services
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.pnlMain.BackColor = System.Drawing.Color.Silver
+        Me.pnlMain.Controls.Add(Me.btn_PricePerCarBrand)
         Me.pnlMain.Controls.Add(Me.btnAddNew)
         Me.pnlMain.Controls.Add(Me.btnBack)
         Me.pnlMain.Controls.Add(Me.btnSearch)
@@ -65,12 +92,28 @@ Partial Class Services
         Me.pnlMain.Controls.Add(Me.btnUpdate)
         Me.pnlMain.Controls.Add(Me.txtSearch)
         Me.pnlMain.Controls.Add(Me.Label3)
-        Me.pnlMain.Controls.Add(Me.lvCarBrands)
+        Me.pnlMain.Controls.Add(Me.lvServices)
         Me.pnlMain.Controls.Add(Me.Label2)
-        Me.pnlMain.Location = New System.Drawing.Point(0, 26)
+        Me.pnlMain.Location = New System.Drawing.Point(0, 27)
         Me.pnlMain.Name = "pnlMain"
         Me.pnlMain.Size = New System.Drawing.Size(1072, 508)
         Me.pnlMain.TabIndex = 208
+        '
+        'btn_PricePerCarBrand
+        '
+        Me.btn_PricePerCarBrand.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btn_PricePerCarBrand.BackColor = System.Drawing.Color.MidnightBlue
+        Me.btn_PricePerCarBrand.FlatAppearance.BorderSize = 0
+        Me.btn_PricePerCarBrand.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_PricePerCarBrand.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_PricePerCarBrand.ForeColor = System.Drawing.Color.Gold
+        Me.btn_PricePerCarBrand.Location = New System.Drawing.Point(515, 1)
+        Me.btn_PricePerCarBrand.Name = "btn_PricePerCarBrand"
+        Me.btn_PricePerCarBrand.Size = New System.Drawing.Size(147, 51)
+        Me.btn_PricePerCarBrand.TabIndex = 214
+        Me.btn_PricePerCarBrand.Text = "Price per Carbrand"
+        Me.btn_PricePerCarBrand.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btn_PricePerCarBrand.UseVisualStyleBackColor = False
         '
         'btnAddNew
         '
@@ -172,21 +215,23 @@ Partial Class Services
         Me.Label3.TabIndex = 207
         Me.Label3.Text = "Search"
         '
-        'lvCarBrands
+        'lvServices
         '
-        Me.lvCarBrands.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.lvServices.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lvCarBrands.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.lvCarBrands.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.chSerID, Me.chSerName, Me.ColumnHeader1})
-        Me.lvCarBrands.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lvCarBrands.GridLines = True
-        Me.lvCarBrands.Location = New System.Drawing.Point(13, 112)
-        Me.lvCarBrands.Name = "lvCarBrands"
-        Me.lvCarBrands.Size = New System.Drawing.Size(1051, 383)
-        Me.lvCarBrands.TabIndex = 210
-        Me.lvCarBrands.UseCompatibleStateImageBehavior = False
-        Me.lvCarBrands.View = System.Windows.Forms.View.Details
+        Me.lvServices.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.lvServices.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.chSerID, Me.chSerName, Me.ColumnHeader1})
+        Me.lvServices.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lvServices.FullRowSelect = True
+        Me.lvServices.GridLines = True
+        Me.lvServices.HideSelection = False
+        Me.lvServices.Location = New System.Drawing.Point(13, 112)
+        Me.lvServices.Name = "lvServices"
+        Me.lvServices.Size = New System.Drawing.Size(1051, 383)
+        Me.lvServices.TabIndex = 210
+        Me.lvServices.UseCompatibleStateImageBehavior = False
+        Me.lvServices.View = System.Windows.Forms.View.Details
         '
         'chSerID
         '
@@ -230,7 +275,7 @@ Partial Class Services
         Me.pnlAddEdit.Controls.Add(Me.Label5)
         Me.pnlAddEdit.Controls.Add(Me.txtServiceName)
         Me.pnlAddEdit.Controls.Add(Me.Label11)
-        Me.pnlAddEdit.Controls.Add(Me.txtServices)
+        Me.pnlAddEdit.Controls.Add(Me.txtServiceID)
         Me.pnlAddEdit.Controls.Add(Me.Label4)
         Me.pnlAddEdit.Controls.Add(Me.btnSave)
         Me.pnlAddEdit.Controls.Add(Me.btnAddEditClose)
@@ -282,16 +327,16 @@ Partial Class Services
         Me.Label11.TabIndex = 231
         Me.Label11.Text = "Service name"
         '
-        'txtServices
+        'txtServiceID
         '
-        Me.txtServices.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
-        Me.txtServices.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtServices.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtServices.Location = New System.Drawing.Point(163, 79)
-        Me.txtServices.Name = "txtServices"
-        Me.txtServices.ReadOnly = True
-        Me.txtServices.Size = New System.Drawing.Size(128, 26)
-        Me.txtServices.TabIndex = 228
+        Me.txtServiceID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+        Me.txtServiceID.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtServiceID.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtServiceID.Location = New System.Drawing.Point(163, 79)
+        Me.txtServiceID.Name = "txtServiceID"
+        Me.txtServiceID.ReadOnly = True
+        Me.txtServiceID.Size = New System.Drawing.Size(128, 26)
+        Me.txtServiceID.TabIndex = 228
         '
         'Label4
         '
@@ -349,11 +394,317 @@ Partial Class Services
         Me.lblAddedit.Text = "  Add services"
         Me.lblAddedit.TextAlign = System.Drawing.ContentAlignment.BottomLeft
         '
+        'pnl_PerCarBrand
+        '
+        Me.pnl_PerCarBrand.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.pnl_PerCarBrand.BackColor = System.Drawing.Color.Silver
+        Me.pnl_PerCarBrand.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pnl_PerCarBrand.Controls.Add(Me.pnl_PerCarBrandForm)
+        Me.pnl_PerCarBrand.Controls.Add(Me.btn_PerCarBrandAddNew)
+        Me.pnl_PerCarBrand.Controls.Add(Me.btn_PerCarBrandUpdate)
+        Me.pnl_PerCarBrand.Controls.Add(Me.btn_PerCarBrandClose)
+        Me.pnl_PerCarBrand.Controls.Add(Me.Label8)
+        Me.pnl_PerCarBrand.Controls.Add(Me.lvw_PerCarBrand)
+        Me.pnl_PerCarBrand.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.pnl_PerCarBrand.Location = New System.Drawing.Point(3, 17)
+        Me.pnl_PerCarBrand.Name = "pnl_PerCarBrand"
+        Me.pnl_PerCarBrand.Size = New System.Drawing.Size(1017, 505)
+        Me.pnl_PerCarBrand.TabIndex = 240
+        Me.pnl_PerCarBrand.Visible = False
+        '
+        'pnl_PerCarBrandForm
+        '
+        Me.pnl_PerCarBrandForm.Controls.Add(Me.lbl_scb_id)
+        Me.pnl_PerCarBrandForm.Controls.Add(Me.btn_PerCarBrandCancel)
+        Me.pnl_PerCarBrandForm.Controls.Add(Me.cbo_carbrand)
+        Me.pnl_PerCarBrandForm.Controls.Add(Me.txt_adjusted_price)
+        Me.pnl_PerCarBrandForm.Controls.Add(Me.Label10)
+        Me.pnl_PerCarBrandForm.Controls.Add(Me.Label9)
+        Me.pnl_PerCarBrandForm.Controls.Add(Me.btn_PerCarBrandSave)
+        Me.pnl_PerCarBrandForm.Controls.Add(Me.txt_PCB_service_fee)
+        Me.pnl_PerCarBrandForm.Controls.Add(Me.Label1)
+        Me.pnl_PerCarBrandForm.Controls.Add(Me.txt_PCB_service_name)
+        Me.pnl_PerCarBrandForm.Controls.Add(Me.Label6)
+        Me.pnl_PerCarBrandForm.Controls.Add(Me.txt_PCB_ID)
+        Me.pnl_PerCarBrandForm.Controls.Add(Me.Label7)
+        Me.pnl_PerCarBrandForm.Enabled = False
+        Me.pnl_PerCarBrandForm.Location = New System.Drawing.Point(717, 69)
+        Me.pnl_PerCarBrandForm.Name = "pnl_PerCarBrandForm"
+        Me.pnl_PerCarBrandForm.Size = New System.Drawing.Size(291, 416)
+        Me.pnl_PerCarBrandForm.TabIndex = 243
+        '
+        'btn_PerCarBrandCancel
+        '
+        Me.btn_PerCarBrandCancel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btn_PerCarBrandCancel.BackColor = System.Drawing.Color.MidnightBlue
+        Me.btn_PerCarBrandCancel.FlatAppearance.BorderSize = 0
+        Me.btn_PerCarBrandCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_PerCarBrandCancel.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_PerCarBrandCancel.ForeColor = System.Drawing.Color.Gold
+        Me.btn_PerCarBrandCancel.Location = New System.Drawing.Point(163, 352)
+        Me.btn_PerCarBrandCancel.Name = "btn_PerCarBrandCancel"
+        Me.btn_PerCarBrandCancel.Size = New System.Drawing.Size(115, 51)
+        Me.btn_PerCarBrandCancel.TabIndex = 255
+        Me.btn_PerCarBrandCancel.Text = "Cancel"
+        Me.btn_PerCarBrandCancel.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btn_PerCarBrandCancel.UseVisualStyleBackColor = False
+        '
+        'cbo_carbrand
+        '
+        Me.cbo_carbrand.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cbo_carbrand.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbo_carbrand.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cbo_carbrand.Font = New System.Drawing.Font("Segoe UI Light", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbo_carbrand.FormattingEnabled = True
+        Me.cbo_carbrand.ItemHeight = 20
+        Me.cbo_carbrand.Location = New System.Drawing.Point(34, 225)
+        Me.cbo_carbrand.MinimumSize = New System.Drawing.Size(244, 0)
+        Me.cbo_carbrand.Name = "cbo_carbrand"
+        Me.cbo_carbrand.Size = New System.Drawing.Size(244, 28)
+        Me.cbo_carbrand.TabIndex = 254
+        '
+        'txt_adjusted_price
+        '
+        Me.txt_adjusted_price.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txt_adjusted_price.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+        Me.txt_adjusted_price.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txt_adjusted_price.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_adjusted_price.Location = New System.Drawing.Point(34, 287)
+        Me.txt_adjusted_price.Name = "txt_adjusted_price"
+        Me.txt_adjusted_price.ReadOnly = True
+        Me.txt_adjusted_price.Size = New System.Drawing.Size(244, 26)
+        Me.txt_adjusted_price.TabIndex = 253
+        '
+        'Label10
+        '
+        Me.Label10.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Location = New System.Drawing.Point(13, 263)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(105, 21)
+        Me.Label10.TabIndex = 252
+        Me.Label10.Text = "Adjusted Price"
+        '
+        'Label9
+        '
+        Me.Label9.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Location = New System.Drawing.Point(13, 201)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(73, 21)
+        Me.Label9.TabIndex = 251
+        Me.Label9.Text = "Carbrand"
+        '
+        'btn_PerCarBrandSave
+        '
+        Me.btn_PerCarBrandSave.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btn_PerCarBrandSave.BackColor = System.Drawing.Color.MidnightBlue
+        Me.btn_PerCarBrandSave.FlatAppearance.BorderSize = 0
+        Me.btn_PerCarBrandSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_PerCarBrandSave.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_PerCarBrandSave.ForeColor = System.Drawing.Color.Gold
+        Me.btn_PerCarBrandSave.Location = New System.Drawing.Point(34, 352)
+        Me.btn_PerCarBrandSave.Name = "btn_PerCarBrandSave"
+        Me.btn_PerCarBrandSave.Size = New System.Drawing.Size(115, 51)
+        Me.btn_PerCarBrandSave.TabIndex = 244
+        Me.btn_PerCarBrandSave.Text = "Save"
+        Me.btn_PerCarBrandSave.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btn_PerCarBrandSave.UseVisualStyleBackColor = False
+        '
+        'txt_PCB_service_fee
+        '
+        Me.txt_PCB_service_fee.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txt_PCB_service_fee.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+        Me.txt_PCB_service_fee.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txt_PCB_service_fee.Enabled = False
+        Me.txt_PCB_service_fee.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_PCB_service_fee.Location = New System.Drawing.Point(34, 163)
+        Me.txt_PCB_service_fee.Name = "txt_PCB_service_fee"
+        Me.txt_PCB_service_fee.ReadOnly = True
+        Me.txt_PCB_service_fee.Size = New System.Drawing.Size(244, 26)
+        Me.txt_PCB_service_fee.TabIndex = 250
+        '
+        'Label1
+        '
+        Me.Label1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(13, 139)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(81, 21)
+        Me.Label1.TabIndex = 249
+        Me.Label1.Text = "Service fee"
+        '
+        'txt_PCB_service_name
+        '
+        Me.txt_PCB_service_name.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txt_PCB_service_name.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+        Me.txt_PCB_service_name.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txt_PCB_service_name.Enabled = False
+        Me.txt_PCB_service_name.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_PCB_service_name.Location = New System.Drawing.Point(34, 101)
+        Me.txt_PCB_service_name.Name = "txt_PCB_service_name"
+        Me.txt_PCB_service_name.ReadOnly = True
+        Me.txt_PCB_service_name.Size = New System.Drawing.Size(244, 26)
+        Me.txt_PCB_service_name.TabIndex = 248
+        '
+        'Label6
+        '
+        Me.Label6.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(13, 77)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(99, 21)
+        Me.Label6.TabIndex = 247
+        Me.Label6.Text = "Service name"
+        '
+        'txt_PCB_ID
+        '
+        Me.txt_PCB_ID.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txt_PCB_ID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+        Me.txt_PCB_ID.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txt_PCB_ID.Enabled = False
+        Me.txt_PCB_ID.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_PCB_ID.Location = New System.Drawing.Point(34, 37)
+        Me.txt_PCB_ID.Name = "txt_PCB_ID"
+        Me.txt_PCB_ID.ReadOnly = True
+        Me.txt_PCB_ID.Size = New System.Drawing.Size(128, 26)
+        Me.txt_PCB_ID.TabIndex = 246
+        '
+        'Label7
+        '
+        Me.Label7.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(13, 13)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(76, 21)
+        Me.Label7.TabIndex = 245
+        Me.Label7.Text = "Service ID"
+        '
+        'btn_PerCarBrandAddNew
+        '
+        Me.btn_PerCarBrandAddNew.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btn_PerCarBrandAddNew.BackColor = System.Drawing.Color.MidnightBlue
+        Me.btn_PerCarBrandAddNew.FlatAppearance.BorderSize = 0
+        Me.btn_PerCarBrandAddNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_PerCarBrandAddNew.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_PerCarBrandAddNew.ForeColor = System.Drawing.Color.Gold
+        Me.btn_PerCarBrandAddNew.Location = New System.Drawing.Point(698, -1)
+        Me.btn_PerCarBrandAddNew.Name = "btn_PerCarBrandAddNew"
+        Me.btn_PerCarBrandAddNew.Size = New System.Drawing.Size(102, 51)
+        Me.btn_PerCarBrandAddNew.TabIndex = 242
+        Me.btn_PerCarBrandAddNew.Text = "Add New"
+        Me.btn_PerCarBrandAddNew.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btn_PerCarBrandAddNew.UseVisualStyleBackColor = False
+        '
+        'btn_PerCarBrandUpdate
+        '
+        Me.btn_PerCarBrandUpdate.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btn_PerCarBrandUpdate.BackColor = System.Drawing.Color.MidnightBlue
+        Me.btn_PerCarBrandUpdate.FlatAppearance.BorderSize = 0
+        Me.btn_PerCarBrandUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_PerCarBrandUpdate.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_PerCarBrandUpdate.ForeColor = System.Drawing.Color.Gold
+        Me.btn_PerCarBrandUpdate.Location = New System.Drawing.Point(806, -1)
+        Me.btn_PerCarBrandUpdate.Name = "btn_PerCarBrandUpdate"
+        Me.btn_PerCarBrandUpdate.Size = New System.Drawing.Size(102, 51)
+        Me.btn_PerCarBrandUpdate.TabIndex = 241
+        Me.btn_PerCarBrandUpdate.Text = "Update"
+        Me.btn_PerCarBrandUpdate.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btn_PerCarBrandUpdate.UseVisualStyleBackColor = False
+        '
+        'btn_PerCarBrandClose
+        '
+        Me.btn_PerCarBrandClose.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btn_PerCarBrandClose.BackColor = System.Drawing.Color.MidnightBlue
+        Me.btn_PerCarBrandClose.FlatAppearance.BorderSize = 0
+        Me.btn_PerCarBrandClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_PerCarBrandClose.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_PerCarBrandClose.ForeColor = System.Drawing.Color.Gold
+        Me.btn_PerCarBrandClose.Location = New System.Drawing.Point(914, -1)
+        Me.btn_PerCarBrandClose.Name = "btn_PerCarBrandClose"
+        Me.btn_PerCarBrandClose.Size = New System.Drawing.Size(102, 51)
+        Me.btn_PerCarBrandClose.TabIndex = 225
+        Me.btn_PerCarBrandClose.Text = "Close"
+        Me.btn_PerCarBrandClose.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btn_PerCarBrandClose.UseVisualStyleBackColor = False
+        '
+        'Label8
+        '
+        Me.Label8.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label8.BackColor = System.Drawing.Color.MidnightBlue
+        Me.Label8.Font = New System.Drawing.Font("Segoe UI Light", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.Color.Gold
+        Me.Label8.Location = New System.Drawing.Point(-3, 0)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(1015, 51)
+        Me.Label8.TabIndex = 224
+        Me.Label8.Text = "Price per Carbrand"
+        Me.Label8.TextAlign = System.Drawing.ContentAlignment.BottomLeft
+        '
+        'lvw_PerCarBrand
+        '
+        Me.lvw_PerCarBrand.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lvw_PerCarBrand.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.lvw_PerCarBrand.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4})
+        Me.lvw_PerCarBrand.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lvw_PerCarBrand.FullRowSelect = True
+        Me.lvw_PerCarBrand.GridLines = True
+        Me.lvw_PerCarBrand.HideSelection = False
+        Me.lvw_PerCarBrand.Location = New System.Drawing.Point(16, 68)
+        Me.lvw_PerCarBrand.Name = "lvw_PerCarBrand"
+        Me.lvw_PerCarBrand.Size = New System.Drawing.Size(694, 417)
+        Me.lvw_PerCarBrand.TabIndex = 235
+        Me.lvw_PerCarBrand.UseCompatibleStateImageBehavior = False
+        Me.lvw_PerCarBrand.View = System.Windows.Forms.View.Details
+        '
+        'ColumnHeader2
+        '
+        Me.ColumnHeader2.Text = "ICB_ID"
+        Me.ColumnHeader2.Width = 127
+        '
+        'ColumnHeader3
+        '
+        Me.ColumnHeader3.Text = "Carbrand"
+        Me.ColumnHeader3.Width = 364
+        '
+        'ColumnHeader4
+        '
+        Me.ColumnHeader4.Text = "Adjusted Service fee"
+        Me.ColumnHeader4.Width = 154
+        '
+        'lbl_scb_id
+        '
+        Me.lbl_scb_id.AutoSize = True
+        Me.lbl_scb_id.Location = New System.Drawing.Point(183, 39)
+        Me.lbl_scb_id.Name = "lbl_scb_id"
+        Me.lbl_scb_id.Size = New System.Drawing.Size(0, 25)
+        Me.lbl_scb_id.TabIndex = 256
+        Me.lbl_scb_id.Visible = False
+        '
         'Services
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Silver
+        Me.Controls.Add(Me.pnl_PerCarBrand)
         Me.Controls.Add(Me.pnlAddEdit)
         Me.Controls.Add(Me.pnlMain)
         Me.Name = "Services"
@@ -362,6 +713,9 @@ Partial Class Services
         Me.pnlMain.PerformLayout()
         Me.pnlAddEdit.ResumeLayout(False)
         Me.pnlAddEdit.PerformLayout()
+        Me.pnl_PerCarBrand.ResumeLayout(False)
+        Me.pnl_PerCarBrandForm.ResumeLayout(False)
+        Me.pnl_PerCarBrandForm.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -373,7 +727,7 @@ Partial Class Services
     Friend WithEvents btnUpdate As System.Windows.Forms.Button
     Friend WithEvents txtSearch As System.Windows.Forms.TextBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents lvCarBrands As System.Windows.Forms.ListView
+    Friend WithEvents lvServices As System.Windows.Forms.ListView
     Friend WithEvents chSerID As System.Windows.Forms.ColumnHeader
     Friend WithEvents chSerName As System.Windows.Forms.ColumnHeader
     Friend WithEvents ColumnHeader1 As System.Windows.Forms.ColumnHeader
@@ -384,10 +738,34 @@ Partial Class Services
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents txtServiceName As System.Windows.Forms.TextBox
     Friend WithEvents Label11 As System.Windows.Forms.Label
-    Friend WithEvents txtServices As System.Windows.Forms.TextBox
+    Friend WithEvents txtServiceID As System.Windows.Forms.TextBox
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents btnSave As System.Windows.Forms.Button
     Friend WithEvents btnAddEditClose As System.Windows.Forms.Button
     Friend WithEvents lblAddedit As System.Windows.Forms.Label
+    Friend WithEvents btn_PricePerCarBrand As System.Windows.Forms.Button
+    Friend WithEvents pnl_PerCarBrand As System.Windows.Forms.Panel
+    Friend WithEvents pnl_PerCarBrandForm As System.Windows.Forms.Panel
+    Friend WithEvents btn_PerCarBrandCancel As System.Windows.Forms.Button
+    Friend WithEvents cbo_carbrand As System.Windows.Forms.ComboBox
+    Friend WithEvents txt_adjusted_price As System.Windows.Forms.TextBox
+    Friend WithEvents Label10 As System.Windows.Forms.Label
+    Friend WithEvents Label9 As System.Windows.Forms.Label
+    Friend WithEvents btn_PerCarBrandSave As System.Windows.Forms.Button
+    Friend WithEvents txt_PCB_service_fee As System.Windows.Forms.TextBox
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents txt_PCB_service_name As System.Windows.Forms.TextBox
+    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents txt_PCB_ID As System.Windows.Forms.TextBox
+    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents btn_PerCarBrandAddNew As System.Windows.Forms.Button
+    Friend WithEvents btn_PerCarBrandUpdate As System.Windows.Forms.Button
+    Friend WithEvents btn_PerCarBrandClose As System.Windows.Forms.Button
+    Friend WithEvents Label8 As System.Windows.Forms.Label
+    Friend WithEvents lvw_PerCarBrand As System.Windows.Forms.ListView
+    Friend WithEvents ColumnHeader2 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents ColumnHeader3 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents ColumnHeader4 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents lbl_scb_id As System.Windows.Forms.Label
 
 End Class
