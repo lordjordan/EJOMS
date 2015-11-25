@@ -17,6 +17,19 @@
         End If
 
     End Sub
+    'Clears all textboxes
+    Public Sub ClearTextBoxes(Optional ByVal ctlcol As Control.ControlCollection = Nothing)
+        If ctlcol Is Nothing Then ctlcol = Me.Controls
+        For Each ctl As Control In ctlcol
+            If TypeOf (ctl) Is TextBox Then
+                DirectCast(ctl, TextBox).Clear()
+            Else
+                If Not ctl.Controls Is Nothing OrElse ctl.Controls.Count <> 0 Then
+                    ClearTextBoxes(ctl.Controls)
+                End If
+            End If
+        Next
+    End Sub
     Private Sub btnAddEditClose_Click(sender As Object, e As EventArgs) Handles btnAddEditClose.Click
 
         btnAddEditClosed = True
@@ -25,6 +38,9 @@
             timerAnimate.Start()
 
         End If
+
+        'pnlAddEdit.Visible = False
+        'ClearTextBoxes()
         pnlMain.Enabled = True
 
     End Sub

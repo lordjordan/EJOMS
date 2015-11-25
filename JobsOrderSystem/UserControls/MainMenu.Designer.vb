@@ -28,7 +28,7 @@ Partial Class MainMenu
         Me.btnLogOut = New System.Windows.Forms.Button()
         Me.lblDate = New System.Windows.Forms.Label()
         Me.lblTime = New System.Windows.Forms.Label()
-        Me.tmrTimeDate = New System.Windows.Forms.Timer(Me.components)
+        Me.timerAnimate = New System.Windows.Forms.Timer(Me.components)
         Me.btnSalesInvoice = New System.Windows.Forms.Button()
         Me.btnAddNewJO = New System.Windows.Forms.Button()
         Me.btnReports = New System.Windows.Forms.Button()
@@ -97,10 +97,10 @@ Partial Class MainMenu
         Me.lblTime.Text = "Setting up the time..."
         Me.lblTime.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
-        'tmrTimeDate
+        'timerAnimate
         '
-        Me.tmrTimeDate.Enabled = True
-        Me.tmrTimeDate.Interval = 1000
+        Me.timerAnimate.Enabled = True
+        Me.timerAnimate.Interval = 1000
         '
         'btnSalesInvoice
         '
@@ -284,6 +284,6 @@ Partial Class MainMenu
     Friend WithEvents btnLogOut As System.Windows.Forms.Button
     Friend WithEvents lblDate As System.Windows.Forms.Label
     Friend WithEvents lblTime As System.Windows.Forms.Label
-    Friend WithEvents tmrTimeDate As System.Windows.Forms.Timer
+    Friend WithEvents timerAnimate As System.Windows.Forms.Timer
 
 End Class

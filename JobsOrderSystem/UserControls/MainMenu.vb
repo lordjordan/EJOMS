@@ -39,14 +39,14 @@
 
 
 
-    Private Sub tmrTimeDate_Tick(sender As Object, e As EventArgs) Handles tmrTimeDate.Tick
-        tmrTimeDate.Enabled = False
+    Private Sub tmrTimeDate_Tick(sender As Object, e As EventArgs) Handles timerAnimate.Tick
+        timerAnimate.Enabled = False
         'lblDate.Text = Now.DayOfWeek.ToString & ", " & Now.Day.ToString & " " & Now.mo.ToString
         lblTime.Text = Format(Now, "long time") 'Now.Hour.ToString & ":" & Now.Minute.ToString
         'lblDate.Text = Format(Now, "dddd, d MMMM")
         lblDate.Text = Format(Now, "long date")
 
-        tmrTimeDate.Enabled = True
+        timerAnimate.Enabled = True
     End Sub
 
  
