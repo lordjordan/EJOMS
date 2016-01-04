@@ -59,6 +59,7 @@ Partial Class frmLogin
         Me.btnLog.Name = "btnLog"
         Me.btnLog.Size = New System.Drawing.Size(64, 48)
         Me.btnLog.TabIndex = 173
+        Me.btnLog.Text = " "
         Me.btnLog.TextAlign = System.Drawing.ContentAlignment.BottomLeft
         Me.btnLog.UseVisualStyleBackColor = False
         '

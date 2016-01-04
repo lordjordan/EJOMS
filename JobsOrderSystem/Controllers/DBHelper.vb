@@ -16,7 +16,6 @@ Public Class DBHelper
     Public Sub New(ConnectionString As String)
         Connected = False
         Me.Connectionstring = ConnectionString
-
     End Sub
 
     Private Function BuildCommand(ByRef cmd As SqlCommand, params As Dictionary(Of String, Object)) As SqlClient.SqlCommand

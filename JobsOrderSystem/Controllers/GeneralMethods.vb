@@ -1,11 +1,11 @@
 ﻿Imports System.IO
 
 Module GeneralMethods
-    Public Function NumToStr(number As String, Optional size As Byte = 8) As String
+    Public Function NumToStr(number As String, Optional size As Byte = 12) As String
         number = FormatNumber(number, 2)
         number = Replace(number, ".", "")
         number = Replace(number, ",", "")
-        number = "00000000" & number
+        number = "000000000000" & number
         Return number.Substring(number.Length - size)
     End Function
 

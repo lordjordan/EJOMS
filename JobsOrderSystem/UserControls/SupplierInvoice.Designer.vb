@@ -55,6 +55,8 @@ Partial Class SupplierInvoice
         Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Label2 = New System.Windows.Forms.Label()
         Me.timerAnimate = New System.Windows.Forms.Timer(Me.components)
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.pnlAddEdit.SuspendLayout()
         Me.pnlMain.SuspendLayout()
         Me.SuspendLayout()
@@ -64,6 +66,8 @@ Partial Class SupplierInvoice
         Me.pnlAddEdit.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.pnlAddEdit.BackColor = System.Drawing.Color.Silver
         Me.pnlAddEdit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pnlAddEdit.Controls.Add(Me.TextBox1)
+        Me.pnlAddEdit.Controls.Add(Me.Label1)
         Me.pnlAddEdit.Controls.Add(Me.btnViewImg)
         Me.pnlAddEdit.Controls.Add(Me.btnBrowseInvoice)
         Me.pnlAddEdit.Controls.Add(Me.TextBox14)
@@ -93,7 +97,7 @@ Partial Class SupplierInvoice
         Me.btnViewImg.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnViewImg.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnViewImg.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnViewImg.Location = New System.Drawing.Point(428, 275)
+        Me.btnViewImg.Location = New System.Drawing.Point(428, 280)
         Me.btnViewImg.Name = "btnViewImg"
         Me.btnViewImg.Size = New System.Drawing.Size(28, 26)
         Me.btnViewImg.TabIndex = 240
@@ -107,7 +111,7 @@ Partial Class SupplierInvoice
         Me.btnBrowseInvoice.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnBrowseInvoice.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBrowseInvoice.ForeColor = System.Drawing.Color.Gold
-        Me.btnBrowseInvoice.Location = New System.Drawing.Point(337, 243)
+        Me.btnBrowseInvoice.Location = New System.Drawing.Point(337, 248)
         Me.btnBrowseInvoice.Name = "btnBrowseInvoice"
         Me.btnBrowseInvoice.Size = New System.Drawing.Size(119, 26)
         Me.btnBrowseInvoice.TabIndex = 239
@@ -119,7 +123,7 @@ Partial Class SupplierInvoice
         Me.TextBox14.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
         Me.TextBox14.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TextBox14.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox14.Location = New System.Drawing.Point(109, 275)
+        Me.TextBox14.Location = New System.Drawing.Point(109, 280)
         Me.TextBox14.Name = "TextBox14"
         Me.TextBox14.Size = New System.Drawing.Size(319, 26)
         Me.TextBox14.TabIndex = 238
@@ -128,7 +132,7 @@ Partial Class SupplierInvoice
         '
         Me.Label17.AutoSize = True
         Me.Label17.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.Location = New System.Drawing.Point(105, 246)
+        Me.Label17.Location = New System.Drawing.Point(105, 251)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(216, 21)
         Me.Label17.TabIndex = 237
@@ -138,7 +142,7 @@ Partial Class SupplierInvoice
         '
         Me.CheckBox1.AutoSize = True
         Me.CheckBox1.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox1.Location = New System.Drawing.Point(399, 307)
+        Me.CheckBox1.Location = New System.Drawing.Point(399, 312)
         Me.CheckBox1.Name = "CheckBox1"
         Me.CheckBox1.Size = New System.Drawing.Size(57, 25)
         Me.CheckBox1.TabIndex = 236
@@ -151,7 +155,7 @@ Partial Class SupplierInvoice
         Me.dtDueDate.CalendarTitleBackColor = System.Drawing.Color.MidnightBlue
         Me.dtDueDate.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right
         Me.dtDueDate.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dtDueDate.Location = New System.Drawing.Point(212, 181)
+        Me.dtDueDate.Location = New System.Drawing.Point(212, 197)
         Me.dtDueDate.Name = "dtDueDate"
         Me.dtDueDate.Size = New System.Drawing.Size(244, 29)
         Me.dtDueDate.TabIndex = 235
@@ -161,7 +165,7 @@ Partial Class SupplierInvoice
         Me.txtPrice.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
         Me.txtPrice.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtPrice.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPrice.Location = New System.Drawing.Point(212, 146)
+        Me.txtPrice.Location = New System.Drawing.Point(212, 124)
         Me.txtPrice.Name = "txtPrice"
         Me.txtPrice.Size = New System.Drawing.Size(244, 26)
         Me.txtPrice.TabIndex = 234
@@ -170,7 +174,7 @@ Partial Class SupplierInvoice
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(107, 187)
+        Me.Label5.Location = New System.Drawing.Point(107, 203)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(72, 21)
         Me.Label5.TabIndex = 233
@@ -180,7 +184,7 @@ Partial Class SupplierInvoice
         '
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(107, 136)
+        Me.Label11.Location = New System.Drawing.Point(107, 114)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(83, 42)
         Me.Label11.TabIndex = 231
@@ -191,7 +195,7 @@ Partial Class SupplierInvoice
         Me.txtID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
         Me.txtID.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtID.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtID.Location = New System.Drawing.Point(212, 97)
+        Me.txtID.Location = New System.Drawing.Point(212, 75)
         Me.txtID.Name = "txtID"
         Me.txtID.ReadOnly = True
         Me.txtID.Size = New System.Drawing.Size(128, 26)
@@ -201,7 +205,7 @@ Partial Class SupplierInvoice
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(107, 100)
+        Me.Label4.Location = New System.Drawing.Point(107, 78)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(102, 21)
         Me.Label4.TabIndex = 227
@@ -432,6 +436,26 @@ Partial Class SupplierInvoice
         '
         Me.timerAnimate.Interval = 1
         '
+        'TextBox1
+        '
+        Me.TextBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox1.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox1.Location = New System.Drawing.Point(212, 159)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(244, 26)
+        Me.TextBox1.TabIndex = 242
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(107, 162)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(85, 21)
+        Me.Label1.TabIndex = 241
+        Me.Label1.Text = "Receipt no."
+        '
         'SupplierInvoice
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -479,5 +503,7 @@ Partial Class SupplierInvoice
     Friend WithEvents timerAnimate As System.Windows.Forms.Timer
     Friend WithEvents ColumnHeader2 As System.Windows.Forms.ColumnHeader
     Friend WithEvents ColumnHeader3 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents Label1 As System.Windows.Forms.Label
 
 End Class

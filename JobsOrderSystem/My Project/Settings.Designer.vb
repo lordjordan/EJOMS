@@ -54,14 +54,14 @@ Namespace My
             End Get
         End Property
         
-        <Global.System.Configuration.UserScopedSettingAttribute(), _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.Configuration.DefaultSettingValueAttribute("Server=ACER\DEV;Database=EJOMSdb;User Id=sa;Password=p@ssword;")> _
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Server=.;Database=EJOMSdb;User Id=sa;Password=p@ssword;")>  _
         Public Property connectionString() As String
             Get
-                Return CType(Me("connectionString"), String)
+                Return CType(Me("connectionString"),String)
             End Get
-            Set(value As String)
+            Set
                 Me("connectionString") = value
             End Set
         End Property

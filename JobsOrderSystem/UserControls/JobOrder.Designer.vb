@@ -37,6 +37,12 @@ Partial Class JobOrder
         Me.chJobID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.pnlAddEdit = New System.Windows.Forms.Panel()
+        Me.txtBrand = New System.Windows.Forms.TextBox()
+        Me.Label23 = New System.Windows.Forms.Label()
+        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
+        Me.Label22 = New System.Windows.Forms.Label()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.Label21 = New System.Windows.Forms.Label()
         Me.btnSearchService = New System.Windows.Forms.Button()
         Me.btnSearchParts = New System.Windows.Forms.Button()
         Me.txtCarMod = New System.Windows.Forms.TextBox()
@@ -50,10 +56,15 @@ Partial Class JobOrder
         Me.lvServices = New System.Windows.Forms.ListView()
         Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader8 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader9 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Label5 = New System.Windows.Forms.Label()
         Me.lvParts = New System.Windows.Forms.ListView()
         Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader7 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader6 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.btnSave = New System.Windows.Forms.Button()
         Me.btnSearchPlate = New System.Windows.Forms.Button()
         Me.btnBrowseInspect = New System.Windows.Forms.Button()
@@ -86,6 +97,10 @@ Partial Class JobOrder
         Me.btnAddEditClose = New System.Windows.Forms.Button()
         Me.lblAddedit = New System.Windows.Forms.Label()
         Me.timerAnimate = New System.Windows.Forms.Timer(Me.components)
+        Me.pnl_items = New System.Windows.Forms.Panel()
+        Me.Label24 = New System.Windows.Forms.Label()
+        Me.Label25 = New System.Windows.Forms.Label()
+        Me.Label26 = New System.Windows.Forms.Label()
         Me.pnlMain.SuspendLayout()
         Me.pnlAddEdit.SuspendLayout()
         Me.SuspendLayout()
@@ -138,7 +153,7 @@ Partial Class JobOrder
         Me.pnlMain.Controls.Add(Me.lvJobOrderList)
         Me.pnlMain.Location = New System.Drawing.Point(0, 24)
         Me.pnlMain.Name = "pnlMain"
-        Me.pnlMain.Size = New System.Drawing.Size(1030, 670)
+        Me.pnlMain.Size = New System.Drawing.Size(1030, 673)
         Me.pnlMain.TabIndex = 193
         '
         'btnPrint
@@ -236,7 +251,7 @@ Partial Class JobOrder
         Me.lvJobOrderList.GridLines = True
         Me.lvJobOrderList.Location = New System.Drawing.Point(14, 119)
         Me.lvJobOrderList.Name = "lvJobOrderList"
-        Me.lvJobOrderList.Size = New System.Drawing.Size(1001, 536)
+        Me.lvJobOrderList.Size = New System.Drawing.Size(1001, 539)
         Me.lvJobOrderList.TabIndex = 6
         Me.lvJobOrderList.UseCompatibleStateImageBehavior = False
         Me.lvJobOrderList.View = System.Windows.Forms.View.Details
@@ -253,8 +268,18 @@ Partial Class JobOrder
         'pnlAddEdit
         '
         Me.pnlAddEdit.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.pnlAddEdit.AutoScroll = True
         Me.pnlAddEdit.BackColor = System.Drawing.Color.Silver
         Me.pnlAddEdit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pnlAddEdit.Controls.Add(Me.Label26)
+        Me.pnlAddEdit.Controls.Add(Me.Label25)
+        Me.pnlAddEdit.Controls.Add(Me.Label24)
+        Me.pnlAddEdit.Controls.Add(Me.txtBrand)
+        Me.pnlAddEdit.Controls.Add(Me.Label23)
+        Me.pnlAddEdit.Controls.Add(Me.ComboBox2)
+        Me.pnlAddEdit.Controls.Add(Me.Label22)
+        Me.pnlAddEdit.Controls.Add(Me.ComboBox1)
+        Me.pnlAddEdit.Controls.Add(Me.Label21)
         Me.pnlAddEdit.Controls.Add(Me.btnSearchService)
         Me.pnlAddEdit.Controls.Add(Me.btnSearchParts)
         Me.pnlAddEdit.Controls.Add(Me.txtCarMod)
@@ -300,11 +325,68 @@ Partial Class JobOrder
         Me.pnlAddEdit.Controls.Add(Me.btnAddEditClose)
         Me.pnlAddEdit.Controls.Add(Me.lblAddedit)
         Me.pnlAddEdit.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.pnlAddEdit.Location = New System.Drawing.Point(0, 26)
+        Me.pnlAddEdit.Location = New System.Drawing.Point(0, 25)
         Me.pnlAddEdit.Name = "pnlAddEdit"
         Me.pnlAddEdit.Size = New System.Drawing.Size(1030, 650)
         Me.pnlAddEdit.TabIndex = 194
         Me.pnlAddEdit.Visible = False
+        '
+        'txtBrand
+        '
+        Me.txtBrand.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+        Me.txtBrand.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtBrand.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtBrand.Location = New System.Drawing.Point(126, 346)
+        Me.txtBrand.Name = "txtBrand"
+        Me.txtBrand.Size = New System.Drawing.Size(244, 26)
+        Me.txtBrand.TabIndex = 246
+        '
+        'Label23
+        '
+        Me.Label23.AutoSize = True
+        Me.Label23.Location = New System.Drawing.Point(15, 349)
+        Me.Label23.Name = "Label23"
+        Me.Label23.Size = New System.Drawing.Size(50, 21)
+        Me.Label23.TabIndex = 245
+        Me.Label23.Text = "Brand"
+        '
+        'ComboBox2
+        '
+        Me.ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ComboBox2.FormattingEnabled = True
+        Me.ComboBox2.Items.AddRange(New Object() {"Pending", "On process", "Paid"})
+        Me.ComboBox2.Location = New System.Drawing.Point(462, 89)
+        Me.ComboBox2.Name = "ComboBox2"
+        Me.ComboBox2.Size = New System.Drawing.Size(279, 29)
+        Me.ComboBox2.TabIndex = 244
+        '
+        'Label22
+        '
+        Me.Label22.AutoSize = True
+        Me.Label22.Location = New System.Drawing.Point(405, 92)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(51, 21)
+        Me.Label22.TabIndex = 243
+        Me.Label22.Text = "Status"
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(126, 573)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(244, 29)
+        Me.ComboBox1.TabIndex = 242
+        '
+        'Label21
+        '
+        Me.Label21.AutoSize = True
+        Me.Label21.Location = New System.Drawing.Point(15, 576)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(93, 21)
+        Me.Label21.TabIndex = 240
+        Me.Label21.Text = "Transmission"
         '
         'btnSearchService
         '
@@ -315,7 +397,7 @@ Partial Class JobOrder
         Me.btnSearchService.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSearchService.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.btnSearchService.Image = CType(resources.GetObject("btnSearchService.Image"), System.Drawing.Image)
-        Me.btnSearchService.Location = New System.Drawing.Point(980, 87)
+        Me.btnSearchService.Location = New System.Drawing.Point(847, 385)
         Me.btnSearchService.Name = "btnSearchService"
         Me.btnSearchService.Size = New System.Drawing.Size(28, 26)
         Me.btnSearchService.TabIndex = 239
@@ -331,7 +413,7 @@ Partial Class JobOrder
         Me.btnSearchParts.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSearchParts.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.btnSearchParts.Image = CType(resources.GetObject("btnSearchParts.Image"), System.Drawing.Image)
-        Me.btnSearchParts.Location = New System.Drawing.Point(680, 88)
+        Me.btnSearchParts.Location = New System.Drawing.Point(847, 121)
         Me.btnSearchParts.Name = "btnSearchParts"
         Me.btnSearchParts.Size = New System.Drawing.Size(28, 26)
         Me.btnSearchParts.TabIndex = 238
@@ -343,7 +425,7 @@ Partial Class JobOrder
         Me.txtCarMod.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
         Me.txtCarMod.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtCarMod.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCarMod.Location = New System.Drawing.Point(135, 337)
+        Me.txtCarMod.Location = New System.Drawing.Point(126, 378)
         Me.txtCarMod.Name = "txtCarMod"
         Me.txtCarMod.Size = New System.Drawing.Size(244, 26)
         Me.txtCarMod.TabIndex = 237
@@ -351,7 +433,7 @@ Partial Class JobOrder
         'Label20
         '
         Me.Label20.AutoSize = True
-        Me.Label20.Location = New System.Drawing.Point(24, 340)
+        Me.Label20.Location = New System.Drawing.Point(15, 381)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(113, 21)
         Me.Label20.TabIndex = 236
@@ -362,16 +444,17 @@ Partial Class JobOrder
         Me.txtRemarks.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
         Me.txtRemarks.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtRemarks.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtRemarks.Location = New System.Drawing.Point(442, 471)
+        Me.txtRemarks.Location = New System.Drawing.Point(409, 763)
         Me.txtRemarks.Multiline = True
         Me.txtRemarks.Name = "txtRemarks"
-        Me.txtRemarks.Size = New System.Drawing.Size(566, 55)
+        Me.txtRemarks.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.txtRemarks.Size = New System.Drawing.Size(466, 58)
         Me.txtRemarks.TabIndex = 233
         '
         'Label19
         '
         Me.Label19.AutoSize = True
-        Me.Label19.Location = New System.Drawing.Point(438, 447)
+        Me.Label19.Location = New System.Drawing.Point(405, 739)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(70, 21)
         Me.Label19.TabIndex = 232
@@ -382,16 +465,17 @@ Partial Class JobOrder
         Me.txtFindings.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
         Me.txtFindings.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtFindings.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtFindings.Location = New System.Drawing.Point(442, 385)
+        Me.txtFindings.Location = New System.Drawing.Point(410, 675)
         Me.txtFindings.Multiline = True
         Me.txtFindings.Name = "txtFindings"
-        Me.txtFindings.Size = New System.Drawing.Size(566, 52)
+        Me.txtFindings.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.txtFindings.Size = New System.Drawing.Size(465, 58)
         Me.txtFindings.TabIndex = 231
         '
         'Label18
         '
         Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(438, 361)
+        Me.Label18.Location = New System.Drawing.Point(407, 651)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(200, 21)
         Me.Label18.TabIndex = 230
@@ -405,7 +489,7 @@ Partial Class JobOrder
         Me.btnViewImg.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnViewImg.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnViewImg.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnViewImg.Location = New System.Drawing.Point(351, 595)
+        Me.btnViewImg.Location = New System.Drawing.Point(343, 794)
         Me.btnViewImg.Name = "btnViewImg"
         Me.btnViewImg.Size = New System.Drawing.Size(28, 26)
         Me.btnViewImg.TabIndex = 228
@@ -415,7 +499,7 @@ Partial Class JobOrder
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(738, 89)
+        Me.Label10.Location = New System.Drawing.Point(405, 385)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(63, 21)
         Me.Label10.TabIndex = 227
@@ -423,12 +507,12 @@ Partial Class JobOrder
         '
         'lvServices
         '
-        Me.lvServices.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader3, Me.ColumnHeader4})
+        Me.lvServices.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader8, Me.ColumnHeader9})
         Me.lvServices.FullRowSelect = True
         Me.lvServices.GridLines = True
-        Me.lvServices.Location = New System.Drawing.Point(742, 113)
+        Me.lvServices.Location = New System.Drawing.Point(410, 411)
         Me.lvServices.Name = "lvServices"
-        Me.lvServices.Size = New System.Drawing.Size(266, 218)
+        Me.lvServices.Size = New System.Drawing.Size(465, 225)
         Me.lvServices.TabIndex = 226
         Me.lvServices.UseCompatibleStateImageBehavior = False
         Me.lvServices.View = System.Windows.Forms.View.Details
@@ -441,12 +525,22 @@ Partial Class JobOrder
         'ColumnHeader4
         '
         Me.ColumnHeader4.Text = "Service"
-        Me.ColumnHeader4.Width = 262
+        Me.ColumnHeader4.Width = 220
+        '
+        'ColumnHeader8
+        '
+        Me.ColumnHeader8.Text = "Original fee"
+        Me.ColumnHeader8.Width = 120
+        '
+        'ColumnHeader9
+        '
+        Me.ColumnHeader9.Text = "Fee w/mark-up"
+        Me.ColumnHeader9.Width = 132
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(438, 89)
+        Me.Label5.Location = New System.Drawing.Point(405, 122)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(43, 21)
         Me.Label5.TabIndex = 225
@@ -454,12 +548,12 @@ Partial Class JobOrder
         '
         'lvParts
         '
-        Me.lvParts.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2})
+        Me.lvParts.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader5, Me.ColumnHeader2, Me.ColumnHeader7, Me.ColumnHeader6})
         Me.lvParts.FullRowSelect = True
         Me.lvParts.GridLines = True
-        Me.lvParts.Location = New System.Drawing.Point(442, 113)
+        Me.lvParts.Location = New System.Drawing.Point(410, 147)
         Me.lvParts.Name = "lvParts"
-        Me.lvParts.Size = New System.Drawing.Size(266, 218)
+        Me.lvParts.Size = New System.Drawing.Size(465, 225)
         Me.lvParts.TabIndex = 224
         Me.lvParts.UseCompatibleStateImageBehavior = False
         Me.lvParts.View = System.Windows.Forms.View.Details
@@ -469,10 +563,25 @@ Partial Class JobOrder
         Me.ColumnHeader1.Text = "Item ID"
         Me.ColumnHeader1.Width = 0
         '
+        'ColumnHeader5
+        '
+        Me.ColumnHeader5.Text = "Qty"
+        Me.ColumnHeader5.Width = 54
+        '
         'ColumnHeader2
         '
         Me.ColumnHeader2.Text = "Name"
-        Me.ColumnHeader2.Width = 261
+        Me.ColumnHeader2.Width = 180
+        '
+        'ColumnHeader7
+        '
+        Me.ColumnHeader7.Text = "Original price"
+        Me.ColumnHeader7.Width = 106
+        '
+        'ColumnHeader6
+        '
+        Me.ColumnHeader6.Text = "Price w/mark-up"
+        Me.ColumnHeader6.Width = 126
         '
         'btnSave
         '
@@ -482,9 +591,9 @@ Partial Class JobOrder
         Me.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSave.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSave.ForeColor = System.Drawing.Color.Gold
-        Me.btnSave.Location = New System.Drawing.Point(824, -1)
+        Me.btnSave.Location = New System.Drawing.Point(807, -1)
         Me.btnSave.Name = "btnSave"
-        Me.btnSave.Size = New System.Drawing.Size(102, 51)
+        Me.btnSave.Size = New System.Drawing.Size(102, 52)
         Me.btnSave.TabIndex = 223
         Me.btnSave.Text = "Save"
         Me.btnSave.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -499,7 +608,7 @@ Partial Class JobOrder
         Me.btnSearchPlate.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSearchPlate.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.btnSearchPlate.Image = CType(resources.GetObject("btnSearchPlate.Image"), System.Drawing.Image)
-        Me.btnSearchPlate.Location = New System.Drawing.Point(351, 145)
+        Me.btnSearchPlate.Location = New System.Drawing.Point(342, 153)
         Me.btnSearchPlate.Name = "btnSearchPlate"
         Me.btnSearchPlate.Size = New System.Drawing.Size(28, 26)
         Me.btnSearchPlate.TabIndex = 222
@@ -513,7 +622,7 @@ Partial Class JobOrder
         Me.btnBrowseInspect.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnBrowseInspect.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBrowseInspect.ForeColor = System.Drawing.Color.Gold
-        Me.btnBrowseInspect.Location = New System.Drawing.Point(260, 563)
+        Me.btnBrowseInspect.Location = New System.Drawing.Point(252, 762)
         Me.btnBrowseInspect.Name = "btnBrowseInspect"
         Me.btnBrowseInspect.Size = New System.Drawing.Size(119, 26)
         Me.btnBrowseInspect.TabIndex = 221
@@ -525,15 +634,15 @@ Partial Class JobOrder
         Me.TextBox14.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
         Me.TextBox14.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TextBox14.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox14.Location = New System.Drawing.Point(32, 595)
+        Me.TextBox14.Location = New System.Drawing.Point(19, 794)
         Me.TextBox14.Name = "TextBox14"
-        Me.TextBox14.Size = New System.Drawing.Size(319, 26)
+        Me.TextBox14.Size = New System.Drawing.Size(324, 26)
         Me.TextBox14.TabIndex = 220
         '
         'Label17
         '
         Me.Label17.AutoSize = True
-        Me.Label17.Location = New System.Drawing.Point(28, 566)
+        Me.Label17.Location = New System.Drawing.Point(15, 765)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(166, 21)
         Me.Label17.TabIndex = 219
@@ -543,7 +652,7 @@ Partial Class JobOrder
         '
         Me.cbxFuel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.cbxFuel.FormattingEnabled = True
-        Me.cbxFuel.Location = New System.Drawing.Point(135, 497)
+        Me.cbxFuel.Location = New System.Drawing.Point(126, 538)
         Me.cbxFuel.Name = "cbxFuel"
         Me.cbxFuel.Size = New System.Drawing.Size(244, 29)
         Me.cbxFuel.TabIndex = 218
@@ -551,7 +660,7 @@ Partial Class JobOrder
         'Label16
         '
         Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(24, 500)
+        Me.Label16.Location = New System.Drawing.Point(15, 541)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(37, 21)
         Me.Label16.TabIndex = 217
@@ -562,7 +671,7 @@ Partial Class JobOrder
         Me.txtEngine.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
         Me.txtEngine.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtEngine.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtEngine.Location = New System.Drawing.Point(135, 465)
+        Me.txtEngine.Location = New System.Drawing.Point(126, 506)
         Me.txtEngine.Name = "txtEngine"
         Me.txtEngine.Size = New System.Drawing.Size(244, 26)
         Me.txtEngine.TabIndex = 216
@@ -570,7 +679,7 @@ Partial Class JobOrder
         'Label15
         '
         Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(24, 463)
+        Me.Label15.Location = New System.Drawing.Point(15, 504)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(82, 21)
         Me.Label15.TabIndex = 215
@@ -581,7 +690,7 @@ Partial Class JobOrder
         Me.txtColor.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
         Me.txtColor.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtColor.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtColor.Location = New System.Drawing.Point(135, 401)
+        Me.txtColor.Location = New System.Drawing.Point(126, 442)
         Me.txtColor.Name = "txtColor"
         Me.txtColor.Size = New System.Drawing.Size(244, 26)
         Me.txtColor.TabIndex = 214
@@ -589,7 +698,7 @@ Partial Class JobOrder
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(24, 404)
+        Me.Label14.Location = New System.Drawing.Point(15, 445)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(46, 21)
         Me.Label14.TabIndex = 213
@@ -600,7 +709,7 @@ Partial Class JobOrder
         Me.txtMileage.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
         Me.txtMileage.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtMileage.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtMileage.Location = New System.Drawing.Point(135, 433)
+        Me.txtMileage.Location = New System.Drawing.Point(126, 474)
         Me.txtMileage.Name = "txtMileage"
         Me.txtMileage.Size = New System.Drawing.Size(244, 26)
         Me.txtMileage.TabIndex = 212
@@ -608,7 +717,7 @@ Partial Class JobOrder
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(24, 432)
+        Me.Label13.Location = New System.Drawing.Point(15, 473)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(62, 21)
         Me.Label13.TabIndex = 211
@@ -619,7 +728,7 @@ Partial Class JobOrder
         Me.txtVin.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
         Me.txtVin.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtVin.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtVin.Location = New System.Drawing.Point(135, 369)
+        Me.txtVin.Location = New System.Drawing.Point(126, 410)
         Me.txtVin.Name = "txtVin"
         Me.txtVin.Size = New System.Drawing.Size(244, 26)
         Me.txtVin.TabIndex = 210
@@ -627,7 +736,7 @@ Partial Class JobOrder
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(24, 372)
+        Me.Label12.Location = New System.Drawing.Point(15, 413)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(112, 21)
         Me.Label12.TabIndex = 209
@@ -638,7 +747,7 @@ Partial Class JobOrder
         Me.txtPlateno.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
         Me.txtPlateno.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtPlateno.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPlateno.Location = New System.Drawing.Point(135, 145)
+        Me.txtPlateno.Location = New System.Drawing.Point(126, 153)
         Me.txtPlateno.Name = "txtPlateno"
         Me.txtPlateno.Size = New System.Drawing.Size(216, 26)
         Me.txtPlateno.TabIndex = 208
@@ -646,7 +755,7 @@ Partial Class JobOrder
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(24, 148)
+        Me.Label11.Location = New System.Drawing.Point(15, 156)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(69, 21)
         Me.Label11.TabIndex = 207
@@ -657,16 +766,17 @@ Partial Class JobOrder
         Me.txtAddress.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
         Me.txtAddress.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtAddress.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtAddress.Location = New System.Drawing.Point(135, 273)
+        Me.txtAddress.Location = New System.Drawing.Point(126, 281)
         Me.txtAddress.Multiline = True
         Me.txtAddress.Name = "txtAddress"
+        Me.txtAddress.ReadOnly = True
         Me.txtAddress.Size = New System.Drawing.Size(244, 58)
         Me.txtAddress.TabIndex = 203
         '
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(24, 276)
+        Me.Label9.Location = New System.Drawing.Point(15, 284)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(67, 21)
         Me.Label9.TabIndex = 202
@@ -677,15 +787,16 @@ Partial Class JobOrder
         Me.txtContact.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
         Me.txtContact.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtContact.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtContact.Location = New System.Drawing.Point(135, 209)
+        Me.txtContact.Location = New System.Drawing.Point(126, 217)
         Me.txtContact.Name = "txtContact"
+        Me.txtContact.ReadOnly = True
         Me.txtContact.Size = New System.Drawing.Size(244, 26)
         Me.txtContact.TabIndex = 201
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(24, 210)
+        Me.Label8.Location = New System.Drawing.Point(15, 218)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(89, 21)
         Me.Label8.TabIndex = 200
@@ -696,15 +807,16 @@ Partial Class JobOrder
         Me.txtEmail.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
         Me.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtEmail.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtEmail.Location = New System.Drawing.Point(135, 241)
+        Me.txtEmail.Location = New System.Drawing.Point(126, 249)
         Me.txtEmail.Name = "txtEmail"
+        Me.txtEmail.ReadOnly = True
         Me.txtEmail.Size = New System.Drawing.Size(244, 26)
         Me.txtEmail.TabIndex = 199
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(24, 244)
+        Me.Label7.Location = New System.Drawing.Point(15, 252)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(45, 21)
         Me.Label7.TabIndex = 198
@@ -715,15 +827,16 @@ Partial Class JobOrder
         Me.txtName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
         Me.txtName.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtName.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtName.Location = New System.Drawing.Point(135, 177)
+        Me.txtName.Location = New System.Drawing.Point(126, 185)
         Me.txtName.Name = "txtName"
+        Me.txtName.ReadOnly = True
         Me.txtName.Size = New System.Drawing.Size(244, 26)
         Me.txtName.TabIndex = 197
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(24, 180)
+        Me.Label6.Location = New System.Drawing.Point(15, 188)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(50, 21)
         Me.Label6.TabIndex = 196
@@ -734,7 +847,7 @@ Partial Class JobOrder
         Me.txtDateReceived.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
         Me.txtDateReceived.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtDateReceived.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtDateReceived.Location = New System.Drawing.Point(135, 113)
+        Me.txtDateReceived.Location = New System.Drawing.Point(126, 121)
         Me.txtDateReceived.Name = "txtDateReceived"
         Me.txtDateReceived.Size = New System.Drawing.Size(244, 26)
         Me.txtDateReceived.TabIndex = 192
@@ -742,7 +855,7 @@ Partial Class JobOrder
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(24, 116)
+        Me.Label2.Location = New System.Drawing.Point(15, 124)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(101, 21)
         Me.Label2.TabIndex = 191
@@ -753,7 +866,7 @@ Partial Class JobOrder
         Me.txtJobID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
         Me.txtJobID.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtJobID.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtJobID.Location = New System.Drawing.Point(135, 81)
+        Me.txtJobID.Location = New System.Drawing.Point(126, 89)
         Me.txtJobID.Name = "txtJobID"
         Me.txtJobID.ReadOnly = True
         Me.txtJobID.Size = New System.Drawing.Size(244, 26)
@@ -762,7 +875,7 @@ Partial Class JobOrder
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(24, 84)
+        Me.Label4.Location = New System.Drawing.Point(15, 92)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(52, 21)
         Me.Label4.TabIndex = 189
@@ -776,9 +889,9 @@ Partial Class JobOrder
         Me.btnAddEditClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAddEditClose.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAddEditClose.ForeColor = System.Drawing.Color.Gold
-        Me.btnAddEditClose.Location = New System.Drawing.Point(925, -1)
+        Me.btnAddEditClose.Location = New System.Drawing.Point(908, -1)
         Me.btnAddEditClose.Name = "btnAddEditClose"
-        Me.btnAddEditClose.Size = New System.Drawing.Size(102, 51)
+        Me.btnAddEditClose.Size = New System.Drawing.Size(102, 52)
         Me.btnAddEditClose.TabIndex = 188
         Me.btnAddEditClose.Text = "Close"
         Me.btnAddEditClose.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -793,7 +906,7 @@ Partial Class JobOrder
         Me.lblAddedit.ForeColor = System.Drawing.Color.Gold
         Me.lblAddedit.Location = New System.Drawing.Point(-1, 0)
         Me.lblAddedit.Name = "lblAddedit"
-        Me.lblAddedit.Size = New System.Drawing.Size(1030, 50)
+        Me.lblAddedit.Size = New System.Drawing.Size(1013, 51)
         Me.lblAddedit.TabIndex = 0
         Me.lblAddedit.Text = "Add new Job Order"
         Me.lblAddedit.TextAlign = System.Drawing.ContentAlignment.BottomLeft
@@ -801,6 +914,43 @@ Partial Class JobOrder
         'timerAnimate
         '
         Me.timerAnimate.Interval = 1
+        '
+        'pnl_items
+        '
+        Me.pnl_items.Location = New System.Drawing.Point(19, 101)
+        Me.pnl_items.Name = "pnl_items"
+        Me.pnl_items.Size = New System.Drawing.Size(990, 418)
+        Me.pnl_items.TabIndex = 246
+        Me.pnl_items.Visible = False
+        '
+        'Label24
+        '
+        Me.Label24.AutoSize = True
+        Me.Label24.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label24.Location = New System.Drawing.Point(886, 153)
+        Me.Label24.Name = "Label24"
+        Me.Label24.Size = New System.Drawing.Size(50, 21)
+        Me.Label24.TabIndex = 247
+        Me.Label24.Text = "Total:"
+        '
+        'Label25
+        '
+        Me.Label25.AutoSize = True
+        Me.Label25.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label25.Location = New System.Drawing.Point(886, 414)
+        Me.Label25.Name = "Label25"
+        Me.Label25.Size = New System.Drawing.Size(50, 21)
+        Me.Label25.TabIndex = 248
+        Me.Label25.Text = "Total:"
+        '
+        'Label26
+        '
+        Me.Label26.AutoSize = True
+        Me.Label26.Location = New System.Drawing.Point(1008, 817)
+        Me.Label26.Name = "Label26"
+        Me.Label26.Size = New System.Drawing.Size(0, 21)
+        Me.Label26.TabIndex = 249
+        Me.Label26.Visible = False
         '
         'JobOrder
         '
@@ -810,6 +960,7 @@ Partial Class JobOrder
         Me.BackColor = System.Drawing.Color.Silver
         Me.Controls.Add(Me.pnlAddEdit)
         Me.Controls.Add(Me.pnlMain)
+        Me.Controls.Add(Me.pnl_items)
         Me.Name = "JobOrder"
         Me.Size = New System.Drawing.Size(1030, 697)
         Me.pnlMain.ResumeLayout(False)
@@ -881,5 +1032,20 @@ Partial Class JobOrder
     Friend WithEvents Label20 As System.Windows.Forms.Label
     Friend WithEvents btnSearchService As System.Windows.Forms.Button
     Friend WithEvents btnSearchParts As System.Windows.Forms.Button
+    Friend WithEvents Label21 As System.Windows.Forms.Label
+    Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
+    Friend WithEvents ComboBox2 As System.Windows.Forms.ComboBox
+    Friend WithEvents Label22 As System.Windows.Forms.Label
+    Friend WithEvents pnl_items As System.Windows.Forms.Panel
+    Friend WithEvents ColumnHeader5 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents txtBrand As System.Windows.Forms.TextBox
+    Friend WithEvents Label23 As System.Windows.Forms.Label
+    Friend WithEvents ColumnHeader8 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents ColumnHeader9 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents ColumnHeader7 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents ColumnHeader6 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents Label26 As System.Windows.Forms.Label
+    Friend WithEvents Label25 As System.Windows.Forms.Label
+    Friend WithEvents Label24 As System.Windows.Forms.Label
 
 End Class

@@ -4,6 +4,7 @@
 
     Dim db As New DBHelper(My.Settings.connectionString)
     Dim dr As SqlClient.SqlDataReader
+    Dim itm As ListViewItem
     Dim cmd As SqlClient.SqlCommand
     Private Sub showAddEdit(mode As Boolean)
         pnlAddEdit.Visible = mode
@@ -14,9 +15,14 @@
     End Sub
     Private Sub btnAddNew_Click(sender As Object, e As EventArgs) Handles btnAddNew.Click
         btnAddNewClick = True
+        lblAddedit.Text = "   Add new service"
+        Label4.Visible = False
+        txtServiceID.Visible = False
         showAddEdit(True)
+
+
         If pnlAddEdit.Height <> 200 Then
-            lblAddedit.Text = "   Add new service"
+
             timerAnimate.Start()
         End If
     End Sub
@@ -44,6 +50,9 @@
     Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
         Dim selected_count As Integer
         selected_count = lvServices.SelectedItems.Count
+        Label4.Visible = True
+        txtServiceID.Visible = True
+        lblAddedit.Text = "   Update service"
         If selected_count = 1 Then
             With lvServices.SelectedItems.Item(0)
                 txtServiceID.Text = .SubItems(0).Text.ToString
@@ -53,7 +62,7 @@
             btnAddNewClick = True
             showAddEdit(True)
             If pnlAddEdit.Height <> 200 Then
-                lblAddedit.Text = "   Update service"
+
                 timerAnimate.Start()
             End If
         ElseIf selected_count >= 1 Then
@@ -99,10 +108,11 @@
         End If
     End Sub
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
-        If txtServiceFee.Text = "" Or txtServiceName.Text = "" Or Val(txtServiceFee.Text) <= 0 Then
-            MsgBox("Invalid Service name/ Service Fee.", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Invalid Data")
-            Exit Sub
-        End If
+        If correctInputs() = False Then Exit Sub
+        'If txtServiceFee.Text = "" Or txtServiceName.Text = "" Or Val(txtServiceFee.Text) <= 0 Then
+        '    MsgBox("Invalid Service name/ Service Fee.", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Invalid Data")
+        '    Exit Sub
+        'End If
         Try
             Dim parameters As New Dictionary(Of String, Object)
             parameters.Add("service_name", txtServiceName.Text.ToString)
@@ -113,43 +123,47 @@
                 If (db.ExecuteNonQuery("UPDATE tbl_services SET service_name=@service_name,service_fee=@service_fee WHERE service_id=@service_id", parameters) > 0) Then
                     MsgBox("Record Update!", MsgBoxStyle.OkOnly + MsgBoxStyle.Information, "Save Succesful")
                 End If
-                loadServiceListview()
+                load_Listview()
             Else
                 '@ Insert New record
                 If db.ExecuteNonQuery("INSERT INTO tbl_services(service_name,service_fee) VALUES(@service_name,@service_fee)", parameters) > 0 Then
                     MsgBox("New Record Added", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Save Succesful")
-                    loadServiceListview()
+                    load_Listview()
                 End If
             End If
+            ClearTextBoxes()
         Catch ex As Exception
+
+            MsgBox("Error occured!" & vbCrLf & ex.ToString, vbCritical + vbOKOnly, "Error")
+
         Finally
             db.Dispose()
         End Try
         btnAddEditClose_Click(sender, e)
     End Sub
     Private Sub loadPerCarBrandListview()
-        lvw_PerCarBrand.Items.Clear()
-        Dim parameters As New Dictionary(Of String, Object)
-        parameters.Add("service_id", lvServices.SelectedItems.Item(0).SubItems(0).Text)
-        Try
-            dr = db.ExecuteReader("SELECT scb_id,sc.service_fee,c.name FROM tbl_services_carbrands as sc JOIN tbl_car_brands c ON sc.car_brand_id=c.car_brand_id WHERE sc.service_id=@service_id", parameters)
-            If dr.HasRows Then
-                While dr.Read
-                    With Me.lvw_PerCarBrand.Items.Add(dr.Item("scb_id").ToString)
-                        .SubItems.Add(dr.Item("name").ToString)
-                        .SubItems.Add(StrToNum(dr.Item("service_fee").ToString))
-                    End With
-                End While
+        'lvw_PerCarBrand.Items.Clear()
+        'Dim parameters As New Dictionary(Of String, Object)
+        'parameters.Add("service_id", lvServices.SelectedItems.Item(0).SubItems(0).Text)
+        'Try
+        '    dr = db.ExecuteReader("SELECT scb_id,sc.service_fee,c.name FROM tbl_services_carbrands as sc JOIN tbl_car_brands c ON sc.car_brand_id=c.car_brand_id WHERE sc.service_id=@service_id", parameters)
+        '    If dr.HasRows Then
+        '        While dr.Read
+        '            With Me.lvw_PerCarBrand.Items.Add(dr.Item("scb_id").ToString)
+        '                .SubItems.Add(dr.Item("name").ToString)
+        '                .SubItems.Add(StrToNum(dr.Item("service_fee").ToString))
+        '            End With
+        '        End While
 
-            Else
-                MsgBox("No Record found", MsgBoxStyle.OkOnly + MsgBoxStyle.Information, "No record found")
-            End If
+        '    Else
+        '        MsgBox("No Record found", MsgBoxStyle.OkOnly + MsgBoxStyle.Information, "No record found")
+        '    End If
 
-        Catch ex As Exception
-            MsgBox(ex.ToString)
-        Finally
-            db.Dispose()
-        End Try
+        'Catch ex As Exception
+        '    MsgBox(ex.ToString)
+        'Finally
+        '    db.Dispose()
+        'End Try
     End Sub
     Private Sub loadCarBrands()
         'If (lvw_PerCarBrand.Items.Count > 1) Then
@@ -167,29 +181,29 @@
         'Else
 
         'End If
-        cbo_carbrand.Items.Clear()
-        dr = db.ExecuteReader("SELECT car_brand_id,name FROM tbl_car_brands")
+        'cbo_carbrand.Items.Clear()
+        'dr = db.ExecuteReader("SELECT car_brand_id,name FROM tbl_car_brands")
 
-        If dr.HasRows Then
-            Do While dr.Read
-                cbo_carbrand.Items.Add(dr.Item("name") & "                                                                                   000" & dr.Item("car_brand_id"))
-            Loop
-        End If
+        'If dr.HasRows Then
+        '    Do While dr.Read
+        '        cbo_carbrand.Items.Add(dr.Item("name") & "                                                                                   000" & dr.Item("car_brand_id"))
+        '    Loop
+        'End If
     End Sub
-    Private Sub loadServiceListview()
+    Public Sub load_Listview()
         Dim parameters As New Dictionary(Of String, Object)
         lvServices.Items.Clear()
         Dim Item As ListViewItem
-        parameters.Add("keyword", "%" & txtSearch.Text & "%")
+
 
         Try
-            dr = db.ExecuteReader("SELECT service_id,service_name,service_fee FROM tbl_services WHERE service_name LIKE @keyword", parameters)
+            dr = db.ExecuteReader("SELECT service_id,service_name,service_fee FROM tbl_services")
             If dr.HasRows Then
                 Do While dr.Read
                     Item = Me.lvServices.Items.Add(dr.Item("service_id").ToString)
                     With Item
                         .SubItems.Add(dr.Item("service_name"))
-                        .SubItems.Add(StrToNum(dr.Item("service_fee"), 2))
+                        .SubItems.Add(StrToNum(dr.Item("service_fee")))
                     End With
 
                     'With Me.lvServices.Items.Add(dr.Item("service_id").ToString)
@@ -197,22 +211,19 @@
                     '    .SubItems.Add(dr.Item("service_fee").ToString)
                     'End With
                 Loop
+                ToolStripStatusLabel1.Text = "Count: " & lvServices.Items.Count
             Else
                 MsgBox("No record of services", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "No services")
             End If
         Catch ex As Exception
-            MsgBox(ex.ToString)
+            MsgBox("Error occured!" & vbCrLf & ex.ToString, vbCritical + vbOKOnly, "Error")
         Finally
             db.Dispose()
         End Try
     End Sub
-    Private Sub Services_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        loadServiceListview()
-    End Sub
 
-    Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
-        loadServiceListview()
-    End Sub
+
+
 
     Private Sub btn_PricePerCarBrand_Click(sender As Object, e As EventArgs) Handles btn_PricePerCarBrand.Click
         Dim selected_count As Integer
@@ -278,4 +289,59 @@
         use_form(False)
 
     End Sub
+
+    Private Sub btn_PerCarBrandSave_Click(sender As Object, e As EventArgs) Handles btn_PerCarBrandSave.Click
+
+    End Sub
+
+    Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
+        Try
+            dr = db.ExecuteReader("SELECT * FROM tbl_services WHERE service_id LIKE '%" & txtSearch.Text & "%' OR " & _
+                                  " service_name LIKE '%" & txtSearch.Text & "%'")
+            If dr.HasRows Then
+                Do While dr.Read
+                    itm = lvServices.Items.Add(dr.Item("service_id"))
+                    itm.SubItems.Add(dr.Item("service name"))
+                    itm.SubItems.Add(StrToNum(dr.Item("service fee")))
+                Loop
+            Else
+
+            End If
+            ToolStripStatusLabel1.Text = "Count: " & lvServices.Items.Count
+        Catch ex As Exception
+            MsgBox("Error occured!" & vbCrLf & ex.ToString, vbCritical + vbOKOnly, "Error")
+        Finally
+            db.Dispose()
+        End Try
+    End Sub
+    Public Sub ClearTextBoxes(Optional ByVal ctlcol As Control.ControlCollection = Nothing)
+        If ctlcol Is Nothing Then ctlcol = Me.Controls
+        For Each ctl As Control In ctlcol
+            If TypeOf (ctl) Is TextBox Then
+                DirectCast(ctl, TextBox).Clear()
+            Else
+                If Not ctl.Controls Is Nothing OrElse ctl.Controls.Count <> 0 Then
+                    ClearTextBoxes(ctl.Controls)
+                End If
+            End If
+        Next
+    End Sub
+    Private Function correctInputs()
+        If txtServiceName.Text = "" Or txtServiceFee.Text = "" Then
+            MsgBox("Some fields are empty", vbExclamation + vbOKOnly, "Empty fields")
+            Return False
+        Else
+            Return True
+        End If
+
+
+    End Function
+
+    Private Sub txtSearch_KeyDown(sender As Object, e As KeyEventArgs) Handles txtSearch.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            btnSearch_Click(sender, e)
+        End If
+    End Sub
+
+ 
 End Class

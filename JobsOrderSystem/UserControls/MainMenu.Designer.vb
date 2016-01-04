@@ -38,6 +38,9 @@ Partial Class MainMenu
         Me.btnClients = New System.Windows.Forms.Button()
         Me.btnJobOrderList = New System.Windows.Forms.Button()
         Me.btnCarBrands = New System.Windows.Forms.Button()
+        Me.btnNotification = New System.Windows.Forms.Button()
+        Me.pnlNoti = New System.Windows.Forms.Panel()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.SuspendLayout()
         '
         'lblMainMenu
@@ -62,7 +65,7 @@ Partial Class MainMenu
         Me.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnLogOut.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnLogOut.ForeColor = System.Drawing.Color.Gold
-        Me.btnLogOut.Location = New System.Drawing.Point(876, 27)
+        Me.btnLogOut.Location = New System.Drawing.Point(910, 27)
         Me.btnLogOut.Name = "btnLogOut"
         Me.btnLogOut.Size = New System.Drawing.Size(76, 51)
         Me.btnLogOut.TabIndex = 193
@@ -114,7 +117,7 @@ Partial Class MainMenu
         Me.btnSalesInvoice.Name = "btnSalesInvoice"
         Me.btnSalesInvoice.Size = New System.Drawing.Size(140, 123)
         Me.btnSalesInvoice.TabIndex = 187
-        Me.btnSalesInvoice.Text = "Supplier invoice"
+        Me.btnSalesInvoice.Text = "Supplier &invoice"
         Me.btnSalesInvoice.TextAlign = System.Drawing.ContentAlignment.BottomLeft
         Me.btnSalesInvoice.UseVisualStyleBackColor = False
         '
@@ -130,7 +133,7 @@ Partial Class MainMenu
         Me.btnAddNewJO.Name = "btnAddNewJO"
         Me.btnAddNewJO.Size = New System.Drawing.Size(287, 123)
         Me.btnAddNewJO.TabIndex = 186
-        Me.btnAddNewJO.Text = "New job order"
+        Me.btnAddNewJO.Text = "&New job order"
         Me.btnAddNewJO.TextAlign = System.Drawing.ContentAlignment.BottomLeft
         Me.btnAddNewJO.UseVisualStyleBackColor = False
         '
@@ -146,7 +149,7 @@ Partial Class MainMenu
         Me.btnReports.Name = "btnReports"
         Me.btnReports.Size = New System.Drawing.Size(287, 248)
         Me.btnReports.TabIndex = 184
-        Me.btnReports.Text = "Reports"
+        Me.btnReports.Text = "&Reports"
         Me.btnReports.TextAlign = System.Drawing.ContentAlignment.BottomLeft
         Me.btnReports.UseVisualStyleBackColor = False
         '
@@ -162,7 +165,7 @@ Partial Class MainMenu
         Me.btnUsers.Name = "btnUsers"
         Me.btnUsers.Size = New System.Drawing.Size(140, 123)
         Me.btnUsers.TabIndex = 183
-        Me.btnUsers.Text = "Users"
+        Me.btnUsers.Text = "&Users"
         Me.btnUsers.TextAlign = System.Drawing.ContentAlignment.BottomLeft
         Me.btnUsers.UseVisualStyleBackColor = False
         '
@@ -178,7 +181,7 @@ Partial Class MainMenu
         Me.btnServices.Name = "btnServices"
         Me.btnServices.Size = New System.Drawing.Size(287, 123)
         Me.btnServices.TabIndex = 182
-        Me.btnServices.Text = "Services"
+        Me.btnServices.Text = "&Services"
         Me.btnServices.TextAlign = System.Drawing.ContentAlignment.BottomLeft
         Me.btnServices.UseVisualStyleBackColor = False
         '
@@ -194,7 +197,7 @@ Partial Class MainMenu
         Me.btnItems.Name = "btnItems"
         Me.btnItems.Size = New System.Drawing.Size(287, 123)
         Me.btnItems.TabIndex = 181
-        Me.btnItems.Text = "Parts"
+        Me.btnItems.Text = "&Parts"
         Me.btnItems.TextAlign = System.Drawing.ContentAlignment.BottomLeft
         Me.btnItems.UseVisualStyleBackColor = False
         '
@@ -210,7 +213,7 @@ Partial Class MainMenu
         Me.btnClients.Name = "btnClients"
         Me.btnClients.Size = New System.Drawing.Size(287, 248)
         Me.btnClients.TabIndex = 178
-        Me.btnClients.Text = "Car List"
+        Me.btnClients.Text = "&Car List"
         Me.btnClients.TextAlign = System.Drawing.ContentAlignment.BottomLeft
         Me.btnClients.UseVisualStyleBackColor = False
         '
@@ -226,7 +229,7 @@ Partial Class MainMenu
         Me.btnJobOrderList.Name = "btnJobOrderList"
         Me.btnJobOrderList.Size = New System.Drawing.Size(287, 248)
         Me.btnJobOrderList.TabIndex = 177
-        Me.btnJobOrderList.Text = "Job Order List"
+        Me.btnJobOrderList.Text = "&Job Order List"
         Me.btnJobOrderList.TextAlign = System.Drawing.ContentAlignment.BottomLeft
         Me.btnJobOrderList.UseVisualStyleBackColor = False
         '
@@ -242,9 +245,39 @@ Partial Class MainMenu
         Me.btnCarBrands.Name = "btnCarBrands"
         Me.btnCarBrands.Size = New System.Drawing.Size(287, 123)
         Me.btnCarBrands.TabIndex = 185
-        Me.btnCarBrands.Text = "Car brands"
+        Me.btnCarBrands.Text = "Car &brands"
         Me.btnCarBrands.TextAlign = System.Drawing.ContentAlignment.BottomLeft
         Me.btnCarBrands.UseVisualStyleBackColor = False
+        '
+        'btnNotification
+        '
+        Me.btnNotification.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnNotification.BackColor = System.Drawing.Color.MidnightBlue
+        Me.btnNotification.FlatAppearance.BorderSize = 0
+        Me.btnNotification.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnNotification.Font = New System.Drawing.Font("Segoe UI", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnNotification.ForeColor = System.Drawing.Color.Gold
+        Me.btnNotification.Location = New System.Drawing.Point(839, 27)
+        Me.btnNotification.Name = "btnNotification"
+        Me.btnNotification.Size = New System.Drawing.Size(61, 51)
+        Me.btnNotification.TabIndex = 196
+        Me.btnNotification.Text = "!"
+        Me.btnNotification.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnNotification.UseVisualStyleBackColor = False
+        Me.btnNotification.Visible = False
+        '
+        'pnlNoti
+        '
+        Me.pnlNoti.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.pnlNoti.BackColor = System.Drawing.Color.MidnightBlue
+        Me.pnlNoti.Location = New System.Drawing.Point(635, 78)
+        Me.pnlNoti.Name = "pnlNoti"
+        Me.pnlNoti.Size = New System.Drawing.Size(265, 0)
+        Me.pnlNoti.TabIndex = 197
+        '
+        'Timer1
+        '
+        Me.Timer1.Interval = 1
         '
         'MainMenu
         '
@@ -252,6 +285,8 @@ Partial Class MainMenu
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.BackColor = System.Drawing.Color.Silver
+        Me.Controls.Add(Me.pnlNoti)
+        Me.Controls.Add(Me.btnNotification)
         Me.Controls.Add(Me.lblDate)
         Me.Controls.Add(Me.lblTime)
         Me.Controls.Add(Me.btnLogOut)
@@ -285,5 +320,8 @@ Partial Class MainMenu
     Friend WithEvents lblDate As System.Windows.Forms.Label
     Friend WithEvents lblTime As System.Windows.Forms.Label
     Friend WithEvents timerAnimate As System.Windows.Forms.Timer
+    Friend WithEvents btnNotification As System.Windows.Forms.Button
+    Friend WithEvents pnlNoti As System.Windows.Forms.Panel
+    Friend WithEvents Timer1 As System.Windows.Forms.Timer
 
 End Class

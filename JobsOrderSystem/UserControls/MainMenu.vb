@@ -1,13 +1,18 @@
 ﻿Public Class MainMenu
+    Dim timerStopper As String
+    Dim btnNoti As Boolean = False
     Private Sub btnJobOrderList_Click(sender As Object, e As EventArgs) Handles btnJobOrderList.Click
         showUSC(uscJobOrder)
     End Sub
 
     Private Sub btnItems_Click(sender As Object, e As EventArgs) Handles btnItems.Click
+        uscItem.load_items()
         showUSC(uscItem)
+
     End Sub
 
     Private Sub btnServices_Click(sender As Object, e As EventArgs) Handles btnServices.Click
+        uscServices.load_Listview()
         showUSC(uscServices)
     End Sub
 
@@ -50,12 +55,14 @@
         timerAnimate.Enabled = True
     End Sub
 
- 
+
     Private Sub btnClients_Click_1(sender As Object, e As EventArgs) Handles btnClients.Click
+        uscCars.loadCars()
         showUSC(uscCars)
     End Sub
 
     Private Sub btnCarBrands_Click(sender As Object, e As EventArgs) Handles btnCarBrands.Click
+        uscCarBrands.loadCarBrands()
         showUSC(uscCarBrands)
     End Sub
 
@@ -74,13 +81,44 @@
 
     End Sub
 
-   
-    Private Sub MainMenu_Scroll(sender As Object, e As ScrollEventArgs) Handles Me.Scroll
 
-    End Sub
 
     Private Sub btnAddNewJO_Click(sender As Object, e As EventArgs) Handles btnAddNewJO.Click
         showUSC(uscJobOrder)
         uscJobOrder.btnAddNew.PerformClick()
+    End Sub
+
+    Private Sub btnNotification_Click(sender As Object, e As EventArgs) Handles btnNotification.Click
+
+        If btnNoti = False Then
+            btnNoti = True
+        Else
+            btnNoti = False
+        End If
+        Timer1.Start()
+    End Sub
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        If btnNoti = True Then
+            timerStopper = pnlNoti.Height
+            If timerStopper = 300 Then
+                Timer1.Stop()
+
+
+                Exit Sub
+            End If
+            pnlNoti.Height += 50
+        Else
+            timerStopper = pnlNoti.Height
+            If timerStopper = 0 Then
+
+                Timer1.Stop()
+                Exit Sub
+            End If
+            pnlNoti.Height -= 50
+        End If
+    End Sub
+    Private Sub notiBoom()
+
     End Sub
 End Class

@@ -25,6 +25,8 @@ Partial Class CarBrands
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CarBrands))
         Me.pnlMain = New System.Windows.Forms.Panel()
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
+        Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.btnBack = New System.Windows.Forms.Button()
         Me.btnSearch = New System.Windows.Forms.Button()
         Me.btnAddNew = New System.Windows.Forms.Button()
@@ -35,6 +37,7 @@ Partial Class CarBrands
         Me.lvCarBrands = New System.Windows.Forms.ListView()
         Me.chCBID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Label1 = New System.Windows.Forms.Label()
         Me.pnlAddEdit = New System.Windows.Forms.Panel()
         Me.txtPercent = New System.Windows.Forms.TextBox()
@@ -47,8 +50,8 @@ Partial Class CarBrands
         Me.btnAddEditClose = New System.Windows.Forms.Button()
         Me.lblAddedit = New System.Windows.Forms.Label()
         Me.timerAnimate = New System.Windows.Forms.Timer(Me.components)
-        Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.pnlMain.SuspendLayout()
+        Me.StatusStrip1.SuspendLayout()
         Me.pnlAddEdit.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -58,6 +61,7 @@ Partial Class CarBrands
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.pnlMain.BackColor = System.Drawing.Color.Silver
+        Me.pnlMain.Controls.Add(Me.StatusStrip1)
         Me.pnlMain.Controls.Add(Me.btnBack)
         Me.pnlMain.Controls.Add(Me.btnSearch)
         Me.pnlMain.Controls.Add(Me.btnAddNew)
@@ -71,6 +75,22 @@ Partial Class CarBrands
         Me.pnlMain.Name = "pnlMain"
         Me.pnlMain.Size = New System.Drawing.Size(1007, 496)
         Me.pnlMain.TabIndex = 205
+        '
+        'StatusStrip1
+        '
+        Me.StatusStrip1.BackColor = System.Drawing.Color.White
+        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel1})
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 474)
+        Me.StatusStrip1.Name = "StatusStrip1"
+        Me.StatusStrip1.Size = New System.Drawing.Size(1007, 22)
+        Me.StatusStrip1.TabIndex = 218
+        Me.StatusStrip1.Text = "StatusStrip1"
+        '
+        'ToolStripStatusLabel1
+        '
+        Me.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
+        Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(40, 17)
+        Me.ToolStripStatusLabel1.Text = "Count"
         '
         'btnBack
         '
@@ -184,7 +204,7 @@ Partial Class CarBrands
         Me.lvCarBrands.GridLines = True
         Me.lvCarBrands.Location = New System.Drawing.Point(8, 112)
         Me.lvCarBrands.Name = "lvCarBrands"
-        Me.lvCarBrands.Size = New System.Drawing.Size(986, 372)
+        Me.lvCarBrands.Size = New System.Drawing.Size(986, 348)
         Me.lvCarBrands.TabIndex = 210
         Me.lvCarBrands.UseCompatibleStateImageBehavior = False
         Me.lvCarBrands.View = System.Windows.Forms.View.Details
@@ -198,6 +218,11 @@ Partial Class CarBrands
         '
         Me.chName.Text = "Name"
         Me.chName.Width = 302
+        '
+        'ColumnHeader1
+        '
+        Me.ColumnHeader1.Text = "Interest percentage (%)"
+        Me.ColumnHeader1.Width = 555
         '
         'Label1
         '
@@ -227,7 +252,7 @@ Partial Class CarBrands
         Me.pnlAddEdit.Controls.Add(Me.lblAddedit)
         Me.pnlAddEdit.Location = New System.Drawing.Point(328, 27)
         Me.pnlAddEdit.Name = "pnlAddEdit"
-        Me.pnlAddEdit.Size = New System.Drawing.Size(420, 200)
+        Me.pnlAddEdit.Size = New System.Drawing.Size(420, 0)
         Me.pnlAddEdit.TabIndex = 214
         Me.pnlAddEdit.Visible = False
         '
@@ -238,7 +263,7 @@ Partial Class CarBrands
         Me.txtPercent.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtPercent.Location = New System.Drawing.Point(130, 142)
         Me.txtPercent.Name = "txtPercent"
-        Me.txtPercent.Size = New System.Drawing.Size(128, 26)
+        Me.txtPercent.Size = New System.Drawing.Size(72, 26)
         Me.txtPercent.TabIndex = 232
         '
         'Label11
@@ -343,11 +368,6 @@ Partial Class CarBrands
         '
         Me.timerAnimate.Interval = 1
         '
-        'ColumnHeader1
-        '
-        Me.ColumnHeader1.Text = "Interest percentage (%)"
-        Me.ColumnHeader1.Width = 555
-        '
         'CarBrands
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -359,6 +379,8 @@ Partial Class CarBrands
         Me.Size = New System.Drawing.Size(1007, 519)
         Me.pnlMain.ResumeLayout(False)
         Me.pnlMain.PerformLayout()
+        Me.StatusStrip1.ResumeLayout(False)
+        Me.StatusStrip1.PerformLayout()
         Me.pnlAddEdit.ResumeLayout(False)
         Me.pnlAddEdit.PerformLayout()
         Me.ResumeLayout(False)
@@ -388,5 +410,7 @@ Partial Class CarBrands
     Friend WithEvents txtCBID As System.Windows.Forms.TextBox
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents ColumnHeader1 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents StatusStrip1 As System.Windows.Forms.StatusStrip
+    Friend WithEvents ToolStripStatusLabel1 As System.Windows.Forms.ToolStripStatusLabel
 
 End Class

@@ -1,5 +1,6 @@
-﻿Public Class frmMain
-
+﻿
+Public Class frmMain
+   
     Private Sub frmMain_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
         Dim Cancel As Boolean = e.Cancel
         Dim UnloadMode As System.Windows.Forms.CloseReason = e.CloseReason
@@ -15,7 +16,7 @@
     End Sub
 
 
-  
+
     Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         showUSC(uscMainmenu)
     End Sub

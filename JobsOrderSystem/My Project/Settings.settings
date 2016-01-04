@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="connectionString" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Server=ACER\DEV;Database=EJOMSdb;User Id=sa;Password=p@ssword;</Value>
+      <Value Profile="(Default)">Server=.;Database=EJOMSdb;User Id=sa;Password=p@ssword;</Value>
     </Setting>
   </Settings>
 </SettingsFile>

@@ -51,6 +51,7 @@ Partial Class Services
         Me.lblAddedit = New System.Windows.Forms.Label()
         Me.pnl_PerCarBrand = New System.Windows.Forms.Panel()
         Me.pnl_PerCarBrandForm = New System.Windows.Forms.Panel()
+        Me.lbl_scb_id = New System.Windows.Forms.Label()
         Me.btn_PerCarBrandCancel = New System.Windows.Forms.Button()
         Me.cbo_carbrand = New System.Windows.Forms.ComboBox()
         Me.txt_adjusted_price = New System.Windows.Forms.TextBox()
@@ -71,11 +72,13 @@ Partial Class Services
         Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.lbl_scb_id = New System.Windows.Forms.Label()
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
+        Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.pnlMain.SuspendLayout()
         Me.pnlAddEdit.SuspendLayout()
         Me.pnl_PerCarBrand.SuspendLayout()
         Me.pnl_PerCarBrandForm.SuspendLayout()
+        Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'pnlMain
@@ -94,9 +97,9 @@ Partial Class Services
         Me.pnlMain.Controls.Add(Me.Label3)
         Me.pnlMain.Controls.Add(Me.lvServices)
         Me.pnlMain.Controls.Add(Me.Label2)
-        Me.pnlMain.Location = New System.Drawing.Point(0, 27)
+        Me.pnlMain.Location = New System.Drawing.Point(0, 30)
         Me.pnlMain.Name = "pnlMain"
-        Me.pnlMain.Size = New System.Drawing.Size(1072, 508)
+        Me.pnlMain.Size = New System.Drawing.Size(1072, 479)
         Me.pnlMain.TabIndex = 208
         '
         'btn_PricePerCarBrand
@@ -114,6 +117,7 @@ Partial Class Services
         Me.btn_PricePerCarBrand.Text = "Price per Carbrand"
         Me.btn_PricePerCarBrand.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btn_PricePerCarBrand.UseVisualStyleBackColor = False
+        Me.btn_PricePerCarBrand.Visible = False
         '
         'btnAddNew
         '
@@ -226,9 +230,10 @@ Partial Class Services
         Me.lvServices.FullRowSelect = True
         Me.lvServices.GridLines = True
         Me.lvServices.HideSelection = False
-        Me.lvServices.Location = New System.Drawing.Point(13, 112)
+        Me.lvServices.Location = New System.Drawing.Point(3, 112)
+        Me.lvServices.MultiSelect = False
         Me.lvServices.Name = "lvServices"
-        Me.lvServices.Size = New System.Drawing.Size(1051, 383)
+        Me.lvServices.Size = New System.Drawing.Size(1051, 354)
         Me.lvServices.TabIndex = 210
         Me.lvServices.UseCompatibleStateImageBehavior = False
         Me.lvServices.View = System.Windows.Forms.View.Details
@@ -281,7 +286,7 @@ Partial Class Services
         Me.pnlAddEdit.Controls.Add(Me.btnAddEditClose)
         Me.pnlAddEdit.Controls.Add(Me.lblAddedit)
         Me.pnlAddEdit.Font = New System.Drawing.Font("Symbol", 8.25!)
-        Me.pnlAddEdit.Location = New System.Drawing.Point(318, 27)
+        Me.pnlAddEdit.Location = New System.Drawing.Point(318, 30)
         Me.pnlAddEdit.Name = "pnlAddEdit"
         Me.pnlAddEdit.Size = New System.Drawing.Size(437, 200)
         Me.pnlAddEdit.TabIndex = 217
@@ -292,16 +297,17 @@ Partial Class Services
         Me.txtServiceFee.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
         Me.txtServiceFee.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtServiceFee.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtServiceFee.Location = New System.Drawing.Point(163, 143)
+        Me.txtServiceFee.Location = New System.Drawing.Point(163, 137)
         Me.txtServiceFee.Name = "txtServiceFee"
-        Me.txtServiceFee.Size = New System.Drawing.Size(244, 26)
+        Me.txtServiceFee.Size = New System.Drawing.Size(128, 26)
         Me.txtServiceFee.TabIndex = 234
+        Me.txtServiceFee.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label5
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(58, 146)
+        Me.Label5.Location = New System.Drawing.Point(58, 140)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(81, 21)
         Me.Label5.TabIndex = 233
@@ -312,7 +318,7 @@ Partial Class Services
         Me.txtServiceName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
         Me.txtServiceName.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtServiceName.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtServiceName.Location = New System.Drawing.Point(163, 111)
+        Me.txtServiceName.Location = New System.Drawing.Point(163, 105)
         Me.txtServiceName.Name = "txtServiceName"
         Me.txtServiceName.Size = New System.Drawing.Size(244, 26)
         Me.txtServiceName.TabIndex = 232
@@ -321,7 +327,7 @@ Partial Class Services
         '
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(58, 114)
+        Me.Label11.Location = New System.Drawing.Point(58, 108)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(99, 21)
         Me.Label11.TabIndex = 231
@@ -332,7 +338,7 @@ Partial Class Services
         Me.txtServiceID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
         Me.txtServiceID.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtServiceID.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtServiceID.Location = New System.Drawing.Point(163, 79)
+        Me.txtServiceID.Location = New System.Drawing.Point(163, 73)
         Me.txtServiceID.Name = "txtServiceID"
         Me.txtServiceID.ReadOnly = True
         Me.txtServiceID.Size = New System.Drawing.Size(128, 26)
@@ -342,7 +348,7 @@ Partial Class Services
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(58, 84)
+        Me.Label4.Location = New System.Drawing.Point(58, 78)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(76, 21)
         Me.Label4.TabIndex = 227
@@ -432,6 +438,15 @@ Partial Class Services
         Me.pnl_PerCarBrandForm.Name = "pnl_PerCarBrandForm"
         Me.pnl_PerCarBrandForm.Size = New System.Drawing.Size(291, 416)
         Me.pnl_PerCarBrandForm.TabIndex = 243
+        '
+        'lbl_scb_id
+        '
+        Me.lbl_scb_id.AutoSize = True
+        Me.lbl_scb_id.Location = New System.Drawing.Point(183, 39)
+        Me.lbl_scb_id.Name = "lbl_scb_id"
+        Me.lbl_scb_id.Size = New System.Drawing.Size(0, 25)
+        Me.lbl_scb_id.TabIndex = 256
+        Me.lbl_scb_id.Visible = False
         '
         'btn_PerCarBrandCancel
         '
@@ -668,7 +683,7 @@ Partial Class Services
         Me.lvw_PerCarBrand.FullRowSelect = True
         Me.lvw_PerCarBrand.GridLines = True
         Me.lvw_PerCarBrand.HideSelection = False
-        Me.lvw_PerCarBrand.Location = New System.Drawing.Point(16, 68)
+        Me.lvw_PerCarBrand.Location = New System.Drawing.Point(28, 67)
         Me.lvw_PerCarBrand.Name = "lvw_PerCarBrand"
         Me.lvw_PerCarBrand.Size = New System.Drawing.Size(694, 417)
         Me.lvw_PerCarBrand.TabIndex = 235
@@ -690,23 +705,31 @@ Partial Class Services
         Me.ColumnHeader4.Text = "Adjusted Service fee"
         Me.ColumnHeader4.Width = 154
         '
-        'lbl_scb_id
+        'StatusStrip1
         '
-        Me.lbl_scb_id.AutoSize = True
-        Me.lbl_scb_id.Location = New System.Drawing.Point(183, 39)
-        Me.lbl_scb_id.Name = "lbl_scb_id"
-        Me.lbl_scb_id.Size = New System.Drawing.Size(0, 25)
-        Me.lbl_scb_id.TabIndex = 256
-        Me.lbl_scb_id.Visible = False
+        Me.StatusStrip1.BackColor = System.Drawing.Color.White
+        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel1})
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 512)
+        Me.StatusStrip1.Name = "StatusStrip1"
+        Me.StatusStrip1.Size = New System.Drawing.Size(1072, 22)
+        Me.StatusStrip1.TabIndex = 241
+        Me.StatusStrip1.Text = "StatusStrip1"
+        '
+        'ToolStripStatusLabel1
+        '
+        Me.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
+        Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(40, 17)
+        Me.ToolStripStatusLabel1.Text = "Count"
         '
         'Services
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Silver
-        Me.Controls.Add(Me.pnl_PerCarBrand)
+        Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.pnlAddEdit)
         Me.Controls.Add(Me.pnlMain)
+        Me.Controls.Add(Me.pnl_PerCarBrand)
         Me.Name = "Services"
         Me.Size = New System.Drawing.Size(1072, 534)
         Me.pnlMain.ResumeLayout(False)
@@ -716,7 +739,10 @@ Partial Class Services
         Me.pnl_PerCarBrand.ResumeLayout(False)
         Me.pnl_PerCarBrandForm.ResumeLayout(False)
         Me.pnl_PerCarBrandForm.PerformLayout()
+        Me.StatusStrip1.ResumeLayout(False)
+        Me.StatusStrip1.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents pnlMain As System.Windows.Forms.Panel
@@ -767,5 +793,7 @@ Partial Class Services
     Friend WithEvents ColumnHeader3 As System.Windows.Forms.ColumnHeader
     Friend WithEvents ColumnHeader4 As System.Windows.Forms.ColumnHeader
     Friend WithEvents lbl_scb_id As System.Windows.Forms.Label
+    Friend WithEvents StatusStrip1 As System.Windows.Forms.StatusStrip
+    Friend WithEvents ToolStripStatusLabel1 As System.Windows.Forms.ToolStripStatusLabel
 
 End Class

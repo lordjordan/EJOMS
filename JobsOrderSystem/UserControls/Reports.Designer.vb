@@ -35,7 +35,7 @@ Partial Class Reports
         Me.Label1.ForeColor = System.Drawing.Color.Gold
         Me.Label1.Location = New System.Drawing.Point(0, 27)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(795, 51)
+        Me.Label1.Size = New System.Drawing.Size(968, 51)
         Me.Label1.TabIndex = 195
         Me.Label1.Text = "  Reports"
         '
@@ -47,7 +47,7 @@ Partial Class Reports
         Me.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnBack.Font = New System.Drawing.Font("Segoe UI Light", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBack.ForeColor = System.Drawing.Color.Gold
-        Me.btnBack.Location = New System.Drawing.Point(686, 27)
+        Me.btnBack.Location = New System.Drawing.Point(866, 27)
         Me.btnBack.Name = "btnBack"
         Me.btnBack.Size = New System.Drawing.Size(102, 51)
         Me.btnBack.TabIndex = 206
@@ -62,7 +62,7 @@ Partial Class Reports
         Me.Controls.Add(Me.btnBack)
         Me.Controls.Add(Me.Label1)
         Me.Name = "Reports"
-        Me.Size = New System.Drawing.Size(788, 388)
+        Me.Size = New System.Drawing.Size(968, 500)
         Me.ResumeLayout(False)
 
     End Sub

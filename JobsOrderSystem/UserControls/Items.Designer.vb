@@ -33,26 +33,29 @@ Partial Class Items
         Me.btnUpdate = New System.Windows.Forms.Button()
         Me.txtSearch = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.lvCarBrands = New System.Windows.Forms.ListView()
+        Me.lvItems = New System.Windows.Forms.ListView()
         Me.chCBID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.pnlAddEdit = New System.Windows.Forms.Panel()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.txtQuantity = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.txtPrice = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.txtPartsname = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.txtItemID = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
+        Me.lblItemID = New System.Windows.Forms.Label()
         Me.btnSave = New System.Windows.Forms.Button()
         Me.btnAddEditClose = New System.Windows.Forms.Button()
         Me.lblAddedit = New System.Windows.Forms.Label()
         Me.timerAnimate = New System.Windows.Forms.Timer(Me.components)
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
+        Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.pnlMain.SuspendLayout()
         Me.pnlAddEdit.SuspendLayout()
+        Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
@@ -66,7 +69,7 @@ Partial Class Items
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(887, 51)
         Me.Label1.TabIndex = 191
-        Me.Label1.Text = "  Parts"
+        Me.Label1.Text = "Items"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.BottomLeft
         '
         'pnlMain
@@ -82,11 +85,11 @@ Partial Class Items
         Me.pnlMain.Controls.Add(Me.btnUpdate)
         Me.pnlMain.Controls.Add(Me.txtSearch)
         Me.pnlMain.Controls.Add(Me.Label3)
-        Me.pnlMain.Controls.Add(Me.lvCarBrands)
+        Me.pnlMain.Controls.Add(Me.lvItems)
         Me.pnlMain.Controls.Add(Me.Label1)
-        Me.pnlMain.Location = New System.Drawing.Point(0, 26)
+        Me.pnlMain.Location = New System.Drawing.Point(0, 30)
         Me.pnlMain.Name = "pnlMain"
-        Me.pnlMain.Size = New System.Drawing.Size(887, 413)
+        Me.pnlMain.Size = New System.Drawing.Size(887, 409)
         Me.pnlMain.TabIndex = 207
         '
         'btnAddNew
@@ -101,7 +104,7 @@ Partial Class Items
         Me.btnAddNew.Name = "btnAddNew"
         Me.btnAddNew.Size = New System.Drawing.Size(102, 51)
         Me.btnAddNew.TabIndex = 211
-        Me.btnAddNew.Text = "Add new"
+        Me.btnAddNew.Text = "&Add new"
         Me.btnAddNew.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnAddNew.UseVisualStyleBackColor = False
         '
@@ -117,7 +120,7 @@ Partial Class Items
         Me.btnBack.Name = "btnBack"
         Me.btnBack.Size = New System.Drawing.Size(102, 51)
         Me.btnBack.TabIndex = 205
-        Me.btnBack.Text = "Back"
+        Me.btnBack.Text = "&Back"
         Me.btnBack.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnBack.UseVisualStyleBackColor = False
         '
@@ -149,7 +152,7 @@ Partial Class Items
         Me.btnPrint.Name = "btnPrint"
         Me.btnPrint.Size = New System.Drawing.Size(102, 51)
         Me.btnPrint.TabIndex = 213
-        Me.btnPrint.Text = "Print"
+        Me.btnPrint.Text = "&Print"
         Me.btnPrint.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnPrint.UseVisualStyleBackColor = False
         '
@@ -165,7 +168,7 @@ Partial Class Items
         Me.btnUpdate.Name = "btnUpdate"
         Me.btnUpdate.Size = New System.Drawing.Size(102, 51)
         Me.btnUpdate.TabIndex = 212
-        Me.btnUpdate.Text = "Update"
+        Me.btnUpdate.Text = "&Update"
         Me.btnUpdate.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnUpdate.UseVisualStyleBackColor = False
         '
@@ -189,21 +192,22 @@ Partial Class Items
         Me.Label3.TabIndex = 207
         Me.Label3.Text = "Search"
         '
-        'lvCarBrands
+        'lvItems
         '
-        Me.lvCarBrands.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.lvItems.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lvCarBrands.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.lvCarBrands.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.chCBID, Me.chName, Me.ColumnHeader1, Me.ColumnHeader2})
-        Me.lvCarBrands.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lvCarBrands.GridLines = True
-        Me.lvCarBrands.Location = New System.Drawing.Point(10, 112)
-        Me.lvCarBrands.Name = "lvCarBrands"
-        Me.lvCarBrands.Size = New System.Drawing.Size(866, 288)
-        Me.lvCarBrands.TabIndex = 210
-        Me.lvCarBrands.UseCompatibleStateImageBehavior = False
-        Me.lvCarBrands.View = System.Windows.Forms.View.Details
+        Me.lvItems.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.lvItems.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.chCBID, Me.chName, Me.ColumnHeader1, Me.ColumnHeader2})
+        Me.lvItems.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lvItems.FullRowSelect = True
+        Me.lvItems.GridLines = True
+        Me.lvItems.Location = New System.Drawing.Point(10, 112)
+        Me.lvItems.Name = "lvItems"
+        Me.lvItems.Size = New System.Drawing.Size(866, 265)
+        Me.lvItems.TabIndex = 210
+        Me.lvItems.UseCompatibleStateImageBehavior = False
+        Me.lvItems.View = System.Windows.Forms.View.Details
         '
         'chCBID
         '
@@ -212,12 +216,13 @@ Partial Class Items
         '
         'chName
         '
-        Me.chName.Text = "Parts"
+        Me.chName.Text = "Items"
         Me.chName.Width = 338
         '
         'ColumnHeader1
         '
         Me.ColumnHeader1.Text = "Price"
+        Me.ColumnHeader1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         Me.ColumnHeader1.Width = 238
         '
         'ColumnHeader2
@@ -229,33 +234,33 @@ Partial Class Items
         '
         Me.pnlAddEdit.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.pnlAddEdit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.pnlAddEdit.Controls.Add(Me.TextBox4)
+        Me.pnlAddEdit.Controls.Add(Me.txtQuantity)
         Me.pnlAddEdit.Controls.Add(Me.Label6)
         Me.pnlAddEdit.Controls.Add(Me.txtPrice)
         Me.pnlAddEdit.Controls.Add(Me.Label5)
         Me.pnlAddEdit.Controls.Add(Me.txtPartsname)
         Me.pnlAddEdit.Controls.Add(Me.Label11)
         Me.pnlAddEdit.Controls.Add(Me.txtItemID)
-        Me.pnlAddEdit.Controls.Add(Me.Label4)
+        Me.pnlAddEdit.Controls.Add(Me.lblItemID)
         Me.pnlAddEdit.Controls.Add(Me.btnSave)
         Me.pnlAddEdit.Controls.Add(Me.btnAddEditClose)
         Me.pnlAddEdit.Controls.Add(Me.lblAddedit)
         Me.pnlAddEdit.Font = New System.Drawing.Font("Symbol", 8.25!)
-        Me.pnlAddEdit.Location = New System.Drawing.Point(223, 27)
+        Me.pnlAddEdit.Location = New System.Drawing.Point(223, 31)
         Me.pnlAddEdit.Name = "pnlAddEdit"
-        Me.pnlAddEdit.Size = New System.Drawing.Size(437, 250)
+        Me.pnlAddEdit.Size = New System.Drawing.Size(437, 0)
         Me.pnlAddEdit.TabIndex = 216
         Me.pnlAddEdit.Visible = False
         '
-        'TextBox4
+        'txtQuantity
         '
-        Me.TextBox4.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
-        Me.TextBox4.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox4.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox4.Location = New System.Drawing.Point(132, 182)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(244, 26)
-        Me.TextBox4.TabIndex = 236
+        Me.txtQuantity.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+        Me.txtQuantity.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtQuantity.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtQuantity.Location = New System.Drawing.Point(132, 182)
+        Me.txtQuantity.Name = "txtQuantity"
+        Me.txtQuantity.Size = New System.Drawing.Size(244, 26)
+        Me.txtQuantity.TabIndex = 236
         '
         'Label6
         '
@@ -317,16 +322,18 @@ Partial Class Items
         Me.txtItemID.ReadOnly = True
         Me.txtItemID.Size = New System.Drawing.Size(128, 26)
         Me.txtItemID.TabIndex = 228
+        Me.txtItemID.Visible = False
         '
-        'Label4
+        'lblItemID
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(58, 91)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(59, 21)
-        Me.Label4.TabIndex = 227
-        Me.Label4.Text = "Item ID"
+        Me.lblItemID.AutoSize = True
+        Me.lblItemID.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblItemID.Location = New System.Drawing.Point(58, 91)
+        Me.lblItemID.Name = "lblItemID"
+        Me.lblItemID.Size = New System.Drawing.Size(59, 21)
+        Me.lblItemID.TabIndex = 227
+        Me.lblItemID.Text = "Item ID"
+        Me.lblItemID.Visible = False
         '
         'btnSave
         '
@@ -336,7 +343,7 @@ Partial Class Items
         Me.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSave.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSave.ForeColor = System.Drawing.Color.Gold
-        Me.btnSave.Location = New System.Drawing.Point(233, -1)
+        Me.btnSave.Location = New System.Drawing.Point(226, -1)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(102, 51)
         Me.btnSave.TabIndex = 226
@@ -352,7 +359,7 @@ Partial Class Items
         Me.btnAddEditClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAddEditClose.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAddEditClose.ForeColor = System.Drawing.Color.Gold
-        Me.btnAddEditClose.Location = New System.Drawing.Point(334, -1)
+        Me.btnAddEditClose.Location = New System.Drawing.Point(331, -1)
         Me.btnAddEditClose.Name = "btnAddEditClose"
         Me.btnAddEditClose.Size = New System.Drawing.Size(102, 51)
         Me.btnAddEditClose.TabIndex = 225
@@ -378,11 +385,28 @@ Partial Class Items
         '
         Me.timerAnimate.Interval = 1
         '
+        'StatusStrip1
+        '
+        Me.StatusStrip1.BackColor = System.Drawing.Color.White
+        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel1})
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 417)
+        Me.StatusStrip1.Name = "StatusStrip1"
+        Me.StatusStrip1.Size = New System.Drawing.Size(887, 22)
+        Me.StatusStrip1.TabIndex = 217
+        Me.StatusStrip1.Text = "StatusStrip1"
+        '
+        'ToolStripStatusLabel1
+        '
+        Me.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
+        Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(40, 17)
+        Me.ToolStripStatusLabel1.Text = "Count"
+        '
         'Items
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Silver
+        Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.pnlAddEdit)
         Me.Controls.Add(Me.pnlMain)
         Me.Name = "Items"
@@ -391,7 +415,10 @@ Partial Class Items
         Me.pnlMain.PerformLayout()
         Me.pnlAddEdit.ResumeLayout(False)
         Me.pnlAddEdit.PerformLayout()
+        Me.StatusStrip1.ResumeLayout(False)
+        Me.StatusStrip1.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents Label1 As System.Windows.Forms.Label
@@ -403,23 +430,25 @@ Partial Class Items
     Friend WithEvents btnUpdate As System.Windows.Forms.Button
     Friend WithEvents txtSearch As System.Windows.Forms.TextBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents lvCarBrands As System.Windows.Forms.ListView
+    Friend WithEvents lvItems As System.Windows.Forms.ListView
     Friend WithEvents chCBID As System.Windows.Forms.ColumnHeader
     Friend WithEvents chName As System.Windows.Forms.ColumnHeader
     Friend WithEvents ColumnHeader1 As System.Windows.Forms.ColumnHeader
     Friend WithEvents ColumnHeader2 As System.Windows.Forms.ColumnHeader
     Friend WithEvents pnlAddEdit As System.Windows.Forms.Panel
-    Friend WithEvents TextBox4 As System.Windows.Forms.TextBox
+    Friend WithEvents txtQuantity As System.Windows.Forms.TextBox
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents txtPrice As System.Windows.Forms.TextBox
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents txtPartsname As System.Windows.Forms.TextBox
     Friend WithEvents Label11 As System.Windows.Forms.Label
     Friend WithEvents txtItemID As System.Windows.Forms.TextBox
-    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents lblItemID As System.Windows.Forms.Label
     Friend WithEvents btnSave As System.Windows.Forms.Button
     Friend WithEvents btnAddEditClose As System.Windows.Forms.Button
     Friend WithEvents lblAddedit As System.Windows.Forms.Label
     Friend WithEvents timerAnimate As System.Windows.Forms.Timer
+    Friend WithEvents StatusStrip1 As System.Windows.Forms.StatusStrip
+    Friend WithEvents ToolStripStatusLabel1 As System.Windows.Forms.ToolStripStatusLabel
 
 End Class
