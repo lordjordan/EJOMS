@@ -19,16 +19,16 @@ Public Class DBHelper
     End Sub
 
     Private Function BuildCommand(ByRef cmd As SqlCommand, params As Dictionary(Of String, Object)) As SqlClient.SqlCommand
-        Try
-            con = New SqlClient.SqlConnection(Connectionstring)
-            cmd.Connection = con
-            AddParameters(cmd, params)
-            con.Open()
-            Connected = True
-        Catch ex As Exception
-            Connected = False
-            MsgBox("Unable to connect to the database", MsgBoxStyle.Critical)
-        End Try
+        'Try
+        con = New SqlClient.SqlConnection(Connectionstring)
+        cmd.Connection = con
+        AddParameters(cmd, params)
+        con.Open()
+        Connected = True
+        'Catch ex As Exception
+        '    Connected = False
+        '    MsgBox("Unable to connect to the database", MsgBoxStyle.Critical)
+        'End Try
 
         Return cmd
 

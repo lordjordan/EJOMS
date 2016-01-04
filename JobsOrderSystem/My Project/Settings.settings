@@ -2,8 +2,20 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
   <Profiles />
   <Settings>
-    <Setting Name="connectionString" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Server=.;Database=EJOMSdb;User Id=sa;Password=p@ssword;</Value>
+    <Setting Name="DBname" Type="System.String" Scope="User">
+      <Value Profile="(Default)">EJOMSdb</Value>
+    </Setting>
+    <Setting Name="DBuser" Type="System.String" Scope="User">
+      <Value Profile="(Default)">sa</Value>
+    </Setting>
+    <Setting Name="DBpass" Type="System.String" Scope="User">
+      <Value Profile="(Default)">p@ssword</Value>
+    </Setting>
+    <Setting Name="DBconn" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Data Source=.;Initial Catalog=EJOMSdb;User ID=sa;Password=p@ssword;</Value>
+    </Setting>
+    <Setting Name="DBsource" Type="System.String" Scope="User">
+      <Value Profile="(Default)">.</Value>
     </Setting>
   </Settings>
 </SettingsFile>

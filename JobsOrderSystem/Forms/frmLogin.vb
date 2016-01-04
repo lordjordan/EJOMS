@@ -6,7 +6,7 @@ Imports System.Security.Cryptography
 Imports System.Text
 
 Public Class frmLogin
-    Dim db As New DBHelper(My.Settings.connectionString)
+    'Dim db As New DBHelper(My.Settings.ConnectionString)
     'Dim dr As SQLite.SQLiteDataReader
     'Dim cmd As SQLite.SQLiteCommand
 
@@ -89,6 +89,10 @@ Public Class frmLogin
     End Sub
     Private Sub thisIsOnlyYourAccess()
         'mga access nila later
+
+    End Sub
+
+    Private Sub frmLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
 End Class
