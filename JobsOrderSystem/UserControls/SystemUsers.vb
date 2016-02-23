@@ -245,12 +245,14 @@ Public Class SystemUsers
                 Dim encryptPass = Encrypt(txtpw.Text, "Keys")
                 Dim encryptPass2 = Encrypt(txtconfirmpwd.Text, "Keys")
                 data.Add("user_name", txtuname.Text)
-                If cmbUtype.Text = "Super Administrator" Then
+                If cmbUtype.Text = "Administrator" Then
                     data.Add("user_type", "0")
-                ElseIf cmbUtype.Text = "Administrator" Then
+                ElseIf cmbUtype.Text = "General Manager" Then
                     data.Add("user_type", "1")
-                ElseIf cmbUtype.Text = "Encoder" Then
+                ElseIf cmbUtype.Text = "Bills and Purchasing" Then
                     data.Add("user_type", "2")
+                ElseIf cmbUtype.Text = "Encoder" Then
+                    data.Add("user_type", "3")
                 End If
                 If txtpw.Text = txtconfirmpwd.Text Then
                     data.Add("user_password", encryptPass)
@@ -294,12 +296,14 @@ Public Class SystemUsers
                 Do While dr.Read
                     itm = lvUsers.Items.Add(dr.Item("user_id"))
                     itm.SubItems.Add(dr.Item("user_name"))
-                    If dr.Item("user_type") = 2 Then
+                    If dr.Item("user_type") = 3 Then
                         itm.SubItems.Add("Encoder")
+                    ElseIf dr.Item("user_type") = 0 Then
+                        itm.SubItems.Add("Administrator")
+                    ElseIf dr.Item("user_type") = 2 Then
+                        itm.SubItems.Add("Bills and Purchasing")
                     ElseIf dr.Item("user_type") = 1 Then
-                        itm.SubItems.Add("Admin")
-                    Else
-                        itm.SubItems.Add("Super Administrator")
+                        itm.SubItems.Add("General Manaager")
                     End If
                 Loop
 
