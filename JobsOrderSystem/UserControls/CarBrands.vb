@@ -1,12 +1,20 @@
-﻿Public Class CarBrands
+﻿Imports System.Data.SqlClient
+Imports System.Text
+Imports CrystalDecisions.CrystalReports.Engine
+Imports CrystalDecisions.Shared
+Imports System.Xml
+Imports System.Data
+Public Class CarBrands
     Dim timerStopper As String
     Dim btnAddNewClick, btnEditClick, btnPrintClick, btnAddEditClosed As Boolean
 
-    Dim db As New DBHelper(My.Settings.connectionString)
-    Dim dr As SqlClient.SqlDataReader
 
-    Dim cmd As SqlClient.SqlCommand
     Dim itm As ListViewItem
+
+    Dim ds As New DataSet
+    Dim con As New SqlClient.SqlConnection
+    Dim da As SqlClient.SqlDataAdapter
+    Dim rptItems As New CarBrandsReport
 
     Public Sub loadCarBrands()
         'Dim parameters As New Dictionary(Of String, Object)()
@@ -49,7 +57,49 @@
     Private Sub showAddEdit(mode As Boolean)
         pnlAddEdit.Visible = mode
         pnlMain.Enabled = Not mode
-     
+
+    End Sub
+    Private Sub showPrint(mode As Boolean)
+        pnlMain.Enabled = Not mode
+        pnl_car_brand_report.Visible = mode
+        pnl_car_brand_report.BringToFront()
+    End Sub
+    Private Sub load_report()
+        Try
+            ds.Tables.Clear()
+
+            Dim row As DataRow = Nothing
+            ds.Tables.Add("CarBrandReport")
+            With ds.Tables(0).Columns
+                .Add("car_brand_id")
+                .Add("name")
+                .Add("percentage")
+
+            End With
+
+            For x = 1 To lvCarBrands.Items.Count Step 1
+                row = ds.Tables(0).NewRow
+                row(0) = lvCarBrands.Items(x - 1).SubItems(0).Text
+                row(1) = lvCarBrands.Items(x - 1).SubItems(1).Text
+                row(2) = lvCarBrands.Items(x - 1).SubItems(2).Text
+
+                ds.Tables(0).Rows.Add(row)
+            Next
+
+            ds.WriteXml("XML\CarBrandsReport.xml")
+            Dim dsItem As New DataSet
+            dsItem = New dsReportJobsOrder
+            Dim dsItemTemp As New DataSet
+            dsItemTemp = New DataSet()
+            dsItemTemp.ReadXml("XML\CarBrandsReport.xml")
+            dsItem.Merge(dsItemTemp.Tables(0))
+            rptItems = New CarBrandsReport
+            rptItems.SetDataSource(dsItem)
+            cr_viewer.ReportSource = rptItems
+            Exit Sub
+        Catch ex As Exception
+            MsgBox("Error occured!" & vbCrLf & ex.ToString, vbCritical + vbOKOnly, "Error")
+        End Try
     End Sub
     Private Sub btnAddNew_Click(sender As Object, e As EventArgs) Handles btnAddNew.Click
         lvCarBrands.SelectedItems.Clear()
@@ -71,7 +121,7 @@
         End If
         lvCarBrands.SelectedItems.Clear()
         ClearTextBoxes()
-            pnlMain.Enabled = True
+        pnlMain.Enabled = True
 
     End Sub
 
@@ -139,22 +189,22 @@
         If correctInputs() = False Then Exit Sub
         Dim affected_row As Integer
         Dim parameters As New Dictionary(Of String, Object)
-        parameters.Add("name", txtCarName.Text.ToString)
+        parameters.Add("name", Trim(txtCarName.Text.ToString))
         parameters.Add("percentage", txtPercent.Text)
         If txtCBID.Text <> "" Then
             parameters.Add("car_brand_id", txtCBID.Text)
 
             affected_row = db.ExecuteNonQuery("UPDATE tbl_car_brands SET name=@name, percentage=@percentage WHERE car_brand_id=@car_brand_id", parameters)
             If affected_row > 0 Then
-                MsgBox("Record Update!", MsgBoxStyle.OkOnly + MsgBoxStyle.Information, "Save Succesful")
-
+                MsgBox("Record Update!", MsgBoxStyle.OkOnly + MsgBoxStyle.Information, "Save Successful")
+                log("User ID:" & user_id & "; User name:" & frmLogin.txtUsername.Text & "; update carbrand; car_brand_ID:" & txtCBID.Text)
                 loadCarBrands()
 
             End If
         Else
             If db.ExecuteNonQuery("INSERT INTO tbl_car_brands(name,percentage) VALUES(@name, @percentage)", parameters) > 0 Then
                 MsgBox("New Record Added", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Save Succesful")
-
+                log("User ID:" & user_id & "; User name:" & frmLogin.txtUsername.Text & "; add carbrand; car_brand_name:" & txtCarName.Text)
                 loadCarBrands()
             End If
         End If
@@ -164,14 +214,22 @@
 
     Private Sub CarBrands_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' loadCarListview()
+        ' Me.keyPreview = True
+        
     End Sub
 
     Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
         'loadCarListview()
         Try
+            Dim txt As String
+            If txtSearch.Text.Contains("'") Then
+                txt = Replace(Trim(txtSearch.Text), "'", "''")
+            Else
+                txt = Trim(txtSearch.Text)
+            End If
             lvCarBrands.Items.Clear()
-            dr = db.ExecuteReader("SELECT * FROM tbl_car_brands WHERE car_brand_id LIKE '%" & txtSearch.Text & "%' OR name LIKE '%" & _
-                                 txtSearch.Text & "%'")
+            dr = db.ExecuteReader("SELECT * FROM tbl_car_brands WHERE car_brand_id LIKE '%" & txt & "%' OR name LIKE '%" & _
+                                 txt & "%'")
             If dr.HasRows Then
                 Do While dr.Read
                     itm = lvCarBrands.Items.Add(dr.Item("car_brand_id"))
@@ -201,15 +259,9 @@
             End If
         Next
     End Sub
-
- 
-
-
     Private Sub txtPercent_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtPercent.KeyPress
-        If Asc(e.KeyChar) <> 8 Then
-            If e.Handled = (Char.IsDigit(e.KeyChar)) Then
-                e.Handled = True
-            End If
+        if e.KeyChar <> ControlChars.Back then
+            e.Handled = Not (Char.IsDigit(e.KeyChar) Or e.KeyChar = ".")
         End If
     End Sub
     Private Function correctInputs()
@@ -217,7 +269,12 @@
             MsgBox("Some fields are empty.", vbExclamation + vbOKOnly, "Blank fields")
             Return False
         Else
-            Return True
+            If txtPercent.Text > 100 Or txtPercent.Text < 0 Then
+                MsgBox("Invalid percentage", vbExclamation + vbOKOnly, "INVALID PERCENTAGE")
+                Return False
+            Else
+                Return True
+            End If
         End If
     End Function
 
@@ -227,6 +284,26 @@
         End If
     End Sub
 
-  
+
+
+    Private Sub btnPrint_Click(sender As Object, e As EventArgs) Handles btnPrint.Click
+        showPrint(True)
+        load_report()
+    End Sub
+
+    Private Sub btn_report_back_Click(sender As Object, e As EventArgs) Handles btn_report_back.Click
+        showPrint(False)
+    End Sub
+
+    Private Sub btn_print_report_Click(sender As Object, e As EventArgs) Handles btn_print_report.Click
+        cr_viewer.PrintReport()
+    End Sub
+
+    Private Sub txtSearch_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtSearch.KeyPress
+        If e.KeyChar = ChrW(Keys.Enter) Then
+            btnSearch_Click(sender, e)
+        End If
+    End Sub
+
   
 End Class

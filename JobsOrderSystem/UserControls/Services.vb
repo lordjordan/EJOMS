@@ -2,8 +2,7 @@
     Dim timerStopper As String
     Dim btnAddNewClick, btnEditClick, btnPrintClick, btnAddEditClosed As Boolean
 
-    Dim db As New DBHelper(My.Settings.connectionString)
-    Dim dr As SqlClient.SqlDataReader
+
     Dim itm As ListViewItem
     Dim cmd As SqlClient.SqlCommand
     Private Sub showAddEdit(mode As Boolean)
@@ -121,12 +120,14 @@
                 '@ Update selected Item
                 parameters.Add("service_id", Val(txtServiceID.Text))
                 If (db.ExecuteNonQuery("UPDATE tbl_services SET service_name=@service_name,service_fee=@service_fee WHERE service_id=@service_id", parameters) > 0) Then
+                    log("User id:" & user_id & "; User_name:" & frmLogin.txtUsername.Text & "; update service. Service_ID:" & txtServiceID.Text)
                     MsgBox("Record Update!", MsgBoxStyle.OkOnly + MsgBoxStyle.Information, "Save Succesful")
                 End If
                 load_Listview()
             Else
                 '@ Insert New record
                 If db.ExecuteNonQuery("INSERT INTO tbl_services(service_name,service_fee) VALUES(@service_name,@service_fee)", parameters) > 0 Then
+                    log("User id:" & user_id & "; User_name:" & frmLogin.txtUsername.Text & "; add new service. Service_name:" & txtServiceName.Text)
                     MsgBox("New Record Added", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Save Succesful")
                     load_Listview()
                 End If
@@ -296,13 +297,20 @@
 
     Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
         Try
-            dr = db.ExecuteReader("SELECT * FROM tbl_services WHERE service_id LIKE '%" & txtSearch.Text & "%' OR " & _
-                                  " service_name LIKE '%" & txtSearch.Text & "%'")
+            Dim txt As String
+            If txtSearch.Text.Contains("'") Then
+                txt = Replace(Trim(txtSearch.Text), "'", "''")
+            Else
+                txt = Trim(txtSearch.Text)
+            End If
+            lvServices.Items.Clear()
+            dr = db.ExecuteReader("SELECT * FROM tbl_services WHERE service_id LIKE '%" & txt & "%' OR " & _
+                                  "service_name LIKE '%" & txt & "%'")
             If dr.HasRows Then
                 Do While dr.Read
                     itm = lvServices.Items.Add(dr.Item("service_id"))
-                    itm.SubItems.Add(dr.Item("service name"))
-                    itm.SubItems.Add(StrToNum(dr.Item("service fee")))
+                    itm.SubItems.Add(dr.Item("service_name"))
+                    itm.SubItems.Add(StrToNum(dr.Item("service_fee")))
                 Loop
             Else
 
@@ -342,6 +350,59 @@
             btnSearch_Click(sender, e)
         End If
     End Sub
+    Private Sub showPrintMe(mode As Boolean)
+        pnlPrint.Visible = mode
+        pnlMain.Enabled = Not mode
+    End Sub
+    Private Sub btnPrint_Click(sender As Object, e As EventArgs) Handles btnPrint.Click
+        Try
+            showPrintMe(True)
+            Dim row1 As DataRow = Nothing
+            Dim DS As New DataSet
+            Dim rptINC As New ServicesReport
+            'mag a-add na sa dataset (DS)
+            DS.Tables.Add("ServicesReport")
+            'lagay tayo ng columns
+            With DS.Tables(0).Columns
+                .Add("service_id")
+                .Add("service_name")
+                .Add("service_fee")
+            End With
+            For x = 1 To lvServices.Items.Count Step 1
+                row1 = DS.Tables(0).NewRow
+                row1(0) = lvServices.Items(x - 1).Text
+                row1(1) = lvServices.Items(x - 1).SubItems(1).Text
+                row1(2) = lvServices.Items(x - 1).SubItems(2).Text
+                DS.Tables(0).Rows.Add(row1)
+            Next
 
- 
+            DS.WriteXml("XML\ServicesReport.xml")
+
+            Dim dsINC As New DataSet
+            dsINC = New dsReportJobsOrder
+            Dim dsINCTemp As New DataSet
+            dsINCTemp = New DataSet()
+            'dsINCTemp = New DSreports
+            dsINCTemp.ReadXml("XML\ServicesReport.xml")
+            dsINC.Merge(dsINCTemp.Tables(0))
+
+            'MsgBox(dsINCTemp.Tables(0).Rows(0).Item(0).ToString)
+            rptINC = New ServicesReport
+            rptINC.SetDataSource(dsINCTemp.Tables(0))
+            crvServices.ReportSource = rptINC
+
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+    End Sub
+
+    Private Sub btnCancelPrintattack_Click(sender As Object, e As EventArgs) Handles btnCancelPrintattack.Click
+        showPrintMe(False)
+    End Sub
+
+    Private Sub txtServiceFee_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtServiceFee.KeyPress
+     if e.KeyChar <> ControlChars.Back then
+            e.Handled = Not (Char.IsDigit(e.KeyChar) Or e.KeyChar = ".")
+        End If
+    End Sub
 End Class

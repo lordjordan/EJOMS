@@ -7,7 +7,9 @@ Public Class frmMain
         If UnloadMode = CloseReason.UserClosing Then
             Select Case MessageBox.Show("Are you sure you want to exit?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
                 Case Windows.Forms.DialogResult.Yes
+                    log("User_id:" & user_id & "; User_name:" & frmLogin.txtUsername.Text & "; Exit application and Logged-out.")
                     frmLogin.Close()
+                    'saving var = true
                 Case Windows.Forms.DialogResult.No
                     Cancel = True
             End Select

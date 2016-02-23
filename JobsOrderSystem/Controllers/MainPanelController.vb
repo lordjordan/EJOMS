@@ -9,6 +9,7 @@
     Public uscSystemUsers As New SystemUsers
     Public uscReports As New Reports
     Public uscCarBrands As New CarBrands
+    Public uscSettings As New Settings
 
     Public currentUSC As Control
 
