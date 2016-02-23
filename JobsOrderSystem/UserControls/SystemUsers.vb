@@ -287,14 +287,9 @@ Public Class SystemUsers
  
     Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
         Try
-            Dim txt As String
-            If txtSearch.Text.Contains("'") Then
-                txt = Replace(Trim(txtSearch.Text), "'", "''")
-            Else
-                txt = Trim(txtSearch.Text)
-            End If
+            data.Add("keyword", "%" & Trim(txtSearch.Text) & "%")
             lvUsers.Items.Clear()
-            dr = db.ExecuteReader("SELECT user_id, user_name, user_type FROM tbl_users WHERE user_id LIKE '%" & txt & "%' OR user_name LIKE '%" & txt & "%'")
+            dr = db.ExecuteReader("SELECT user_id, user_name, user_type FROM tbl_users WHERE user_id LIKE  @keyword OR user_name LIKE  @keyword", data)
             If dr.HasRows Then
                 Do While dr.Read
                     itm = lvUsers.Items.Add(dr.Item("user_id"))
@@ -311,6 +306,7 @@ Public Class SystemUsers
             Else
                 MsgBox("No record found.", vbExclamation + vbOKOnly, "No users")
             End If
+            data.Clear()
         Catch ex As Exception
             MsgBox("Error occured!" & vbCrLf & ex.ToString, vbCritical + vbOKOnly, "Error")
         Finally

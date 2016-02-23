@@ -221,15 +221,9 @@ Public Class CarBrands
     Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
         'loadCarListview()
         Try
-            Dim txt As String
-            If txtSearch.Text.Contains("'") Then
-                txt = Replace(Trim(txtSearch.Text), "'", "''")
-            Else
-                txt = Trim(txtSearch.Text)
-            End If
+             data.Add("keyword", "%" & Trim(txtSearch.Text) & "%")
             lvCarBrands.Items.Clear()
-            dr = db.ExecuteReader("SELECT * FROM tbl_car_brands WHERE car_brand_id LIKE '%" & txt & "%' OR name LIKE '%" & _
-                                 txt & "%'")
+            dr = db.ExecuteReader("SELECT * FROM tbl_car_brands WHERE car_brand_id LIKE @keyword OR name LIKE @keyword", data)
             If dr.HasRows Then
                 Do While dr.Read
                     itm = lvCarBrands.Items.Add(dr.Item("car_brand_id"))
@@ -241,6 +235,7 @@ Public Class CarBrands
                 MsgBox("No item found!", vbExclamation + vbOKOnly, "No record(s)")
             End If
             ToolStripStatusLabel1.Text = "Count: " & lvCarBrands.Items.Count
+            data.Clear()
         Catch ex As Exception
             MsgBox("Error occured!" & vbCrLf & ex.ToString, vbCritical + vbOKOnly, "Error")
         Finally

@@ -390,19 +390,14 @@ Public Class Cars
         Try
             
             lvCars.Items.Clear()
-            Dim txt As String
-            If txtSearch.Text.Contains("'") Then
-                txt = Replace(Trim(txtSearch.Text), "'", "''")
-            Else
-                txt = Trim(txtSearch.Text)
-            End If
+             data.Add("keyword", "%" & Trim(txtSearch.Text) & "%")
             dr = db.ExecuteReader("SELECT car_id, last_name + ',' + first_name + ' ' + middle_name as name , car_model_year, plate_no FROM tbl_cars " & _
-                                  "WHERE car_id LIKE '%" & txt & "%' OR " & _
-                                  "last_name LIKE '%" & txt & "%' OR " & _
-                                  "middle_name LIKE '%" & txt & "%' OR " & _
-                                  "first_name LIKE '%" & txt & "%' OR " & _
-                                  "car_model_year LIKE '%" & txt & "%' OR " & _
-                                  "plate_no LIKE '%" & txt & "%'")
+                                  "WHERE car_id LIKE @keyword OR " & _
+                                  "last_name LIKE @keyword OR " & _
+                                  "middle_name LIKE @keyword OR " & _
+                                  "first_name LIKE @keyword OR " & _
+                                  "car_model_year LIKE @keyword OR " & _
+                                  "plate_no LIKE @keyword", data)
             If dr.HasRows Then
                 Do While dr.Read
 
@@ -415,6 +410,7 @@ Public Class Cars
             Else
                 MsgBox("No car found!", vbInformation + vbOKOnly, "No record(s)")
             End If
+            data.Clear()
         Catch ex As Exception
             MsgBox("Error occured!" & vbCrLf & ex.ToString, vbCritical + vbOKOnly, "Error")
         Finally
