@@ -297,15 +297,10 @@
 
     Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
         Try
-            Dim txt As String
-            If txtSearch.Text.Contains("'") Then
-                txt = Replace(Trim(txtSearch.Text), "'", "''")
-            Else
-                txt = Trim(txtSearch.Text)
-            End If
+            data.Add("keyword", "%" & Trim(txtSearch.Text) & "%")
             lvServices.Items.Clear()
-            dr = db.ExecuteReader("SELECT * FROM tbl_services WHERE service_id LIKE '%" & txt & "%' OR " & _
-                                  "service_name LIKE '%" & txt & "%'")
+            dr = db.ExecuteReader("SELECT * FROM tbl_services WHERE service_id LIKE @keyword OR " & _
+                                  "service_name LIKE @keyword", data)
             If dr.HasRows Then
                 Do While dr.Read
                     itm = lvServices.Items.Add(dr.Item("service_id"))
@@ -313,9 +308,10 @@
                     itm.SubItems.Add(StrToNum(dr.Item("service_fee")))
                 Loop
             Else
-
+                MsgBox("No records", vbExclamation + vbOKOnly, "No data")
             End If
             ToolStripStatusLabel1.Text = "Count: " & lvServices.Items.Count
+            data.Clear()
         Catch ex As Exception
             MsgBox("Error occured!" & vbCrLf & ex.ToString, vbCritical + vbOKOnly, "Error")
         Finally
@@ -401,7 +397,7 @@
     End Sub
 
     Private Sub txtServiceFee_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtServiceFee.KeyPress
-     if e.KeyChar <> ControlChars.Back then
+        If e.KeyChar <> ControlChars.Back Then
             e.Handled = Not (Char.IsDigit(e.KeyChar) Or e.KeyChar = ".")
         End If
     End Sub

@@ -5,7 +5,7 @@ Imports CrystalDecisions.Shared
 Imports System.Xml
 Imports System.Data
 Public Class Items
-  
+
     Dim ds As New DataSet
     Dim con As New SqlClient.SqlConnection
 
@@ -137,19 +137,14 @@ Public Class Items
     End Sub
     Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
         Try
-            Dim txt As String
-            If txtSearch.Text.Contains("'") Then
-                txt = Replace(Trim(txtSearch.Text), "'", "''")
-            Else
-                txt = Trim(txtSearch.Text)
-            End If
+            data.Add("keyword", "%" & Trim(txtSearch.Text) & "%")
             lvItems.Items.Clear()
             If cbx_in_critical_level.Checked = True Then
-                dr = db.ExecuteReader("SELECT * FROM tbl_items WHERE item_id LIKE '%" & txt & "%' OR name LIKE '%" & _
-                txt & "%' AND quantity <= critical_level")
+                dr = db.ExecuteReader("SELECT * FROM tbl_items WHERE item_id LIKE @keyword OR name LIKE " & _
+                "@keyword AND quantity <= critical_level")
             Else
-                dr = db.ExecuteReader("SELECT * FROM tbl_items WHERE item_id LIKE '%" & txt & "%' OR name LIKE '%" & _
-                txt & "%'")
+                dr = db.ExecuteReader("SELECT * FROM tbl_items WHERE item_id LIKE @keyword OR name LIKE " & _
+                "@keyword", data)
 
             End If
             If dr.HasRows Then
@@ -164,6 +159,7 @@ Public Class Items
             Else
                 MsgBox("No item found!", vbExclamation + vbOKOnly, "No record(s)")
             End If
+            data.Clear()
             ToolStripStatusLabel1.Text = "Count: " & lvItems.Items.Count
         Catch ex As Exception
             MsgBox("Error occured!" & vbCrLf & ex.ToString, vbCritical + vbOKOnly, "Error")

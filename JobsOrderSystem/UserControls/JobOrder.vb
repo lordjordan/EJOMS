@@ -10,9 +10,9 @@ Public Class JobOrder
 
     Dim timerStopper As String
     Dim btnAddNewClick, btnEditClick, btnPrintClick, btnAddEditClosed As Boolean
-  
+
     Dim da As SqlDataAdapter
-   
+
     Dim con As New SqlConnection
     Dim itm As ListViewItem
     Dim tax_val As Double
@@ -102,7 +102,7 @@ Public Class JobOrder
             If pnlAddEdit.Height <> 0 Then
                 timerAnimate.Start()
             End If
-           
+
             lvJobOrderList.Items.Clear()
             dr = db.ExecuteReader("SELECT job_id , last_name + ', '+ first_name + ' ' + middle_name as name , car_model_year, plate_no, status " & _
                                   "FROM tbl_job_orders INNER JOIN tbl_cars on tbl_job_orders.car_id = tbl_cars.car_id WHERE status =  1") 'pendings lang muna
@@ -204,7 +204,7 @@ Public Class JobOrder
                     txtStatus.Text = "Voided"
                     enable(False)
                 End If
-                
+
                 txtMarkup.Text = dr.Item("mark_up_val")
                 txtFindings.Text = dr.Item("findings")
                 txtRemarks.Text = dr.Item("remarks")
@@ -286,7 +286,7 @@ Public Class JobOrder
             Next
             'calculate each price
             computeEachTotalPrice()
-           
+
 
 
 
@@ -384,7 +384,7 @@ Public Class JobOrder
     End Sub
 
 
-   
+
     Private Sub btnSearchPlate_Click(sender As Object, e As EventArgs) Handles btnSearchPlate.Click
         showCars(True)
     End Sub
@@ -430,48 +430,43 @@ Public Class JobOrder
     End Sub
     Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
         Try
-            Dim txt As String
-            If txtSearch.Text.Contains("'") Then
-                txt = Replace(Trim(txtSearch.Text), "'", "''")
-            Else
-                txt = Trim(txtSearch.Text)
-            End If
+            data.Add("keyword", "%" & Trim(txtSearch.Text) & "%")
             lvJobOrderList.Items.Clear()
             If cbxFilter.SelectedIndex = 0 Or cbxFilter.Text = Nothing Then 'all
                 dr = db.ExecuteReader("SELECT job_id , last_name + ', '+ first_name + ' ' + middle_name as name , car_model_year, plate_no, status " & _
-                                  "FROM tbl_job_orders INNER JOIN tbl_cars on tbl_job_orders.car_id = tbl_cars.car_id WHERE job_id LIKE '%" & _
-                                  txt & "%' OR first_name LIKE '%" & txt & "%' OR last_name LIKE '%" & _
-                                   txt & "%' OR middle_name LIKE '%" & txt & "%' OR car_model_year LIKE '%" & _
-                                   txt & "%' OR plate_no LIKE '%" & txt & "%' ORDER BY job_id DESC")
+                                  "FROM tbl_job_orders INNER JOIN tbl_cars on tbl_job_orders.car_id = tbl_cars.car_id WHERE job_id LIKE " & _
+                                   "@keyword OR first_name LIKE @keyword OR last_name LIKE " & _
+                                  "@keyword OR middle_name LIKE @keyword OR car_model_year LIKE " & _
+                                    "@keyword OR plate_no LIKE @keyword ORDER BY job_id DESC", data)
 
             ElseIf cbxFilter.SelectedIndex = 2 Then 'unpaid
                 dr = db.ExecuteReader("SELECT job_id , last_name + ', '+ first_name + ' ' + middle_name as name , car_model_year, plate_no, status " & _
                                   "FROM (SELECT job_id, status, car_id FROM tbl_job_orders WHERE status = 1) as tblJO " & _
-                                  "INNER JOIN tbl_cars on tblJO.car_id = tbl_cars.car_id WHERE job_id LIKE '%" & _
-                                   txt & "%' OR first_name LIKE '%" & txt & "%' OR last_name LIKE '%" & _
-                                   txt & "%' OR middle_name LIKE '%" & txt & "%' OR car_model_year LIKE '%" & _
-                                   txt & "%' OR plate_no LIKE '%" & txt & "%' ORDER BY job_id DESC")
+                                  "INNER JOIN tbl_cars on tblJO.car_id = tbl_cars.car_id WHERE job_id LIKE " & _
+                                   "@keyword OR first_name LIKE @keyword OR last_name LIKE " & _
+                                   "@keyword OR middle_name LIKE @keyword OR car_model_year LIKE " & _
+                                   "@keyword OR plate_no LIKE @keyword ORDER BY job_id DESC", data)
             ElseIf cbxFilter.SelectedIndex = 1 Then 'paid
                 dr = db.ExecuteReader("SELECT job_id , last_name + ', '+ first_name + ' ' + middle_name as name , car_model_year, plate_no, status " & _
                                   "FROM (SELECT job_id, status, car_id FROM tbl_job_orders WHERE status = 0) as tblJO " & _
-                                  "INNER JOIN tbl_cars on tblJO.car_id = tbl_cars.car_id WHERE job_id LIKE '%" & _
-                                   txt & "%' OR first_name LIKE '%" & txt & "%' OR last_name LIKE '%" & _
-                                  txt & "%' OR middle_name LIKE '%" & txt & "%' OR car_model_year LIKE '%" & _
-                                   txt & "%' OR plate_no LIKE '%" & txt & "%' ORDER BY job_id DESC")
+                                  "INNER JOIN tbl_cars on tblJO.car_id = tbl_cars.car_id WHERE job_id LIKE " & _
+                                    "@keyword OR first_name LIKE @keyword OR last_name LIKE " & _
+                                  "@keyword OR middle_name LIKE @keyword OR car_model_year LIKE " & _
+                                   "@keyword OR plate_no LIKE @keyword ORDER BY job_id DESC", data)
             ElseIf cbxFilter.SelectedIndex = 3 Then 'for quotation
                 dr = db.ExecuteReader("SELECT job_id , last_name + ', '+ first_name + ' ' + middle_name as name , car_model_year, plate_no, status " & _
                                   "FROM (SELECT job_id, status, car_id FROM tbl_job_orders WHERE status = 2) as tblJO " & _
-                                  "INNER JOIN tbl_cars on tblJO.car_id = tbl_cars.car_id WHERE job_id LIKE '%" & _
-                                   txt & "%' OR first_name LIKE '%" & txt & "%' OR last_name LIKE '%" & _
-                                   txt & "%' OR middle_name LIKE '%" & txt & "%' OR car_model_year LIKE '%" & _
-                                   txt & "%' OR plate_no LIKE '%" & txt & "%' ORDER BY job_id DESC")
+                                  "INNER JOIN tbl_cars on tblJO.car_id = tbl_cars.car_id WHERE job_id LIKE " & _
+                                   "@keyword OR first_name LIKE @keyword OR last_name LIKE " & _
+                                   "@keyword OR middle_name LIKE @keyword OR car_model_year LIKE " & _
+                                   "@keyword OR plate_no LIKE @keyword ORDER BY job_id DESC", data)
             Else 'voided
                 dr = db.ExecuteReader("SELECT job_id , last_name + ', '+ first_name + ' ' + middle_name as name , car_model_year, plate_no, status " & _
                                   "FROM (SELECT job_id, status, car_id FROM tbl_job_orders WHERE status = 3) as tblJO " & _
-                                  "INNER JOIN tbl_cars on tblJO.car_id = tbl_cars.car_id WHERE job_id LIKE '%" & _
-                                   txt & "%' OR first_name LIKE '%" & txt & "%' OR last_name LIKE '%" & _
-                                   txt & "%' OR middle_name LIKE '%" & txt & "%' OR car_model_year LIKE '%" & _
-                                   txt & "%' OR plate_no LIKE '%" & txt & "%' ORDER BY job_id DESC")
+                                  "INNER JOIN tbl_cars on tblJO.car_id = tbl_cars.car_id WHERE job_id LIKE " & _
+                                   "@keyword OR first_name LIKE @keyword OR last_name LIKE " & _
+                                   "@keyword OR middle_name LIKE @keyword OR car_model_year LIKE " & _
+                                   "@keyword OR plate_no LIKE @keyword ORDER BY job_id DESC", data)
             End If
 
             If dr.HasRows Then
@@ -491,6 +486,7 @@ Public Class JobOrder
                     End If
                 Loop
             End If
+            data.Clear()
         Catch ex As Exception
             MsgBox("Error occured" & vbCrLf & ex.ToString, "Error")
         Finally
@@ -561,7 +557,7 @@ Public Class JobOrder
 
     Private Sub cbxOrdertype_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbxOrdertype.SelectedIndexChanged
         'trans_type
-        
+
         If user_type = 3 Then
             If cbxOrdertype.SelectedIndex = 0 Then
                 txtStatus.Text = "For quotation"
@@ -896,7 +892,7 @@ Public Class JobOrder
         lvServices.Items.Clear()
         chkTax.Checked = False
     End Sub
-  
+
 
     Private Function validationTechnique()
         If txtPlateno.Text = "" Then
@@ -911,7 +907,7 @@ Public Class JobOrder
             Return False
             Exit Function
         End If
-        
+
         If lvParts.Items.Count = 0 And lvServices.Items.Count = 0 Then
             MsgBox("No jobs order.", vbExclamation + vbOKOnly, "Please specify!")
             Return False
@@ -1253,8 +1249,8 @@ Public Class JobOrder
                 Exit Sub
 
             End If
-            
-            
+
+
 
             dr = db.ExecuteReader("SELECT * FROM tbl_users WHERE user_name=@user_name AND user_password=@user_password AND user_type <> 2", parameters)
             If dr.HasRows Then
@@ -1409,7 +1405,7 @@ Public Class JobOrder
         'Loop  
 
     End Sub
-   
+
     Private Sub btnCancelVeri_Click(sender As Object, e As EventArgs) Handles btnCancelVeri.Click
         showVerifyAcc(False)
     End Sub
@@ -1600,7 +1596,7 @@ Public Class JobOrder
                 row1(18) = txtContact.Text
                 DS.Tables(0).Rows.Add(row1)
             Next
-            
+
             For x = 1 To lvServices.Items.Count Step 1
                 row1 = DS.Tables(0).NewRow
                 row1(0) = txtJobID.Text
@@ -1633,11 +1629,11 @@ Public Class JobOrder
                     row1(16) = ""
                     row1(17) = ""
                 End If
-               
-               
+
+
                 DS.Tables(0).Rows.Add(row1)
             Next
-            
+
             DS.WriteXml("XML\OrderReport.xml")
 
             Dim dsSoa As New DataSet

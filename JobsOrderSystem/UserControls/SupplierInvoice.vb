@@ -101,6 +101,20 @@ Public Class SupplierInvoice
             End If
         Next Control
     End Sub
+    Private Sub clearPanel()
+
+        For Each Control In pnlAddEdit.Controls
+            If TypeOf Control Is ComboBox Then
+                Control.Text = ""     'Clear all text
+            End If
+        Next Control
+
+        For Each Control In pnlAddEdit.Controls
+            If TypeOf Control Is TextBox Then
+                Control.Text = ""     'Clear all text
+            End If
+        Next Control
+    End Sub
     Private Sub timerAnimate_Tick(sender As Object, e As EventArgs) Handles timerAnimate.Tick
         'opening
         If btnAddNewClick = True Then
@@ -139,6 +153,12 @@ Public Class SupplierInvoice
         Return Format(petsa, "yyyyMMdd")
     End Function
 
+    '    imagestream = New System.IO.MemoryStream(imgbyte)
+    '    'PictureBox1.SizeMode = PictureBoxSizeMode.Zoom
+    '    'PictureBox1.Image = Drawing.Image.FromStream(imagestream)
+    '    frmPreviewImg.PictureBox1.SizeMode = PictureBoxSizeMode.Zoom
+    '    frmPreviewImg.PictureBox1.Image = Drawing.Image.FromStream(imagestream)
+    '    txtfname.Text = System.IO.Path.GetFileName(OpenFileDialog1.FileName)
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         Dim data As New Dictionary(Of String, Object)
@@ -321,12 +341,7 @@ Public Class SupplierInvoice
     End Sub
     Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
         Dim paidTotal, notPaidTotal As Double
-        Dim txt As String
-        If txtSearch.Text.Contains("'") Then
-            txt = Replace(Trim(txtSearch.Text), "'", "''")
-        Else
-            txt = Trim(txtSearch.Text)
-        End If
+        data.Add("keyword", "%" & Trim(txtSearch.Text) & "%")
         Try
             Dim stat As Integer
             If txtSearch.Text = "paid" Then
@@ -335,10 +350,10 @@ Public Class SupplierInvoice
                 stat = "0"
             End If
             dr = db.ExecuteReader("SELECT * FROM tbl_supsales_invoices WHERE invoice_id LIKE '%" & txt & "%' OR " & _
-                                  " invoice_no LIKE '%" & txt & "%' OR " & _
-                                  " supplier_name LIKE '%" & txt & "%' OR " & _
-                                  " receipt_no LIKE '%" & txt & "%'OR " & _
-                                  " is_paid LIKE '%" & stat & "%'")
+                                  " invoice_no LIKE @keyword OR " & _
+                                  " supplier_name LIKE @keyword OR " & _
+                                  " receipt_no LIKE @keyword OR " & _
+                                  " is_paid LIKE @keyword ", data)
             lvInvoice.Items.Clear()
             If dr.HasRows Then
                 Do While dr.Read
@@ -374,7 +389,7 @@ Public Class SupplierInvoice
             Else
                 MsgBox("No results found", vbExclamation + vbOKOnly, "No invoice.")
             End If
-
+            data.Clear()
         Catch ex As Exception
             MsgBox("Error occured!" & vbCrLf & ex.ToString, vbCritical + vbOKOnly, "Error")
         Finally

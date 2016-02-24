@@ -7,7 +7,7 @@ Imports System.Text
 Public Class SystemUsers
     Dim timerStopper As String
     Dim btnAddNewClick, btnEditClick, btnPrintClick, btnAddEditClosed As Boolean
- 
+
 
     Private Shared DES As New TripleDESCryptoServiceProvider
     Private Shared MD5 As New MD5CryptoServiceProvider
@@ -245,12 +245,14 @@ Public Class SystemUsers
                 Dim encryptPass = Encrypt(txtpw.Text, "Keys")
                 Dim encryptPass2 = Encrypt(txtconfirmpwd.Text, "Keys")
                 data.Add("user_name", txtuname.Text)
-                If cmbUtype.Text = "Super Administrator" Then
+                If cmbUtype.Text = "Administrator" Then
                     data.Add("user_type", "0")
-                ElseIf cmbUtype.Text = "Administrator" Then
+                ElseIf cmbUtype.Text = "General Manager" Then
                     data.Add("user_type", "1")
-                ElseIf cmbUtype.Text = "Encoder" Then
+                ElseIf cmbUtype.Text = "Bills and Purchasing" Then
                     data.Add("user_type", "2")
+                ElseIf cmbUtype.Text = "Encoder" Then
+                    data.Add("user_type", "3")
                 End If
                 If txtpw.Text = txtconfirmpwd.Text Then
                     data.Add("user_password", encryptPass)
@@ -284,33 +286,31 @@ Public Class SystemUsers
     Private Sub SystemUsers_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         lvLoadListview()
     End Sub
- 
+
     Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
         Try
-            Dim txt As String
-            If txtSearch.Text.Contains("'") Then
-                txt = Replace(Trim(txtSearch.Text), "'", "''")
-            Else
-                txt = Trim(txtSearch.Text)
-            End If
+            data.Add("keyword", "%" & Trim(txtSearch.Text) & "%")
             lvUsers.Items.Clear()
-            dr = db.ExecuteReader("SELECT user_id, user_name, user_type FROM tbl_users WHERE user_id LIKE '%" & txt & "%' OR user_name LIKE '%" & txt & "%'")
+            dr = db.ExecuteReader("SELECT user_id, user_name, user_type FROM tbl_users WHERE user_id LIKE  @keyword OR user_name LIKE  @keyword", data)
             If dr.HasRows Then
                 Do While dr.Read
                     itm = lvUsers.Items.Add(dr.Item("user_id"))
                     itm.SubItems.Add(dr.Item("user_name"))
-                    If dr.Item("user_type") = 2 Then
+                    If dr.Item("user_type") = 3 Then
                         itm.SubItems.Add("Encoder")
+                    ElseIf dr.Item("user_type") = 0 Then
+                        itm.SubItems.Add("Administrator")
+                    ElseIf dr.Item("user_type") = 2 Then
+                        itm.SubItems.Add("Bills and Purchasing")
                     ElseIf dr.Item("user_type") = 1 Then
-                        itm.SubItems.Add("Admin")
-                    Else
-                        itm.SubItems.Add("Super Administrator")
+                        itm.SubItems.Add("General Manaager")
                     End If
                 Loop
 
             Else
                 MsgBox("No record found.", vbExclamation + vbOKOnly, "No users")
             End If
+            data.Clear()
         Catch ex As Exception
             MsgBox("Error occured!" & vbCrLf & ex.ToString, vbCritical + vbOKOnly, "Error")
         Finally

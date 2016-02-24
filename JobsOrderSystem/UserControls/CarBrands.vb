@@ -101,6 +101,48 @@ Public Class CarBrands
             MsgBox("Error occured!" & vbCrLf & ex.ToString, vbCritical + vbOKOnly, "Error")
         End Try
     End Sub
+    Private Sub showPrint(mode As Boolean)
+        pnlMain.Enabled = Not mode
+        pnl_car_brand_report.Visible = mode
+        pnl_car_brand_report.BringToFront()
+    End Sub
+    Private Sub load_report()
+        Try
+            ds.Tables.Clear()
+
+            Dim row As DataRow = Nothing
+            ds.Tables.Add("CarBrandReport")
+            With ds.Tables(0).Columns
+                .Add("car_brand_id")
+                .Add("name")
+                .Add("percentage")
+
+            End With
+
+            For x = 1 To lvCarBrands.Items.Count Step 1
+                row = ds.Tables(0).NewRow
+                row(0) = lvCarBrands.Items(x - 1).SubItems(0).Text
+                row(1) = lvCarBrands.Items(x - 1).SubItems(1).Text
+                row(2) = lvCarBrands.Items(x - 1).SubItems(2).Text
+
+                ds.Tables(0).Rows.Add(row)
+            Next
+
+            ds.WriteXml("XML\CarBrandsReport.xml")
+            Dim dsItem As New DataSet
+            dsItem = New dsReportJobsOrder
+            Dim dsItemTemp As New DataSet
+            dsItemTemp = New DataSet()
+            dsItemTemp.ReadXml("XML\CarBrandsReport.xml")
+            dsItem.Merge(dsItemTemp.Tables(0))
+            rptItems = New CarBrandsReport
+            rptItems.SetDataSource(dsItem)
+            cr_viewer.ReportSource = rptItems
+            Exit Sub
+        Catch ex As Exception
+            MsgBox("Error occured!" & vbCrLf & ex.ToString, vbCritical + vbOKOnly, "Error")
+        End Try
+    End Sub
     Private Sub btnAddNew_Click(sender As Object, e As EventArgs) Handles btnAddNew.Click
         lvCarBrands.SelectedItems.Clear()
         btnAddNewClick = True
@@ -215,21 +257,15 @@ Public Class CarBrands
     Private Sub CarBrands_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' loadCarListview()
         ' Me.keyPreview = True
-        
+
     End Sub
 
     Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
         'loadCarListview()
         Try
-            Dim txt As String
-            If txtSearch.Text.Contains("'") Then
-                txt = Replace(Trim(txtSearch.Text), "'", "''")
-            Else
-                txt = Trim(txtSearch.Text)
-            End If
+            data.Add("keyword", "%" & Trim(txtSearch.Text) & "%")
             lvCarBrands.Items.Clear()
-            dr = db.ExecuteReader("SELECT * FROM tbl_car_brands WHERE car_brand_id LIKE '%" & txt & "%' OR name LIKE '%" & _
-                                 txt & "%'")
+            dr = db.ExecuteReader("SELECT * FROM tbl_car_brands WHERE car_brand_id LIKE @keyword OR name LIKE @keyword", data)
             If dr.HasRows Then
                 Do While dr.Read
                     itm = lvCarBrands.Items.Add(dr.Item("car_brand_id"))
@@ -241,6 +277,7 @@ Public Class CarBrands
                 MsgBox("No item found!", vbExclamation + vbOKOnly, "No record(s)")
             End If
             ToolStripStatusLabel1.Text = "Count: " & lvCarBrands.Items.Count
+            data.Clear()
         Catch ex As Exception
             MsgBox("Error occured!" & vbCrLf & ex.ToString, vbCritical + vbOKOnly, "Error")
         Finally
@@ -260,7 +297,7 @@ Public Class CarBrands
         Next
     End Sub
     Private Sub txtPercent_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtPercent.KeyPress
-        if e.KeyChar <> ControlChars.Back then
+        If e.KeyChar <> ControlChars.Back Then
             e.Handled = Not (Char.IsDigit(e.KeyChar) Or e.KeyChar = ".")
         End If
     End Sub
@@ -305,5 +342,5 @@ Public Class CarBrands
         End If
     End Sub
 
-  
+
 End Class
