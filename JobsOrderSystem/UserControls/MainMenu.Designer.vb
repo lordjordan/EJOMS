@@ -29,6 +29,10 @@ Partial Class MainMenu
         Me.lblDate = New System.Windows.Forms.Label()
         Me.lblTime = New System.Windows.Forms.Label()
         Me.timerAnimate = New System.Windows.Forms.Timer(Me.components)
+        Me.btnNotification = New System.Windows.Forms.Button()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.flwpnl_notifications = New System.Windows.Forms.FlowLayoutPanel()
+        Me.btnSettings = New System.Windows.Forms.Button()
         Me.btnSalesInvoice = New System.Windows.Forms.Button()
         Me.btnAddNewJO = New System.Windows.Forms.Button()
         Me.btnReports = New System.Windows.Forms.Button()
@@ -38,9 +42,6 @@ Partial Class MainMenu
         Me.btnClients = New System.Windows.Forms.Button()
         Me.btnJobOrderList = New System.Windows.Forms.Button()
         Me.btnCarBrands = New System.Windows.Forms.Button()
-        Me.btnNotification = New System.Windows.Forms.Button()
-        Me.pnlNoti = New System.Windows.Forms.Panel()
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.SuspendLayout()
         '
         'lblMainMenu
@@ -60,7 +61,7 @@ Partial Class MainMenu
         'btnLogOut
         '
         Me.btnLogOut.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnLogOut.BackColor = System.Drawing.Color.MidnightBlue
+        Me.btnLogOut.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(134, Byte), Integer))
         Me.btnLogOut.FlatAppearance.BorderSize = 0
         Me.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnLogOut.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -79,7 +80,7 @@ Partial Class MainMenu
         Me.lblDate.BackColor = System.Drawing.Color.Transparent
         Me.lblDate.Font = New System.Drawing.Font("Segoe UI Light", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblDate.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.lblDate.Location = New System.Drawing.Point(459, 622)
+        Me.lblDate.Location = New System.Drawing.Point(459, 718)
         Me.lblDate.Name = "lblDate"
         Me.lblDate.Size = New System.Drawing.Size(528, 59)
         Me.lblDate.TabIndex = 195
@@ -93,7 +94,7 @@ Partial Class MainMenu
         Me.lblTime.Font = New System.Drawing.Font("Segoe UI Light", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTime.ForeColor = System.Drawing.Color.MidnightBlue
         Me.lblTime.ImageAlign = System.Drawing.ContentAlignment.BottomRight
-        Me.lblTime.Location = New System.Drawing.Point(649, 572)
+        Me.lblTime.Location = New System.Drawing.Point(649, 668)
         Me.lblTime.Name = "lblTime"
         Me.lblTime.Size = New System.Drawing.Size(338, 55)
         Me.lblTime.TabIndex = 194
@@ -104,6 +105,52 @@ Partial Class MainMenu
         '
         Me.timerAnimate.Enabled = True
         Me.timerAnimate.Interval = 1000
+        '
+        'btnNotification
+        '
+        Me.btnNotification.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnNotification.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(134, Byte), Integer))
+        Me.btnNotification.FlatAppearance.BorderSize = 0
+        Me.btnNotification.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnNotification.Font = New System.Drawing.Font("Segoe UI", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnNotification.ForeColor = System.Drawing.Color.Gold
+        Me.btnNotification.Location = New System.Drawing.Point(839, 27)
+        Me.btnNotification.Name = "btnNotification"
+        Me.btnNotification.Size = New System.Drawing.Size(61, 51)
+        Me.btnNotification.TabIndex = 196
+        Me.btnNotification.Text = "!"
+        Me.btnNotification.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnNotification.UseVisualStyleBackColor = False
+        '
+        'Timer1
+        '
+        Me.Timer1.Interval = 1
+        '
+        'flwpnl_notifications
+        '
+        Me.flwpnl_notifications.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.flwpnl_notifications.BackColor = System.Drawing.Color.MidnightBlue
+        Me.flwpnl_notifications.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft
+        Me.flwpnl_notifications.Location = New System.Drawing.Point(635, 81)
+        Me.flwpnl_notifications.Name = "flwpnl_notifications"
+        Me.flwpnl_notifications.Size = New System.Drawing.Size(265, 0)
+        Me.flwpnl_notifications.TabIndex = 199
+        '
+        'btnSettings
+        '
+        Me.btnSettings.BackColor = System.Drawing.Color.DimGray
+        Me.btnSettings.FlatAppearance.BorderSize = 0
+        Me.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSettings.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSettings.ForeColor = System.Drawing.Color.White
+        Me.btnSettings.Image = Global.JobsOrderSystem.My.Resources.Resources.settingss
+        Me.btnSettings.Location = New System.Drawing.Point(613, 492)
+        Me.btnSettings.Name = "btnSettings"
+        Me.btnSettings.Size = New System.Drawing.Size(140, 123)
+        Me.btnSettings.TabIndex = 198
+        Me.btnSettings.Text = "S&ettings"
+        Me.btnSettings.TextAlign = System.Drawing.ContentAlignment.BottomLeft
+        Me.btnSettings.UseVisualStyleBackColor = False
         '
         'btnSalesInvoice
         '
@@ -149,7 +196,7 @@ Partial Class MainMenu
         Me.btnReports.Name = "btnReports"
         Me.btnReports.Size = New System.Drawing.Size(287, 248)
         Me.btnReports.TabIndex = 184
-        Me.btnReports.Text = "&Reports"
+        Me.btnReports.Text = "&Sales Report"
         Me.btnReports.TextAlign = System.Drawing.ContentAlignment.BottomLeft
         Me.btnReports.UseVisualStyleBackColor = False
         '
@@ -249,43 +296,14 @@ Partial Class MainMenu
         Me.btnCarBrands.TextAlign = System.Drawing.ContentAlignment.BottomLeft
         Me.btnCarBrands.UseVisualStyleBackColor = False
         '
-        'btnNotification
-        '
-        Me.btnNotification.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnNotification.BackColor = System.Drawing.Color.MidnightBlue
-        Me.btnNotification.FlatAppearance.BorderSize = 0
-        Me.btnNotification.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnNotification.Font = New System.Drawing.Font("Segoe UI", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnNotification.ForeColor = System.Drawing.Color.Gold
-        Me.btnNotification.Location = New System.Drawing.Point(839, 27)
-        Me.btnNotification.Name = "btnNotification"
-        Me.btnNotification.Size = New System.Drawing.Size(61, 51)
-        Me.btnNotification.TabIndex = 196
-        Me.btnNotification.Text = "!"
-        Me.btnNotification.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnNotification.UseVisualStyleBackColor = False
-        Me.btnNotification.Visible = False
-        '
-        'pnlNoti
-        '
-        Me.pnlNoti.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.pnlNoti.BackColor = System.Drawing.Color.MidnightBlue
-        Me.pnlNoti.Location = New System.Drawing.Point(635, 78)
-        Me.pnlNoti.Name = "pnlNoti"
-        Me.pnlNoti.Size = New System.Drawing.Size(265, 0)
-        Me.pnlNoti.TabIndex = 197
-        '
-        'Timer1
-        '
-        Me.Timer1.Interval = 1
-        '
         'MainMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.BackColor = System.Drawing.Color.Silver
-        Me.Controls.Add(Me.pnlNoti)
+        Me.Controls.Add(Me.flwpnl_notifications)
+        Me.Controls.Add(Me.btnSettings)
         Me.Controls.Add(Me.btnNotification)
         Me.Controls.Add(Me.lblDate)
         Me.Controls.Add(Me.lblTime)
@@ -302,7 +320,7 @@ Partial Class MainMenu
         Me.Controls.Add(Me.btnCarBrands)
         Me.Font = New System.Drawing.Font("Segoe UI Light", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Name = "MainMenu"
-        Me.Size = New System.Drawing.Size(1000, 696)
+        Me.Size = New System.Drawing.Size(1000, 792)
         Me.ResumeLayout(False)
 
     End Sub
@@ -321,7 +339,8 @@ Partial Class MainMenu
     Friend WithEvents lblTime As System.Windows.Forms.Label
     Friend WithEvents timerAnimate As System.Windows.Forms.Timer
     Friend WithEvents btnNotification As System.Windows.Forms.Button
-    Friend WithEvents pnlNoti As System.Windows.Forms.Panel
     Friend WithEvents Timer1 As System.Windows.Forms.Timer
+    Friend WithEvents btnSettings As System.Windows.Forms.Button
+    Friend WithEvents flwpnl_notifications As System.Windows.Forms.FlowLayoutPanel
 
 End Class

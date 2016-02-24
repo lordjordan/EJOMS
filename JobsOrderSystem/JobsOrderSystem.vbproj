@@ -46,10 +46,27 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304">
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -73,6 +90,18 @@
     <Compile Include="Controllers\DBHelper.vb" />
     <Compile Include="Controllers\GeneralMethods.vb" />
     <Compile Include="Controllers\MainPanelController.vb" />
+    <Compile Include="Forms\frmAuditTrail.Designer.vb">
+      <DependentUpon>frmAuditTrail.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmAuditTrail.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmDbBackRes.Designer.vb">
+      <DependentUpon>frmDbBackRes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmDbBackRes.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\frmLogin.Designer.vb">
       <DependentUpon>frmLogin.vb</DependentUpon>
     </Compile>
@@ -84,6 +113,30 @@
     </Compile>
     <Compile Include="Forms\frmMain.Designer.vb">
       <DependentUpon>frmMain.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmItems.Designer.vb">
+      <DependentUpon>frmItems.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmItems.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmPreviewImg.Designer.vb">
+      <DependentUpon>frmPreviewImg.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmPreviewImg.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmServices.Designer.vb">
+      <DependentUpon>frmServices.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmServices.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_payment.Designer.vb">
+      <DependentUpon>frm_payment.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_payment.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -100,6 +153,68 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Reports\AuditTrail.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AuditTrail.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\CarBrandsReport1.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CarBrandsReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\CarsReport.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CarsReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\dsReportJobsOrder.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsReportJobsOrder.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\dsReportJobsOrder.vb">
+      <DependentUpon>dsReportJobsOrder.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\InvoiceReport.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InvoiceReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ItemReport1.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ItemReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\OrderReport.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrderReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Orders.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Orders.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\SalesReport1.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SalesReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ServicesReport.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ServicesReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="UserControls\CarBrands.Designer.vb">
       <DependentUpon>CarBrands.vb</DependentUpon>
@@ -137,16 +252,22 @@
     <Compile Include="UserControls\Reports.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\SupplierInvoice.Designer.vb">
-      <DependentUpon>SupplierInvoice.vb</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\SupplierInvoice.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Include="UserControls\Services.Designer.vb">
       <DependentUpon>Services.vb</DependentUpon>
     </Compile>
     <Compile Include="UserControls\Services.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Settings.Designer.vb">
+      <DependentUpon>Settings.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Settings.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SupplierInvoice.Designer.vb">
+      <DependentUpon>SupplierInvoice.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SupplierInvoice.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControls\SystemUsers.Designer.vb">
@@ -157,17 +278,71 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Forms\frmAuditTrail.resx">
+      <DependentUpon>frmAuditTrail.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmDbBackRes.resx">
+      <DependentUpon>frmDbBackRes.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmLogin.resx">
       <DependentUpon>frmLogin.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmMain.resx">
       <DependentUpon>frmMain.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmItems.resx">
+      <DependentUpon>frmItems.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmPreviewImg.resx">
+      <DependentUpon>frmPreviewImg.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmServices.resx">
+      <DependentUpon>frmServices.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm_payment.resx">
+      <DependentUpon>frm_payment.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\AuditTrail.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>AuditTrail.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CarBrandsReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CarBrandsReport1.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CarsReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CarsReport.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\InvoiceReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>InvoiceReport.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ItemReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ItemReport1.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\OrderReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>OrderReport.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Orders.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Orders.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\SalesReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SalesReport1.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ServicesReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ServicesReport.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\CarBrands.resx">
       <DependentUpon>CarBrands.vb</DependentUpon>
@@ -187,11 +362,14 @@
     <EmbeddedResource Include="UserControls\Reports.resx">
       <DependentUpon>Reports.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\SupplierInvoice.resx">
-      <DependentUpon>SupplierInvoice.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Services.resx">
       <DependentUpon>Services.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Settings.resx">
+      <DependentUpon>Settings.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SupplierInvoice.resx">
+      <DependentUpon>SupplierInvoice.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SystemUsers.resx">
       <DependentUpon>SystemUsers.vb</DependentUpon>
@@ -210,9 +388,20 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Reports\" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Reports\dsReportJobsOrder.xsc">
+      <DependentUpon>dsReportJobsOrder.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\dsReportJobsOrder.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsReportJobsOrder.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Reports\dsReportJobsOrder.xss">
+      <DependentUpon>dsReportJobsOrder.xsd</DependentUpon>
+    </None>
     <None Include="Resources\carS.png" />
   </ItemGroup>
   <ItemGroup>
@@ -250,6 +439,29 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\spark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settingss.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Editprice.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EditQuan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RemoveIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Editprice1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\AuditTrail.png" />
+    <Content Include="Resources\dbBackupRes.png" />
+    <None Include="Resources\View.png" />
+    <None Include="Resources\EURO SHOP LOGO.png" />
+    <Content Include="Resources\tax.png" />
+    <Content Include="Resources\userACc.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

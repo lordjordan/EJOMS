@@ -10,7 +10,7 @@ Public Class frmLogin
     'Dim dr As SQLite.SQLiteDataReader
     'Dim cmd As SQLite.SQLiteCommand
 
-    Dim dr As SqlClient.SqlDataReader
+
     'Dim cmd As SqlClient.SqlCommand
     Private Const EM_SETCUEBANNER As Integer = &H1501
     <DllImport("user32.dll", CharSet:=CharSet.Auto)> _
@@ -32,16 +32,26 @@ Public Class frmLogin
         Return Convert.ToBase64String(DES.CreateEncryptor().TransformFinalBlock(Buffer, 0, Buffer.Length))
     End Function
 
-    Private Sub btnLog_Click(sender As Object, e As EventArgs) Handles btnLog.Click
+    Public Shared Function Decrypt(ByVal encryptedString As String, ByVal key As String) As String
 
+        DES.Key = frmLogin.MD5Hash(key)
+        DES.Mode = CipherMode.ECB
+
+        Dim Buffer As Byte() = Convert.FromBase64String(encryptedString)
+        Return ASCIIEncoding.ASCII.GetString(DES.CreateDecryptor().TransformFinalBlock(Buffer, 0, Buffer.Length))
+    End Function
+
+    Private Sub btnLog_Click(sender As Object, e As EventArgs) Handles btnLog.Click
         Try
+            Cursor = Cursors.WaitCursor
             Dim user As String = txtUsername.Text
             Dim pass As String = txtPassword.Text
             Dim userType As String = lbl_utype.Text
+            
             If txtUsername.Text = "" Or txtPassword.Text = "" Then
                 MsgBox("Enter username and password", MsgBoxStyle.Exclamation, "Invalid Username/Password")
             Else
-                Dim db As New DBHelper(My.Settings.connectionString)
+
                 Dim dr As SqlDataReader
                 Dim parameters As New Dictionary(Of String, Object)()
                 Dim encryptPass = Encrypt(txtPassword.Text, "Keys")
@@ -52,23 +62,30 @@ Public Class frmLogin
                 If dr.HasRows Then
                     dr.Read()
                     'lbl_utype.Text = CInt(dr.Item("user_type"))
-
+                    user_id = dr.Item("user_id")
+                    user_type = dr.Item("user_type")
+                    uscMainmenu.get_notifications()
+                    userRightAccess(user_type)
+                    log("User_id: " & user_type & "; User_name:" & Me.txtUsername.Text & "; Logged - in.")
                     Me.Hide()
                     frmMain.Show()
                 Else
                     MsgBox("Invalid Username/Password", MsgBoxStyle.Exclamation, "Invalid Username/Password")
+                    log("User_name:" & Me.txtUsername.Text & "; Failed attemp to log-in.")
                 End If
+
                 'Do While dr.Read
                 '    MsgBox(dr.Item(1).ToString)
-                'Loop
+                'Loop  
 
             End If
+            Cursor = Cursors.Arrow
         Catch ex As Exception
-            MsgBox(ex.ToString)
+            MsgBox("Error occured!" & vbCrLf & ex.ToString, vbCritical + vbOKOnly, "Error")
         Finally
             db.Dispose() '<--------CHECK THIS!
         End Try
-        Exit Sub
+
 
     End Sub
 
@@ -79,9 +96,7 @@ Public Class frmLogin
         SetCueText(txtPassword, "Password")
     End Sub
 
-    Private Sub frmLogin_Shown(sender As Object, e As EventArgs) Handles Me.Shown
-
-    End Sub
+   
     Public Sub reset()
         Me.txtUsername.Text = ""
         Me.txtPassword.Text = ""
@@ -92,7 +107,12 @@ Public Class frmLogin
 
     End Sub
 
-    Private Sub frmLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+    Private Sub txtPassword_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtPassword.KeyPress
+        If e.KeyChar = ChrW(Keys.Enter) Then
+            btnLog_Click(sender, e)
+        End If
     End Sub
+
+   
+   
 End Class

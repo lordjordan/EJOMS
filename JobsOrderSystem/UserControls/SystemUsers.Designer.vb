@@ -28,23 +28,24 @@ Partial Class SystemUsers
         Me.btnAddNew = New System.Windows.Forms.Button()
         Me.btnBack = New System.Windows.Forms.Button()
         Me.btnSearch = New System.Windows.Forms.Button()
-        Me.btnPrint = New System.Windows.Forms.Button()
         Me.btnUpdate = New System.Windows.Forms.Button()
         Me.txtSearch = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.lvCarBrands = New System.Windows.Forms.ListView()
+        Me.lvUsers = New System.Windows.Forms.ListView()
         Me.chUid = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.SuppInvoiceno = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Label2 = New System.Windows.Forms.Label()
         Me.timerAnimate = New System.Windows.Forms.Timer(Me.components)
         Me.pnlAddEdit = New System.Windows.Forms.Panel()
-        Me.btnViewImg = New System.Windows.Forms.Button()
-        Me.cbxFuel = New System.Windows.Forms.ComboBox()
+        Me.txtconfirmpwd = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.cmbUtype = New System.Windows.Forms.ComboBox()
         Me.Label16 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtpw = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.txtPrice = New System.Windows.Forms.TextBox()
+        Me.txtuname = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.txtID = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -64,11 +65,10 @@ Partial Class SystemUsers
         Me.pnlMain.Controls.Add(Me.btnAddNew)
         Me.pnlMain.Controls.Add(Me.btnBack)
         Me.pnlMain.Controls.Add(Me.btnSearch)
-        Me.pnlMain.Controls.Add(Me.btnPrint)
         Me.pnlMain.Controls.Add(Me.btnUpdate)
         Me.pnlMain.Controls.Add(Me.txtSearch)
         Me.pnlMain.Controls.Add(Me.Label3)
-        Me.pnlMain.Controls.Add(Me.lvCarBrands)
+        Me.pnlMain.Controls.Add(Me.lvUsers)
         Me.pnlMain.Controls.Add(Me.Label2)
         Me.pnlMain.Location = New System.Drawing.Point(0, 26)
         Me.pnlMain.Name = "pnlMain"
@@ -78,12 +78,12 @@ Partial Class SystemUsers
         'btnAddNew
         '
         Me.btnAddNew.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnAddNew.BackColor = System.Drawing.Color.MidnightBlue
+        Me.btnAddNew.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(134, Byte), Integer))
         Me.btnAddNew.FlatAppearance.BorderSize = 0
         Me.btnAddNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAddNew.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAddNew.ForeColor = System.Drawing.Color.Gold
-        Me.btnAddNew.Location = New System.Drawing.Point(700, 1)
+        Me.btnAddNew.Location = New System.Drawing.Point(787, 1)
         Me.btnAddNew.Name = "btnAddNew"
         Me.btnAddNew.Size = New System.Drawing.Size(102, 51)
         Me.btnAddNew.TabIndex = 211
@@ -94,7 +94,7 @@ Partial Class SystemUsers
         'btnBack
         '
         Me.btnBack.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnBack.BackColor = System.Drawing.Color.MidnightBlue
+        Me.btnBack.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(134, Byte), Integer))
         Me.btnBack.FlatAppearance.BorderSize = 0
         Me.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnBack.Font = New System.Drawing.Font("Segoe UI Light", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -123,31 +123,15 @@ Partial Class SystemUsers
         Me.btnSearch.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnSearch.UseVisualStyleBackColor = False
         '
-        'btnPrint
-        '
-        Me.btnPrint.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnPrint.BackColor = System.Drawing.Color.MidnightBlue
-        Me.btnPrint.FlatAppearance.BorderSize = 0
-        Me.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnPrint.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnPrint.ForeColor = System.Drawing.Color.Gold
-        Me.btnPrint.Location = New System.Drawing.Point(902, 1)
-        Me.btnPrint.Name = "btnPrint"
-        Me.btnPrint.Size = New System.Drawing.Size(102, 51)
-        Me.btnPrint.TabIndex = 213
-        Me.btnPrint.Text = "Print"
-        Me.btnPrint.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnPrint.UseVisualStyleBackColor = False
-        '
         'btnUpdate
         '
         Me.btnUpdate.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnUpdate.BackColor = System.Drawing.Color.MidnightBlue
+        Me.btnUpdate.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(134, Byte), Integer))
         Me.btnUpdate.FlatAppearance.BorderSize = 0
         Me.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnUpdate.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnUpdate.ForeColor = System.Drawing.Color.Gold
-        Me.btnUpdate.Location = New System.Drawing.Point(801, 1)
+        Me.btnUpdate.Location = New System.Drawing.Point(895, 1)
         Me.btnUpdate.Name = "btnUpdate"
         Me.btnUpdate.Size = New System.Drawing.Size(102, 51)
         Me.btnUpdate.TabIndex = 212
@@ -175,21 +159,22 @@ Partial Class SystemUsers
         Me.Label3.TabIndex = 207
         Me.Label3.Text = "Search"
         '
-        'lvCarBrands
+        'lvUsers
         '
-        Me.lvCarBrands.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.lvUsers.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lvCarBrands.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.lvCarBrands.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.chUid, Me.ColumnHeader3, Me.SuppInvoiceno})
-        Me.lvCarBrands.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lvCarBrands.GridLines = True
-        Me.lvCarBrands.Location = New System.Drawing.Point(10, 112)
-        Me.lvCarBrands.Name = "lvCarBrands"
-        Me.lvCarBrands.Size = New System.Drawing.Size(1084, 313)
-        Me.lvCarBrands.TabIndex = 210
-        Me.lvCarBrands.UseCompatibleStateImageBehavior = False
-        Me.lvCarBrands.View = System.Windows.Forms.View.Details
+        Me.lvUsers.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.lvUsers.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.chUid, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader1})
+        Me.lvUsers.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lvUsers.FullRowSelect = True
+        Me.lvUsers.GridLines = True
+        Me.lvUsers.Location = New System.Drawing.Point(10, 112)
+        Me.lvUsers.Name = "lvUsers"
+        Me.lvUsers.Size = New System.Drawing.Size(1084, 313)
+        Me.lvUsers.TabIndex = 210
+        Me.lvUsers.UseCompatibleStateImageBehavior = False
+        Me.lvUsers.View = System.Windows.Forms.View.Details
         '
         'chUid
         '
@@ -199,12 +184,17 @@ Partial Class SystemUsers
         'ColumnHeader3
         '
         Me.ColumnHeader3.Text = "User name"
-        Me.ColumnHeader3.Width = 329
+        Me.ColumnHeader3.Width = 350
         '
-        'SuppInvoiceno
+        'ColumnHeader4
         '
-        Me.SuppInvoiceno.Text = "User type"
-        Me.SuppInvoiceno.Width = 651
+        Me.ColumnHeader4.Text = "User type"
+        Me.ColumnHeader4.Width = 350
+        '
+        'ColumnHeader1
+        '
+        Me.ColumnHeader1.Text = "Password"
+        Me.ColumnHeader1.Width = 0
         '
         'Label2
         '
@@ -229,95 +219,105 @@ Partial Class SystemUsers
         Me.pnlAddEdit.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.pnlAddEdit.BackColor = System.Drawing.Color.Silver
         Me.pnlAddEdit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.pnlAddEdit.Controls.Add(Me.btnViewImg)
-        Me.pnlAddEdit.Controls.Add(Me.cbxFuel)
+        Me.pnlAddEdit.Controls.Add(Me.txtconfirmpwd)
+        Me.pnlAddEdit.Controls.Add(Me.Label5)
+        Me.pnlAddEdit.Controls.Add(Me.cmbUtype)
         Me.pnlAddEdit.Controls.Add(Me.Label16)
-        Me.pnlAddEdit.Controls.Add(Me.TextBox1)
+        Me.pnlAddEdit.Controls.Add(Me.txtpw)
         Me.pnlAddEdit.Controls.Add(Me.Label1)
-        Me.pnlAddEdit.Controls.Add(Me.txtPrice)
+        Me.pnlAddEdit.Controls.Add(Me.txtuname)
         Me.pnlAddEdit.Controls.Add(Me.Label11)
         Me.pnlAddEdit.Controls.Add(Me.txtID)
         Me.pnlAddEdit.Controls.Add(Me.Label4)
         Me.pnlAddEdit.Controls.Add(Me.btnSave)
         Me.pnlAddEdit.Controls.Add(Me.btnAddEditClose)
         Me.pnlAddEdit.Controls.Add(Me.lblAddedit)
-        Me.pnlAddEdit.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.pnlAddEdit.Font = New System.Drawing.Font("Symbol", 8.25!)
         Me.pnlAddEdit.Location = New System.Drawing.Point(331, 27)
         Me.pnlAddEdit.Name = "pnlAddEdit"
         Me.pnlAddEdit.Size = New System.Drawing.Size(471, 250)
         Me.pnlAddEdit.TabIndex = 220
         Me.pnlAddEdit.Visible = False
         '
-        'btnViewImg
+        'txtconfirmpwd
         '
-        Me.btnViewImg.BackColor = System.Drawing.Color.MidnightBlue
-        Me.btnViewImg.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.btnViewImg.FlatAppearance.BorderSize = 0
-        Me.btnViewImg.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnViewImg.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnViewImg.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnViewImg.Location = New System.Drawing.Point(378, 151)
-        Me.btnViewImg.Name = "btnViewImg"
-        Me.btnViewImg.Size = New System.Drawing.Size(28, 26)
-        Me.btnViewImg.TabIndex = 239
-        Me.btnViewImg.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnViewImg.UseVisualStyleBackColor = False
+        Me.txtconfirmpwd.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+        Me.txtconfirmpwd.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtconfirmpwd.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtconfirmpwd.Location = New System.Drawing.Point(190, 176)
+        Me.txtconfirmpwd.Name = "txtconfirmpwd"
+        Me.txtconfirmpwd.PasswordChar = Global.Microsoft.VisualBasic.ChrW(8226)
+        Me.txtconfirmpwd.Size = New System.Drawing.Size(244, 26)
+        Me.txtconfirmpwd.TabIndex = 102
         '
-        'cbxFuel
+        'Label5
         '
-        Me.cbxFuel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.cbxFuel.FormattingEnabled = True
-        Me.cbxFuel.Items.AddRange(New Object() {"Super administrator", "Administrator", "Encoder"})
-        Me.cbxFuel.Location = New System.Drawing.Point(162, 183)
-        Me.cbxFuel.Name = "cbxFuel"
-        Me.cbxFuel.Size = New System.Drawing.Size(244, 29)
-        Me.cbxFuel.TabIndex = 238
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(40, 181)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(129, 21)
+        Me.Label5.TabIndex = 239
+        Me.Label5.Text = "Confirm Password"
+        '
+        'cmbUtype
+        '
+        Me.cmbUtype.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbUtype.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cmbUtype.Font = New System.Drawing.Font("Segoe UI Light", 12.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmbUtype.FormattingEnabled = True
+        Me.cmbUtype.Items.AddRange(New Object() {"Administrator", "General Manager", "Bills and Purchasing", "Encoder"})
+        Me.cmbUtype.Location = New System.Drawing.Point(190, 210)
+        Me.cmbUtype.Name = "cmbUtype"
+        Me.cmbUtype.Size = New System.Drawing.Size(244, 29)
+        Me.cmbUtype.TabIndex = 103
         '
         'Label16
         '
         Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(75, 186)
+        Me.Label16.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label16.Location = New System.Drawing.Point(40, 210)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(72, 21)
         Me.Label16.TabIndex = 237
         Me.Label16.Text = "User type"
         '
-        'TextBox1
+        'txtpw
         '
-        Me.TextBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
-        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox1.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(162, 151)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.PasswordChar = Global.Microsoft.VisualBasic.ChrW(8226)
-        Me.TextBox1.Size = New System.Drawing.Size(216, 26)
-        Me.TextBox1.TabIndex = 236
+        Me.txtpw.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+        Me.txtpw.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtpw.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtpw.Location = New System.Drawing.Point(190, 145)
+        Me.txtpw.Name = "txtpw"
+        Me.txtpw.PasswordChar = Global.Microsoft.VisualBasic.ChrW(8226)
+        Me.txtpw.Size = New System.Drawing.Size(244, 26)
+        Me.txtpw.TabIndex = 101
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(74, 154)
+        Me.Label1.Location = New System.Drawing.Point(39, 148)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(72, 21)
         Me.Label1.TabIndex = 235
         Me.Label1.Text = "Password"
         '
-        'txtPrice
+        'txtuname
         '
-        Me.txtPrice.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
-        Me.txtPrice.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtPrice.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPrice.Location = New System.Drawing.Point(162, 119)
-        Me.txtPrice.Name = "txtPrice"
-        Me.txtPrice.Size = New System.Drawing.Size(244, 26)
-        Me.txtPrice.TabIndex = 234
+        Me.txtuname.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+        Me.txtuname.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtuname.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtuname.Location = New System.Drawing.Point(190, 113)
+        Me.txtuname.Name = "txtuname"
+        Me.txtuname.Size = New System.Drawing.Size(244, 26)
+        Me.txtuname.TabIndex = 100
         '
         'Label11
         '
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(74, 122)
+        Me.Label11.Location = New System.Drawing.Point(39, 116)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(81, 21)
         Me.Label11.TabIndex = 231
@@ -327,8 +327,9 @@ Partial Class SystemUsers
         '
         Me.txtID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
         Me.txtID.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtID.Enabled = False
         Me.txtID.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtID.Location = New System.Drawing.Point(162, 87)
+        Me.txtID.Location = New System.Drawing.Point(190, 81)
         Me.txtID.Name = "txtID"
         Me.txtID.ReadOnly = True
         Me.txtID.Size = New System.Drawing.Size(129, 26)
@@ -338,24 +339,24 @@ Partial Class SystemUsers
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(75, 90)
+        Me.Label4.Location = New System.Drawing.Point(39, 84)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(60, 21)
+        Me.Label4.Size = New System.Drawing.Size(58, 21)
         Me.Label4.TabIndex = 227
-        Me.Label4.Text = "User I.d"
+        Me.Label4.Text = "User ID"
         '
         'btnSave
         '
         Me.btnSave.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnSave.BackColor = System.Drawing.Color.MidnightBlue
+        Me.btnSave.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(134, Byte), Integer))
         Me.btnSave.FlatAppearance.BorderSize = 0
         Me.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSave.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSave.ForeColor = System.Drawing.Color.Gold
-        Me.btnSave.Location = New System.Drawing.Point(267, -1)
+        Me.btnSave.Location = New System.Drawing.Point(260, -1)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(102, 51)
-        Me.btnSave.TabIndex = 226
+        Me.btnSave.TabIndex = 104
         Me.btnSave.Text = "Save"
         Me.btnSave.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnSave.UseVisualStyleBackColor = False
@@ -363,7 +364,7 @@ Partial Class SystemUsers
         'btnAddEditClose
         '
         Me.btnAddEditClose.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnAddEditClose.BackColor = System.Drawing.Color.MidnightBlue
+        Me.btnAddEditClose.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(134, Byte), Integer))
         Me.btnAddEditClose.FlatAppearance.BorderSize = 0
         Me.btnAddEditClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAddEditClose.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -371,7 +372,7 @@ Partial Class SystemUsers
         Me.btnAddEditClose.Location = New System.Drawing.Point(368, -1)
         Me.btnAddEditClose.Name = "btnAddEditClose"
         Me.btnAddEditClose.Size = New System.Drawing.Size(102, 51)
-        Me.btnAddEditClose.TabIndex = 225
+        Me.btnAddEditClose.TabIndex = 105
         Me.btnAddEditClose.Text = "Close"
         Me.btnAddEditClose.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnAddEditClose.UseVisualStyleBackColor = False
@@ -410,28 +411,29 @@ Partial Class SystemUsers
     Friend WithEvents btnAddNew As System.Windows.Forms.Button
     Friend WithEvents btnBack As System.Windows.Forms.Button
     Friend WithEvents btnSearch As System.Windows.Forms.Button
-    Friend WithEvents btnPrint As System.Windows.Forms.Button
     Friend WithEvents btnUpdate As System.Windows.Forms.Button
     Friend WithEvents txtSearch As System.Windows.Forms.TextBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents lvCarBrands As System.Windows.Forms.ListView
+    Friend WithEvents lvUsers As System.Windows.Forms.ListView
     Friend WithEvents chUid As System.Windows.Forms.ColumnHeader
     Friend WithEvents ColumnHeader3 As System.Windows.Forms.ColumnHeader
-    Friend WithEvents SuppInvoiceno As System.Windows.Forms.ColumnHeader
+    Friend WithEvents ColumnHeader4 As System.Windows.Forms.ColumnHeader
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents timerAnimate As System.Windows.Forms.Timer
     Friend WithEvents pnlAddEdit As System.Windows.Forms.Panel
-    Friend WithEvents txtPrice As System.Windows.Forms.TextBox
+    Friend WithEvents txtuname As System.Windows.Forms.TextBox
     Friend WithEvents Label11 As System.Windows.Forms.Label
     Friend WithEvents txtID As System.Windows.Forms.TextBox
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents btnSave As System.Windows.Forms.Button
     Friend WithEvents btnAddEditClose As System.Windows.Forms.Button
     Friend WithEvents lblAddedit As System.Windows.Forms.Label
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents txtpw As System.Windows.Forms.TextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents cbxFuel As System.Windows.Forms.ComboBox
+    Friend WithEvents cmbUtype As System.Windows.Forms.ComboBox
     Friend WithEvents Label16 As System.Windows.Forms.Label
-    Friend WithEvents btnViewImg As System.Windows.Forms.Button
+    Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents txtconfirmpwd As System.Windows.Forms.TextBox
+    Friend WithEvents ColumnHeader1 As System.Windows.Forms.ColumnHeader
 
 End Class

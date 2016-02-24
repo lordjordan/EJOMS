@@ -34,6 +34,7 @@ Partial Class Cars
         Me.chCBID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.pnlMain = New System.Windows.Forms.Panel()
         Me.btnBack = New System.Windows.Forms.Button()
         Me.btnSearch = New System.Windows.Forms.Button()
@@ -83,18 +84,24 @@ Partial Class Cars
         Me.btn_SearchBrand = New System.Windows.Forms.Button()
         Me.txtSearchBrand = New System.Windows.Forms.TextBox()
         Me.Label19 = New System.Windows.Forms.Label()
-        Me.btnSelectBrand = New System.Windows.Forms.Button()
-        Me.btnCloseBrand = New System.Windows.Forms.Button()
+        Me.btnSelectCarBrand = New System.Windows.Forms.Button()
+        Me.btnCloseCar = New System.Windows.Forms.Button()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.lvCarBrands = New System.Windows.Forms.ListView()
         Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.pnlPrint = New System.Windows.Forms.Panel()
+        Me.crvCars = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
+        Me.btnPrintAttack = New System.Windows.Forms.Button()
+        Me.btnCancelPrintattack = New System.Windows.Forms.Button()
+        Me.Label20 = New System.Windows.Forms.Label()
         Me.pnlMain.SuspendLayout()
         Me.pnlAddEdit.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.pnlBrand.SuspendLayout()
+        Me.pnlPrint.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
@@ -113,12 +120,12 @@ Partial Class Cars
         'btnAddNew
         '
         Me.btnAddNew.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnAddNew.BackColor = System.Drawing.Color.MidnightBlue
+        Me.btnAddNew.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(134, Byte), Integer))
         Me.btnAddNew.FlatAppearance.BorderSize = 0
         Me.btnAddNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAddNew.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAddNew.ForeColor = System.Drawing.Color.Gold
-        Me.btnAddNew.Location = New System.Drawing.Point(599, 1)
+        Me.btnAddNew.Location = New System.Drawing.Point(578, 1)
         Me.btnAddNew.Name = "btnAddNew"
         Me.btnAddNew.Size = New System.Drawing.Size(102, 51)
         Me.btnAddNew.TabIndex = 211
@@ -129,12 +136,12 @@ Partial Class Cars
         'btnPrint
         '
         Me.btnPrint.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnPrint.BackColor = System.Drawing.Color.MidnightBlue
+        Me.btnPrint.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(134, Byte), Integer))
         Me.btnPrint.FlatAppearance.BorderSize = 0
         Me.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnPrint.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnPrint.ForeColor = System.Drawing.Color.Gold
-        Me.btnPrint.Location = New System.Drawing.Point(801, 1)
+        Me.btnPrint.Location = New System.Drawing.Point(794, 1)
         Me.btnPrint.Name = "btnPrint"
         Me.btnPrint.Size = New System.Drawing.Size(102, 51)
         Me.btnPrint.TabIndex = 213
@@ -145,12 +152,12 @@ Partial Class Cars
         'btnUpdate
         '
         Me.btnUpdate.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnUpdate.BackColor = System.Drawing.Color.MidnightBlue
+        Me.btnUpdate.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(134, Byte), Integer))
         Me.btnUpdate.FlatAppearance.BorderSize = 0
         Me.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnUpdate.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnUpdate.ForeColor = System.Drawing.Color.Gold
-        Me.btnUpdate.Location = New System.Drawing.Point(700, 1)
+        Me.btnUpdate.Location = New System.Drawing.Point(686, 1)
         Me.btnUpdate.Name = "btnUpdate"
         Me.btnUpdate.Size = New System.Drawing.Size(102, 51)
         Me.btnUpdate.TabIndex = 212
@@ -184,7 +191,7 @@ Partial Class Cars
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lvCars.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.lvCars.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.chCBID, Me.chName, Me.ColumnHeader1})
+        Me.lvCars.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.chCBID, Me.chName, Me.ColumnHeader1, Me.ColumnHeader5})
         Me.lvCars.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lvCars.FullRowSelect = True
         Me.lvCars.GridLines = True
@@ -198,17 +205,22 @@ Partial Class Cars
         'chCBID
         '
         Me.chCBID.Text = "Car ID"
-        Me.chCBID.Width = 127
+        Me.chCBID.Width = 113
         '
         'chName
         '
         Me.chName.Text = "Car owner"
-        Me.chName.Width = 321
+        Me.chName.Width = 355
         '
         'ColumnHeader1
         '
         Me.ColumnHeader1.Text = "Car name"
-        Me.ColumnHeader1.Width = 514
+        Me.ColumnHeader1.Width = 380
+        '
+        'ColumnHeader5
+        '
+        Me.ColumnHeader5.Text = "Plate Number"
+        Me.ColumnHeader5.Width = 200
         '
         'pnlMain
         '
@@ -225,7 +237,7 @@ Partial Class Cars
         Me.pnlMain.Controls.Add(Me.Label3)
         Me.pnlMain.Controls.Add(Me.lvCars)
         Me.pnlMain.Controls.Add(Me.Label1)
-        Me.pnlMain.Location = New System.Drawing.Point(0, 26)
+        Me.pnlMain.Location = New System.Drawing.Point(0, 31)
         Me.pnlMain.Name = "pnlMain"
         Me.pnlMain.Size = New System.Drawing.Size(1004, 565)
         Me.pnlMain.TabIndex = 206
@@ -233,7 +245,7 @@ Partial Class Cars
         'btnBack
         '
         Me.btnBack.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnBack.BackColor = System.Drawing.Color.MidnightBlue
+        Me.btnBack.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(134, Byte), Integer))
         Me.btnBack.FlatAppearance.BorderSize = 0
         Me.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnBack.Font = New System.Drawing.Font("Segoe UI Light", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -295,7 +307,7 @@ Partial Class Cars
         Me.pnlAddEdit.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.pnlAddEdit.Location = New System.Drawing.Point(107, 27)
         Me.pnlAddEdit.Name = "pnlAddEdit"
-        Me.pnlAddEdit.Size = New System.Drawing.Size(810, 450)
+        Me.pnlAddEdit.Size = New System.Drawing.Size(810, 0)
         Me.pnlAddEdit.TabIndex = 215
         Me.pnlAddEdit.Visible = False
         '
@@ -308,6 +320,7 @@ Partial Class Cars
         Me.lblbrand_id.Size = New System.Drawing.Size(31, 21)
         Me.lblbrand_id.TabIndex = 252
         Me.lblbrand_id.Text = "???"
+        Me.lblbrand_id.Visible = False
         '
         'txtBrand
         '
@@ -514,7 +527,7 @@ Partial Class Cars
         Me.cbxFuel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.cbxFuel.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbxFuel.FormattingEnabled = True
-        Me.cbxFuel.Items.AddRange(New Object() {"Gas", "Diesel"})
+        Me.cbxFuel.Items.AddRange(New Object() {"Gas", "Diesel", "Hybrid"})
         Me.cbxFuel.Location = New System.Drawing.Point(138, 354)
         Me.cbxFuel.Name = "cbxFuel"
         Me.cbxFuel.Size = New System.Drawing.Size(244, 29)
@@ -657,6 +670,7 @@ Partial Class Cars
         Me.txtCarID.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtCarID.Location = New System.Drawing.Point(138, 96)
         Me.txtCarID.Name = "txtCarID"
+        Me.txtCarID.ReadOnly = True
         Me.txtCarID.Size = New System.Drawing.Size(128, 26)
         Me.txtCarID.TabIndex = 228
         '
@@ -673,14 +687,14 @@ Partial Class Cars
         'btnSave
         '
         Me.btnSave.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnSave.BackColor = System.Drawing.Color.MidnightBlue
+        Me.btnSave.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(134, Byte), Integer))
         Me.btnSave.FlatAppearance.BorderSize = 0
         Me.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSave.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSave.ForeColor = System.Drawing.Color.Gold
-        Me.btnSave.Location = New System.Drawing.Point(606, -1)
+        Me.btnSave.Location = New System.Drawing.Point(597, 4)
         Me.btnSave.Name = "btnSave"
-        Me.btnSave.Size = New System.Drawing.Size(102, 51)
+        Me.btnSave.Size = New System.Drawing.Size(102, 50)
         Me.btnSave.TabIndex = 226
         Me.btnSave.Text = "Save"
         Me.btnSave.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -689,14 +703,14 @@ Partial Class Cars
         'btnAddEditClose
         '
         Me.btnAddEditClose.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnAddEditClose.BackColor = System.Drawing.Color.MidnightBlue
+        Me.btnAddEditClose.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(134, Byte), Integer))
         Me.btnAddEditClose.FlatAppearance.BorderSize = 0
         Me.btnAddEditClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAddEditClose.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAddEditClose.ForeColor = System.Drawing.Color.Gold
-        Me.btnAddEditClose.Location = New System.Drawing.Point(707, -1)
+        Me.btnAddEditClose.Location = New System.Drawing.Point(707, 4)
         Me.btnAddEditClose.Name = "btnAddEditClose"
-        Me.btnAddEditClose.Size = New System.Drawing.Size(102, 51)
+        Me.btnAddEditClose.Size = New System.Drawing.Size(102, 50)
         Me.btnAddEditClose.TabIndex = 225
         Me.btnAddEditClose.Text = "Close"
         Me.btnAddEditClose.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -709,9 +723,9 @@ Partial Class Cars
         Me.lblAddedit.BackColor = System.Drawing.Color.MidnightBlue
         Me.lblAddedit.Font = New System.Drawing.Font("Segoe UI Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblAddedit.ForeColor = System.Drawing.Color.Gold
-        Me.lblAddedit.Location = New System.Drawing.Point(0, -1)
+        Me.lblAddedit.Location = New System.Drawing.Point(0, 4)
         Me.lblAddedit.Name = "lblAddedit"
-        Me.lblAddedit.Size = New System.Drawing.Size(808, 51)
+        Me.lblAddedit.Size = New System.Drawing.Size(808, 50)
         Me.lblAddedit.TabIndex = 224
         Me.lblAddedit.Text = "  Add cars"
         Me.lblAddedit.TextAlign = System.Drawing.ContentAlignment.BottomLeft
@@ -743,11 +757,11 @@ Partial Class Cars
         Me.pnlBrand.Controls.Add(Me.btn_SearchBrand)
         Me.pnlBrand.Controls.Add(Me.txtSearchBrand)
         Me.pnlBrand.Controls.Add(Me.Label19)
-        Me.pnlBrand.Controls.Add(Me.btnSelectBrand)
-        Me.pnlBrand.Controls.Add(Me.btnCloseBrand)
+        Me.pnlBrand.Controls.Add(Me.btnSelectCarBrand)
+        Me.pnlBrand.Controls.Add(Me.btnCloseCar)
         Me.pnlBrand.Controls.Add(Me.Label18)
         Me.pnlBrand.Controls.Add(Me.lvCarBrands)
-        Me.pnlBrand.Location = New System.Drawing.Point(240, 27)
+        Me.pnlBrand.Location = New System.Drawing.Point(240, 29)
         Me.pnlBrand.Name = "pnlBrand"
         Me.pnlBrand.Size = New System.Drawing.Size(567, 433)
         Me.pnlBrand.TabIndex = 219
@@ -789,37 +803,37 @@ Partial Class Cars
         Me.Label19.TabIndex = 228
         Me.Label19.Text = "Search"
         '
-        'btnSelectBrand
+        'btnSelectCarBrand
         '
-        Me.btnSelectBrand.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnSelectBrand.BackColor = System.Drawing.Color.MidnightBlue
-        Me.btnSelectBrand.FlatAppearance.BorderSize = 0
-        Me.btnSelectBrand.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSelectBrand.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSelectBrand.ForeColor = System.Drawing.Color.Gold
-        Me.btnSelectBrand.Location = New System.Drawing.Point(352, 1)
-        Me.btnSelectBrand.Name = "btnSelectBrand"
-        Me.btnSelectBrand.Size = New System.Drawing.Size(102, 51)
-        Me.btnSelectBrand.TabIndex = 227
-        Me.btnSelectBrand.Text = "Select"
-        Me.btnSelectBrand.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnSelectBrand.UseVisualStyleBackColor = False
+        Me.btnSelectCarBrand.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnSelectCarBrand.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(134, Byte), Integer))
+        Me.btnSelectCarBrand.FlatAppearance.BorderSize = 0
+        Me.btnSelectCarBrand.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSelectCarBrand.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSelectCarBrand.ForeColor = System.Drawing.Color.Gold
+        Me.btnSelectCarBrand.Location = New System.Drawing.Point(352, 2)
+        Me.btnSelectCarBrand.Name = "btnSelectCarBrand"
+        Me.btnSelectCarBrand.Size = New System.Drawing.Size(102, 50)
+        Me.btnSelectCarBrand.TabIndex = 227
+        Me.btnSelectCarBrand.Text = "Select"
+        Me.btnSelectCarBrand.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnSelectCarBrand.UseVisualStyleBackColor = False
         '
-        'btnCloseBrand
+        'btnCloseCar
         '
-        Me.btnCloseBrand.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnCloseBrand.BackColor = System.Drawing.Color.MidnightBlue
-        Me.btnCloseBrand.FlatAppearance.BorderSize = 0
-        Me.btnCloseBrand.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCloseBrand.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCloseBrand.ForeColor = System.Drawing.Color.Gold
-        Me.btnCloseBrand.Location = New System.Drawing.Point(460, 1)
-        Me.btnCloseBrand.Name = "btnCloseBrand"
-        Me.btnCloseBrand.Size = New System.Drawing.Size(102, 51)
-        Me.btnCloseBrand.TabIndex = 226
-        Me.btnCloseBrand.Text = "Close"
-        Me.btnCloseBrand.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnCloseBrand.UseVisualStyleBackColor = False
+        Me.btnCloseCar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnCloseCar.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(134, Byte), Integer))
+        Me.btnCloseCar.FlatAppearance.BorderSize = 0
+        Me.btnCloseCar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCloseCar.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCloseCar.ForeColor = System.Drawing.Color.Gold
+        Me.btnCloseCar.Location = New System.Drawing.Point(460, 1)
+        Me.btnCloseCar.Name = "btnCloseCar"
+        Me.btnCloseCar.Size = New System.Drawing.Size(102, 51)
+        Me.btnCloseCar.TabIndex = 226
+        Me.btnCloseCar.Text = "Close"
+        Me.btnCloseCar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnCloseCar.UseVisualStyleBackColor = False
         '
         'Label18
         '
@@ -863,14 +877,91 @@ Partial Class Cars
         Me.ColumnHeader3.Text = "Percentage"
         Me.ColumnHeader3.Width = 184
         '
+        'pnlPrint
+        '
+        Me.pnlPrint.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.pnlPrint.BackColor = System.Drawing.Color.Silver
+        Me.pnlPrint.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pnlPrint.Controls.Add(Me.crvCars)
+        Me.pnlPrint.Controls.Add(Me.btnPrintAttack)
+        Me.pnlPrint.Controls.Add(Me.btnCancelPrintattack)
+        Me.pnlPrint.Controls.Add(Me.Label20)
+        Me.pnlPrint.Location = New System.Drawing.Point(61, 31)
+        Me.pnlPrint.Name = "pnlPrint"
+        Me.pnlPrint.Size = New System.Drawing.Size(892, 535)
+        Me.pnlPrint.TabIndex = 221
+        Me.pnlPrint.Visible = False
+        '
+        'crvCars
+        '
+        Me.crvCars.ActiveViewIndex = -1
+        Me.crvCars.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.crvCars.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.crvCars.Cursor = System.Windows.Forms.Cursors.Default
+        Me.crvCars.Location = New System.Drawing.Point(-1, 63)
+        Me.crvCars.Name = "crvCars"
+        Me.crvCars.Size = New System.Drawing.Size(891, 464)
+        Me.crvCars.TabIndex = 82
+        Me.crvCars.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None
+        '
+        'btnPrintAttack
+        '
+        Me.btnPrintAttack.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnPrintAttack.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(134, Byte), Integer))
+        Me.btnPrintAttack.FlatAppearance.BorderSize = 0
+        Me.btnPrintAttack.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnPrintAttack.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnPrintAttack.ForeColor = System.Drawing.Color.Gold
+        Me.btnPrintAttack.Location = New System.Drawing.Point(654, 0)
+        Me.btnPrintAttack.Name = "btnPrintAttack"
+        Me.btnPrintAttack.Size = New System.Drawing.Size(115, 50)
+        Me.btnPrintAttack.TabIndex = 84
+        Me.btnPrintAttack.Text = "&Print"
+        Me.btnPrintAttack.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnPrintAttack.UseVisualStyleBackColor = False
+        '
+        'btnCancelPrintattack
+        '
+        Me.btnCancelPrintattack.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnCancelPrintattack.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(134, Byte), Integer))
+        Me.btnCancelPrintattack.FlatAppearance.BorderSize = 0
+        Me.btnCancelPrintattack.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCancelPrintattack.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCancelPrintattack.ForeColor = System.Drawing.Color.Gold
+        Me.btnCancelPrintattack.Location = New System.Drawing.Point(775, 0)
+        Me.btnCancelPrintattack.Name = "btnCancelPrintattack"
+        Me.btnCancelPrintattack.Size = New System.Drawing.Size(115, 50)
+        Me.btnCancelPrintattack.TabIndex = 83
+        Me.btnCancelPrintattack.Text = "&Cancel"
+        Me.btnCancelPrintattack.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnCancelPrintattack.UseVisualStyleBackColor = False
+        '
+        'Label20
+        '
+        Me.Label20.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label20.BackColor = System.Drawing.Color.MidnightBlue
+        Me.Label20.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label20.ForeColor = System.Drawing.Color.Gold
+        Me.Label20.Location = New System.Drawing.Point(0, 0)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(890, 51)
+        Me.Label20.TabIndex = 85
+        Me.Label20.TextAlign = System.Drawing.ContentAlignment.BottomLeft
+        '
         'Cars
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Silver
-        Me.Controls.Add(Me.pnlAddEdit)
         Me.Controls.Add(Me.pnlBrand)
+        Me.Controls.Add(Me.pnlAddEdit)
         Me.Controls.Add(Me.StatusStrip1)
+        Me.Controls.Add(Me.pnlPrint)
         Me.Controls.Add(Me.pnlMain)
         Me.Name = "Cars"
         Me.Size = New System.Drawing.Size(1004, 591)
@@ -884,6 +975,7 @@ Partial Class Cars
         Me.StatusStrip1.PerformLayout()
         Me.pnlBrand.ResumeLayout(False)
         Me.pnlBrand.PerformLayout()
+        Me.pnlPrint.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -946,13 +1038,19 @@ Partial Class Cars
     Friend WithEvents pnlBrand As System.Windows.Forms.Panel
     Friend WithEvents Label18 As System.Windows.Forms.Label
     Friend WithEvents lvCarBrands As System.Windows.Forms.ListView
-    Friend WithEvents btnSelectBrand As System.Windows.Forms.Button
-    Friend WithEvents btnCloseBrand As System.Windows.Forms.Button
+    Friend WithEvents btnSelectCarBrand As System.Windows.Forms.Button
+    Friend WithEvents btnCloseCar As System.Windows.Forms.Button
     Friend WithEvents ColumnHeader2 As System.Windows.Forms.ColumnHeader
     Friend WithEvents btn_SearchBrand As System.Windows.Forms.Button
     Friend WithEvents txtSearchBrand As System.Windows.Forms.TextBox
     Friend WithEvents Label19 As System.Windows.Forms.Label
     Friend WithEvents ColumnHeader3 As System.Windows.Forms.ColumnHeader
     Friend WithEvents ColumnHeader4 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents pnlPrint As System.Windows.Forms.Panel
+    Friend WithEvents crvCars As CrystalDecisions.Windows.Forms.CrystalReportViewer
+    Friend WithEvents btnPrintAttack As System.Windows.Forms.Button
+    Friend WithEvents btnCancelPrintattack As System.Windows.Forms.Button
+    Friend WithEvents Label20 As System.Windows.Forms.Label
+    Friend WithEvents ColumnHeader5 As System.Windows.Forms.ColumnHeader
 
 End Class
